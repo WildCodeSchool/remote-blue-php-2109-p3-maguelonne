@@ -4,7 +4,7 @@ nav.navbar.navbar-dark.navbar-expand-lg.fixed-top.bg-white.portfolio-navbar.grad
 }
 
 a.nav-link.active.text-light{
-   text-decoration: blue;
+   text-decoration: var($primary);
 }
 
 
@@ -19,6 +19,7 @@ a.navbar-brand.logo{
     font-size: 37px;
     padding-top: 0px;
     padding-bottom: 0px;
+    font-family: var($font-family-sans-serif);
 }
  
 
