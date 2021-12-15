@@ -1,8 +1,10 @@
-@import 'variables.scss';
+@import 'variables';
 
 @import "~bootstrap/scss/bootstrap";
 
-@import 'navbar.scss';
-@import 'home.scss';
-@import 'ionicons.min.scss';
-@import 'footer.scss';
+@import 'global';
+@import 'navbar';
+@import 'ionicons.min';
+@import 'footer';
+
+@import 'home';
