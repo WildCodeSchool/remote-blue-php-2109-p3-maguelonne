@@ -2,43 +2,33 @@
 
 {% block title %}Home{% endblock %}
 
-{% block stylesheets %}
-{{ parent() }}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-<style>
-    .pink-stripe {
-        height: 50vh;
-        width: 100%;
-        display: flex;
-        font-family: 'Varela Round', sans-serif;
-        font-size: 3rem;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .white-stripe {
-        background-color: white;
-        width: 100vw;
-        height: 50vh;
-        display: flex;
-        position: fixed;
-        bottom: 0;
-        align-items: center;
-        justify-content: center;
-    }
-</style>
-{% endblock %}
-
 {% block body %}
-<div class="pink-stripe">
-    <h1>
-        Let's start coding &#129304;
-    </h1>
-</div>
-<div class="white-stripe ">
-    <img src="https://medinsoft.com/wp-content/uploads/2020/01/LOGO_WILDCODESCHOOL1000-1024x1024.png"
-        style="height:100%">
-</div>
+
+    <main class="page lanidng-page">
+        <section class="portfolio-block block-intro">
+            <div class="container"><img class="img-fluid image" src="{{ asset('build/images/image5.jpg') }}" >
+                <div class="about-me">
+                    <p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu</em></p>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio-block skills" >
+            <div class="container d-flex justify-content-center">
+                <div class="heading"></div>
+                <div class="row d-flex justify-content-center onglet">
+                    <div class="col-md-4 bg-primary mx-2 w-25" data-bss-disabled-mobile="true" data-bss-hover-animate="pulse" >
+                        <h3 class="text-center mt-3">Blog</h3>
+                    </div>
+                    <div class="col-md-4 bg-primary mx-2 w-25" data-bss-disabled-mobile="true" data-bss-hover-animate="pulse" >
+                        <h3 class="text-center mt-3">Association</h3>
+                    </div>
+                    <div class="col-md-4 bg-primary mx-2 w-25" data-bss-disabled-mobile="true" data-bss-hover-animate="pulse" >
+                        <h3 class="text-center mt-3">Sites Amis</h3>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="w-100"></div>
+                </div>
+            </div>
+        </section>
+    </main>
 {% endblock %}

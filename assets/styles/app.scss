@@ -1,7 +1,8 @@
 @import 'variables.scss';
 
-body {
-    margin:0;
-    background-color: $wild-color;
-    color: $light;
-}
+@import "~bootstrap/scss/bootstrap";
+
+@import 'navbar.scss';
+@import 'home.scss';
+@import 'ionicons.min.scss';
+@import 'footer.scss';
