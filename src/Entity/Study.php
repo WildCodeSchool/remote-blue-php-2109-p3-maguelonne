@@ -18,7 +18,7 @@ class Study
     * @ORM\Column(type="integer")
     * @ORM\GeneratedValue
     */
-    protected int $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=255)

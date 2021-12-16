@@ -17,7 +17,7 @@ class Artist
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    protected int $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=80)
@@ -71,16 +71,19 @@ class Artist
 
     /**
      * @ORM\OneToMany(targetEntity=Company::class, mappedBy="artist")
+     * @var ArrayCollection<int, Company>
      */
     private ArrayCollection $company;
 
     /**
      * @ORM\OneToMany(targetEntity=Reward::class, mappedBy="artist")
+     * @var ArrayCollection<int, Reward>
      */
     private ArrayCollection $reward;
 
     /**
      * @ORM\OneToMany(targetEntity=Study::class, mappedBy="artist")
+     * @var ArrayCollection<int, Study>
      */
     private ArrayCollection $study;
 

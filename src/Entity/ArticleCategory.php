@@ -18,7 +18,7 @@ class ArticleCategory
     * @ORM\Column(type="integer")
     * @ORM\GeneratedValue
     */
-    protected int $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -32,8 +32,9 @@ class ArticleCategory
 
     /**
      * @ORM\OneToMany(targetEntity=Article::class, mappedBy="category")
+     *
      */
-    private ArrayCollection $articles;
+    private Collection $articles;
 
     public function __construct()
     {
