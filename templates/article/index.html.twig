@@ -4,11 +4,28 @@
 
 {% block body %}
 <div class="container-fluid">
-<div class="row my-2 my-lg-4 d-flex justify-content-lg-evenly">
-        <button type="button" class="col-12 col-lg-4 btn btn-primary btn-lg">CATEGORIE</button>
-        <button type="button" class="col-12 col-lg-4 btn btn-primary btn-lg">ARCHIVES</button>
+<div class="row my-4 my-lg-4 d-flex justify-content-lg-evenly">
+  <div class="dropdown">
+    <button type="button" class="col-12 col-lg-4 btn btn-primary btn-lg dropdown-toggle" id="dropdownMenuButton1"
+    data-bs-toggle="dropdown" aria-expanded="false">CATEGORIE</button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href="#">Pastille 1</a></li>
+      <li><a class="dropdown-item" href="#">Pastille 2</a></li>
+      <li><a class="dropdown-item" href="#">Pastille 3</a></li>
+    </ul>
+  </div>
+  <div class="dropdown">
+    <button type="button" class="col-12 col-lg-4 btn btn-primary btn-lg dropdown-toggle" id="dropdownMenuButton2"
+    data-bs-toggle="dropdown" aria-expanded="false">ARCHIVES</button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+      <li><a class="dropdown-item" href="#">Pastille 1</a></li>
+      <li><a class="dropdown-item" href="#">Pastille 2</a></li>
+      <li><a class="dropdown-item" href="#">Pastille 3</a></li>
+    </ul>
+  </div>
 </div>
 </div>
+
     <div class="container-fluid col-lg-10 col-12">
     <div class="card mb-3 shadow-sm">
       <div class="row no-gutters">
