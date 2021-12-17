@@ -31,7 +31,6 @@ class EventCategory
 
     /**
      * @ORM\OneToMany(targetEntity=Event::class, mappedBy="category")
-     * @var ArrayCollection<int, Event>
      */
     private Collection $events;
 

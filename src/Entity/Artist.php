@@ -71,21 +71,18 @@ class Artist
 
     /**
      * @ORM\OneToMany(targetEntity=Company::class, mappedBy="artist")
-     * @var ArrayCollection<int, Company>
      */
-    private ArrayCollection $company;
+    private Collection $company;
 
     /**
      * @ORM\OneToMany(targetEntity=Reward::class, mappedBy="artist")
-     * @var ArrayCollection<int, Reward>
      */
-    private ArrayCollection $reward;
+    private Collection $reward;
 
     /**
      * @ORM\OneToMany(targetEntity=Study::class, mappedBy="artist")
-     * @var ArrayCollection<int, Study>
      */
-    private ArrayCollection $study;
+    private Collection $study;
 
     public function __construct()
     {
