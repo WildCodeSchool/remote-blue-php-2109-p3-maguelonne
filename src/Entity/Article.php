@@ -18,7 +18,7 @@ class Article
     * @ORM\Column(type="integer")
     * @ORM\GeneratedValue
     */
-    protected int $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -52,7 +52,6 @@ class Article
 
     /**
      * @ORM\ManyToOne(targetEntity=ArticleCategory::class, inversedBy="articles")
-     * @ORM\JoinColumn(nullable=false)
      */
     private ?ArticleCategory $category;
 

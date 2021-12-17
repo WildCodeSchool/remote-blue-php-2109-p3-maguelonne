@@ -17,7 +17,7 @@ class Reward
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    protected int $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=255)

@@ -17,7 +17,7 @@ class EventCategory
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    protected int $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=80)
@@ -32,7 +32,7 @@ class EventCategory
     /**
      * @ORM\OneToMany(targetEntity=Event::class, mappedBy="category")
      */
-    private ArrayCollection $events;
+    private Collection $events;
 
     public function __construct()
     {
