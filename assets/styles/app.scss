@@ -1,8 +1,7 @@
-@import 'variables.scss';
+@import 'variables';
 
 @import "~bootstrap/scss/bootstrap";
 
+@import 'global';
 
-@import 'home.scss';
-
-@import 'footer.scss';
+@import 'home';
