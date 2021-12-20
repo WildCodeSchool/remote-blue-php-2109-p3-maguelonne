@@ -1,0 +1,63 @@
+<div class="footer-page">
+
+	<div class="container-fluid">
+		<footer class="border-top">
+			<div class="row">
+				<div class="col-md-4">
+					<h2>Maguelone</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.</p>
+				</div>
+
+				<div class="col-md-4">
+					<h2>Mentions Légales</h2>
+					<ul class="nav flex-column">
+						{% set links = [
+    {'title': 'Home', 'path': 'home'},
+    {'title': 'Features', 'path': 'home'},
+    {'title': 'Pricing', 'path': 'home'},
+    {'title': 'Contact', 'path': 'home'},
+   ] %}
+						{% for link in links %}
+							<li class="nav-item mb-2 list-unstyled">
+								<a href="{{ path(link.path) }}" class="nav-link p-0">{{ link.title }}</a>
+							</li>
+						</ul>
+					{% endfor %}
+				</div>
+
+				<div class="col-md-4">
+					<form>
+						<h2>Subscribe to our newsletter</h2>
+						<p>Monthly digest of whats new and exciting from us.</p>
+						<div class="d-flex flex-wrap flex-lg-nowrap w-100 gap-2">
+							<label for="newsletter1" class="visually-hidden">Email address</label>
+							<input type="Email" name="email" class="form-control w-md-100" required="" placeholder="Email">
+							<button class="btn btn-info">Subscribe</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="nav d-flex justify-content-center border-top">
+				<ul class="social list-unstyled d-flex flex-row me-auto align-self-center">
+					<li class="ms-3">
+						<a href="https://fr-fr.facebook.com/">
+							<i class='bx bxl-facebook-circle social_icon'></i>
+						</a>
+					</li>
+					<li class="ms-3">
+						<a href="https://www.instagram.com/">
+							<i class='bx bxl-instagram-alt social_icon'></i>
+						</a>
+					</li>
+					<li class="ms-3">
+						<a href="https://twitter.com/?lang=fr">
+							<i class='bx bxl-twitter social_icon'></i>
+						</a>
+					</li>
+				</ul>
+				<p class="inline-block me-auto">&copy; 2021 Maguelone All rights reserved.</p>
+			</div>
+		</footer>
+	</div>
+</div>

@@ -7,15 +7,18 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/association", name="association_")
+ * @Route("/event", name="event_")
  */
-class AssociationController extends AbstractController
+
+class EventController extends AbstractController
 {
     /**
      * @Route("/", name="index")
      */
     public function index(): Response
     {
-        return $this->render('association/index.html.twig');
+        return $this->render('event/index.html.twig', [
+            'controller_name' => 'EventController',
+        ]);
     }
 }
