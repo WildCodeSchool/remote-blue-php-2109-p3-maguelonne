@@ -6,7 +6,7 @@ nav
 .bg-white
 .portfolio-navbar
 .gradient{
-    height: 5.5rem;    
+    min-height: 5.5rem;    
 }
 
 
@@ -28,7 +28,7 @@ nav
 .fixed-top.bg-white
 .portfolio-navbar
 .gradient{
-    height: 5.5rem;
+    min-height: 5.5rem;
     padding-right:20%;
     padding-left:20%;
 }
@@ -36,7 +36,7 @@ nav
 a
 .navbar-brand
 .logo{
-    height: 3rem;
+    min-height: 3rem;
     font-size: 2.3rem;
     padding-top: 0px;
     padding-bottom: 0px;
