@@ -7,18 +7,18 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/Article", name="article_")
+ * @Route("/artist", name="artist_")
  */
 
-class ArticleController extends AbstractController
+class ArtistController extends AbstractController
 {
     /**
      * @Route("/", name="index")
      */
     public function index(): Response
     {
-        return $this->render('article/index.html.twig', [
-            'controller_name' => 'ArticleController',
+        return $this->render('artist/index.html.twig', [
+            'controller_name' => 'ArtistController',
         ]);
     }
 }

@@ -1,7 +1,9 @@
-@import 'variables.scss';
+@import 'variables';
 @import "~bootstrap/scss/bootstrap";
 @import 'navbar.scss';
 @import 'home.scss';
 @import 'ionicons.min.scss';
-@import '_footer.scss';
-@import '_button.scss';
+@import 'button';
+@import 'global';
+
+
