@@ -6,14 +6,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+* @Route("/friendlink", name="friendLink_")
+*/
+
 class FriendLinkController extends AbstractController
 {
     /**
-     * @Route("/friendlink", name="friend_link")
+     * @Route("/", name="index")
      */
     public function index(): Response
     {
-        return $this->render('friend_link/index.html.twig', [
+        return $this->render('friendLink/index.html.twig', [
             'controller_name' => 'FriendLinkController',
         ]);
     }
