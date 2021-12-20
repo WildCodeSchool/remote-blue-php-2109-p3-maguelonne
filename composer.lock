@@ -9418,7 +9418,7 @@
         },
         {
             "name": "phpstan/phpstan-symfony",
-<<<<<<< HEAD
+
             "version": "1.0.4",
             "source": {
                 "type": "git",
@@ -9429,18 +9429,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/phpstan/phpstan-symfony/zipball/84df52516771a2d8cf26b7b5b42a6dd4b1d26c2c",
                 "reference": "84df52516771a2d8cf26b7b5b42a6dd4b1d26c2c",
-=======
-            "version": "1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phpstan/phpstan-symfony.git",
-                "reference": "a5aed927c36088284267c6170b41fcb556e32a44"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan-symfony/zipball/a5aed927c36088284267c6170b41fcb556e32a44",
-                "reference": "a5aed927c36088284267c6170b41fcb556e32a44",
->>>>>>> c2f12fa89e9aad8049e8445dfb32852279c6ec43
+
                 "shasum": ""
             },
             "require": {
@@ -9495,15 +9484,10 @@
             "description": "Symfony Framework extensions and rules for PHPStan",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan-symfony/issues",
-<<<<<<< HEAD
                 "source": "https://github.com/phpstan/phpstan-symfony/tree/1.0.4"
             },
             "time": "2021-12-16T09:03:35+00:00"
-=======
-                "source": "https://github.com/phpstan/phpstan-symfony/tree/1.0.3"
-            },
-            "time": "2021-12-05T18:14:35+00:00"
->>>>>>> c2f12fa89e9aad8049e8445dfb32852279c6ec43
+
         },
         {
             "name": "phpunit/php-file-iterator",
