@@ -1,47 +1,22 @@
-nav
-.navbar
-.navbar-dark
-.navbar-expand-lg
-.fixed-top
-.bg-white
-.portfolio-navbar
-.gradient{
-    min-height: 5.5rem;    
+.nav-link {
+  position: relative;
+  text-transform: uppercase;
+  color: rgba(color-contrast($secondary), .55);
+  &:hover {
+    color: rgba(color-contrast($secondary), .7);
+  }
+  &.active {
+    color: rgba(color-contrast($secondary), 1);
+  }
+  &:hover,
+  &.active {
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: $nav-link-padding-x/2;
+      right: $nav-link-padding-x/2;
+    }
+  }
 }
-
-
-
-a
-.nav-link
-.active
-.text-light{
-    text-decoration: var($primary);
-    font-family: var($font-family-sans-serif);
-    color: color-contrast($primary);
-}
-
-
-nav
-.navbar
-.navbar-dark
-.navbar-expand-lg
-.fixed-top.bg-white
-.portfolio-navbar
-.gradient{
-    min-height: 5.5rem;
-    padding-right:20%;
-    padding-left:20%;
-}
-
-a
-.navbar-brand
-.logo{
-    min-height: 3rem;
-    font-size: 2.3rem;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    font-family: var($font-family-sans-serif);
-}
- 
-
-
