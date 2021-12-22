@@ -1,8 +1,6 @@
 @import 'variables';
-
+@import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
 @import "~bootstrap/scss/bootstrap";
-
-@import 'global';
-
+@import 'navbar';
 @import 'home';
-
+@import 'global';
