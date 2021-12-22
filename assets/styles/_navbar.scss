@@ -7,11 +7,11 @@
         color: rgba(color-contrast($secondary), .7);
   }
 
-  &.active {
+    &.active {
         color: rgba(color-contrast($secondary), 1);
   }
 
-  &:hover,
+    &:hover,
     &.active {
         &:after {
             content: "";
