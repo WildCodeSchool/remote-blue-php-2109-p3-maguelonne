@@ -5,11 +5,17 @@
             <span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item mx-4 my-auto"><a class="nav-link text-decoration-none hover" href="#">Blog</a></li>
-                <li class="nav-item mx-4 my-auto"><a class="nav-link text-decoration-none hover" href="#">Association</a></li>
-                <li class="nav-item mx-4 my-auto"><a class="nav-link text-decoration-none hover" href="#">Calendrier</a></li>
-                <li class="nav-item mx-4 my-auto"><a class="nav-link text-decoration-none hover" href="#">Artistes</a></li>
-                <li class="nav-item mx-4 my-auto"><a class="nav-link text-decoration-none hover" href="#">Sites Amis</a></li>
+                {% set links = [
+                    {'title': 'Blog', 'path': 'home'},
+                    {'title': 'Association', 'path': 'home'},
+                    {'title': 'Calendrier', 'path': 'home'},
+                    {'title': 'Artistes', 'path': 'home'},
+                    {'title': 'Sites amis', 'path': 'home'},
+                    ] %}
+                {% for link in links %}
+                <li class="nav-item mx-4 my-auto">
+                    <a class="nav-link text-decoration-none hover" href="{{ path(link.path) }}">{{ link.title }}</a></li>
+                {% endfor %}
                 <li class="nav-item mx-2 ms-lg-4"><button class="btn btn-light btn-lg border rounded-circle" type="submit">flag</button></li>
             </ul>
         </div>
