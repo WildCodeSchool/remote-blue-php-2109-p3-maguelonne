@@ -3,9 +3,9 @@
 {% block title %}Page de blog{% endblock %}
 
 {% block body %}
-<div class="container-fluid my-2 my-lg-4">
-  <div class="row d-flex justify-content-center">
-    <div class="btn-group col-12 col-lg-3">
+<div class="container-fluid my-2 my-lg-5">
+  <div class="row d-flex flex-lg-row justify-content-lg-evenly justify-content-center">
+    <div class="btn-group col-12 col-lg-3 mb-4 mb-lg-0">
       <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-bs-display="static" data-bs-toggle="dropdown">CATEGORIES</button>
       <div class="dropdown-menu dropdown-menu-lg-end" >
           <a href="#" class="dropdown-item">Pastille 1</a>
@@ -23,29 +23,33 @@
 </div>
   </div>
 </div>
-{% set articles = {
-  'article-1': {'title': 'La tétralogie pour les presques nuls', 'duration': '10', 'createdAt': '12/11/2021', 'poster': 'https://picsum.photos/id/1015/300/200', 'category': 'Opéra'},
-  'article-2': {'title': 'Les pastorales', 'duration': '5', 'createdAt': '20/12/2021', 'poster': 'https://picsum.photos/id/1016/300/200', 'category': 'Noël'},
-  'article-3': {'title': 'Le requiem de Mozart', 'duration': '15', 'createdAt': '06/07/2015', 'poster': 'https://picsum.photos/id/1018/300/200', 'category': 'Opéra'},
- } %}
+{% set articles = [
+  {'title': 'La tétralogie pour les presques nuls', 'duration': '10', 'createdAt': '12/11/2021', 'poster': 'https://picsum.photos/id/1015/300/200', 'category': 'Opéra'},
+  {'title': 'Les pastorales', 'duration': '5', 'createdAt': '20/12/2021', 'poster': 'https://picsum.photos/id/1016/300/200', 'category': 'Noël'},
+  {'title': 'Le requiem de Mozart', 'duration': '15', 'createdAt': '06/07/2015', 'poster': 'https://picsum.photos/id/1018/300/200', 'category': 'Opéra'},
+ ] %}
 {% for article in articles %}
-<div class="container-fluid col-lg-6 col-12">
-  <div class="card mb-3 shadow-lg">
-    <div class="row no-gutters">
-      <div class="col-md-4" style="max-width: 240px;">
-        <img src="{{ article.poster }}" class="img-fluid" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <div class="d-flex justify-content-start">
-            <h5 class="card-title me-auto">Article écrit le : {{ article.createdAt }}</h5>
-            <strong class="mx-auto">Temps de lecture : {{ article.duration }} minutes</strong>
-            <h5 class="ms-auto">Catégorie : {{ article.category }}</h5>
+<div class="container">
+  <div class="row justify-content-lg-center">
+    <div class="col-lg-9 col-12">
+      <div class="card mb-3 shadow-lg">
+        <div class="row no-gutters">
+          <div class="col-md-4 mx-auto">
+            <img src="{{ article.poster }}" class="card-img img-fluid" alt="...">
           </div>
-      <h3 class="mb-0">{{ article.title }}</h3>
-          <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit odio ullam dicta!
-            Asperiores obcaecati ducimus nihil possimus dolor eligendi, iusto aspernatur similique omnis esse deserunt deleniti officia? Nam, et deleniti.</p>
-          <a href="" class="btn btn-primary">EN LIRE PLUS</a>
+          <div class="col-md-8">
+            <div class="card-body">
+              <div class="d-flex flex-column flex-lg-row justify-content-start">
+                <h5 class="card-title me-auto">Article écrit le : {{ article.createdAt }}</h5>
+                <strong class="mx-lg-auto">Temps de lecture : {{ article.duration }} minutes</strong>
+                <h5 class="ms-lg-auto">Catégorie : {{ article.category }}</h5>
+              </div>
+          <h3 class="mb-0">{{ article.title }}</h3>
+              <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit odio ullam dicta!
+                Asperiores obcaecati ducimus nihil possimus dolor eligendi, iusto aspernatur similique omnis esse deserunt deleniti officia? Nam, et deleniti.</p>
+              <a href="" class="btn btn-primary">EN LIRE PLUS</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
