@@ -1,0 +1,23 @@
+<nav class="navbar p-3 navbar-light navbar-expand-lg bg-secondary fixed-top">
+    <div class="container"><a class="navbar-brand logo ms-lg-0" href="{{ path('home') }}">Maguelone</a>
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarNav">
+            <span class="visually-hidden">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                {% set links = [
+                    {'title': 'Blog', 'path': 'article_index'},
+                    {'title': 'Association', 'path': 'association_index'},
+                    {'title': 'Calendrier', 'path': 'event_index'},
+                    {'title': 'Artistes', 'path': 'artist_index'},
+                    {'title': 'Sites amis', 'path': 'friendLink_index'},
+                    ] %}
+                {% for link in links %}
+                <li class="nav-item mx-4 my-auto">
+                    <a class="nav-link text-decoration-none hover" href="{{ path(link.path) }}">{{ link.title }}</a></li>
+                {% endfor %}
+                <li class="nav-item mx-2 ms-lg-4"><button class="btn btn-light btn-lg border rounded-circle" type="submit">flag</button></li>
+            </ul>
+        </div>
+    </div>
+</nav>
