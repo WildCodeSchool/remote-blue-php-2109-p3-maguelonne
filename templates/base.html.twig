@@ -18,8 +18,8 @@
 		{% endblock %}
 	</head>
 	<body>
-		<header>{% include "_navbar.html.twig" %}</header>
-    {% block body %}{% endblock %}
-		<footer>{% include '_footer.html.twig' %}</footer>
+		{% include '_navbar.html.twig' %}
+		{% block body %}{% endblock %}
+		{% include '_footer.html.twig' %}
 	</body>
 </html>
