@@ -12,3 +12,13 @@ import './styles/app.scss';
 import './bootstrap';
 
 window.bootstrap = require('bootstrap');
+
+const btn = document.querySelector('#btn-scroll');
+
+btn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+    });
+});
