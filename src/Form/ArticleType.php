@@ -29,6 +29,7 @@ class ArticleType extends AbstractType
                 TextareaType::class,
                 [
                     'label' => 'Contenu de l\'article',
+                    'attr' => ['rows' => '10'],
                 ],
             )
             ->add(
