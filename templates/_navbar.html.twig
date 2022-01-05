@@ -16,7 +16,25 @@
                 <li class="nav-item mx-4 my-auto">
                     <a class="nav-link text-decoration-none hover" href="{{ path(link.path) }}">{{ link.title }}</a></li>
                 {% endfor %}
-                <li class="nav-item mx-2 ms-lg-4"><button class="btn btn-light btn-lg border rounded-circle" type="submit">flag</button></li>
+                {% set flags = [
+                    {"alias": 'Français', 'url': 'https://flagcdn.com/h40/fr.jpg'},
+                    {"alias": 'Allemand', 'url': 'https://flagcdn.com/h40/de.jpg'},
+                    {"alias": 'Russe', 'url': 'https://flagcdn.com/h40/ru.jpg'},
+                    {"alias": 'Japonais', 'url': 'https://flagcdn.com/h40/jp.jpg'},
+                    {"alias": 'Anglais', 'url': 'https://flagcdn.com/h40/gb.jpg'},
+                ] %}
+                <li class="nav-item mx-2 ms-lg-4 dropdown">
+                    <button class="btn btn-primary btn-lg border rounded-circle dropdown-toggle" type="button" id="translationAvailable" data-bs-toggle="dropdown"
+                            aria-expanded="false">Choisir la langue</button>
+                    <ul class="dropdown-menu" aria-labelledby="translationAvailable">
+                        {% for flag in flags|sort %}
+                            <li class="dropdown-item">
+                                <img src="{{ flag.url }}" alt="{{ flag.alias }}">
+                                {{ flag.alias }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
