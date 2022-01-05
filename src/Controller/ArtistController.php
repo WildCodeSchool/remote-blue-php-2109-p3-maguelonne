@@ -19,12 +19,12 @@ class ArtistController extends AbstractController
      */
     public function index(): Response
     {
-        $artist = $this->getDoctrine()
+        $artists = $this->getDoctrine()
         ->getRepository(Artist::class)
         ->findAll();
 
         return $this->render('artist/index.html.twig', [
-            'artist' => $artist,
+            'artists' => $artists,
         ]);
     }
 }
