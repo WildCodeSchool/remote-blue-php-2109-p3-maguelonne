@@ -19,10 +19,10 @@ class ArticleCategoryController extends AbstractController
     /**
      * @Route("/", name="index", methods={"GET"})
      */
-    public function index(ArticleCategoryRepository $articleCategoryRepository): Response
+    public function index(ArticleCategoryRepository $articleCatRepo): Response
     {
         return $this->render('article_category/index.html.twig', [
-            'article_categories' => $articleCategoryRepository->findAll(),
+            'article_categories' => $articleCatRepo->findAll(),
         ]);
     }
 
