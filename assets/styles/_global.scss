@@ -5,3 +5,9 @@ body {
 footer{
     background-color: $blue-100;
 }
+
+.navbar-brand {
+    &.logo {
+        font-family: $font-family-maguelonne;
+    }
+}

@@ -3,3 +3,8 @@
     object-fit: cover;
     object-position: top;
 }
+
+.card-img {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
