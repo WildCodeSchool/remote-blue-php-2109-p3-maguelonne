@@ -1,24 +1,23 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/article", name="article_")
+ * @Route("/association", name="association_")
  */
-
-class ArticleController extends AbstractController
+class AssociationController extends AbstractController
 {
     /**
      * @Route("/", name="index")
      */
     public function index(): Response
     {
-        return $this->render('article/index.html.twig', [
-            'controller_name' => 'ArticleController',
+        return $this->render('admin/association.html.twig', [
+            'controller_name' => 'AssociationController',
         ]);
     }
 }
