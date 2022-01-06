@@ -6,6 +6,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 {% set links = [
+                    {'title': 'Accueil', 'path': 'home'},
                     {'title': 'Blog', 'path': 'article_index'},
                     {'title': 'Association', 'path': 'association_index'},
                     {'title': 'Calendrier', 'path': 'event_index'},
@@ -17,11 +18,11 @@
                     <a class="nav-link text-decoration-none hover" href="{{ path(link.path) }}">{{ link.title }}</a></li>
                 {% endfor %}
                 {% set flags = [
-                    {"alias": 'Français', 'url': 'https://flagcdn.com/h40/fr.jpg'},
-                    {"alias": 'Allemand', 'url': 'https://flagcdn.com/h40/de.jpg'},
-                    {"alias": 'Russe', 'url': 'https://flagcdn.com/h40/ru.jpg'},
-                    {"alias": 'Japonais', 'url': 'https://flagcdn.com/h40/jp.jpg'},
-                    {"alias": 'Anglais', 'url': 'https://flagcdn.com/h40/gb.jpg'},
+                    {"alias": 'Français', 'url': 'https://flagcdn.com/40x30/fr.png'},
+                    {"alias": 'Allemand', 'url': 'https://flagcdn.com/40x30/de.png'},
+                    {"alias": 'Russe', 'url': 'https://flagcdn.com/40x30/ru.png'},
+                    {"alias": 'Japonais', 'url': 'https://flagcdn.com/40x30/jp.png'},
+                    {"alias": 'Anglais', 'url': 'https://flagcdn.com/40x30/gb.png'},
                 ] %}
                 <li class="nav-item mx-2 ms-lg-4 dropdown">
                     <button class="btn btn-primary btn-lg border rounded-circle dropdown-toggle" type="button" id="translationAvailable" data-bs-toggle="dropdown"
