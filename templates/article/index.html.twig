@@ -1,19 +1,56 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Article index{% endblock %}
+
+{% block title %}Page de blog{% endblock %}
 
 {% block body %}
-    <h1>Article index</h1>
-        {% for article in articles %}
-            <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
+<div class="container-fluid my-2 my-lg-5">
+  <div class="row d-flex flex-lg-row justify-content-lg-evenly justify-content-center">
+    <div class="btn-group col-12 col-lg-3 mb-4 mb-lg-0">
+      <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-bs-display="static" data-bs-toggle="dropdown">CATEGORIES</button>
+      <div class="dropdown-menu dropdown-menu-lg-end" >
+          <a href="#" class="dropdown-item">Pastille 1</a>
+          <a href="#" class="dropdown-item">Pastille 2</a>
+          <a href="#" class="dropdown-item">Pastille 3</a>
+      </div>
+  </div>
+  <div class="btn-group col-12 col-lg-3">
+    <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-bs-display="static" data-bs-toggle="dropdown">ARCHIVES</button>
+    <div class="dropdown-menu dropdown-menu-lg-start">
+      <a href="#" class="dropdown-item">Pastille 1</a>
+      <a href="#" class="dropdown-item">Pastille 2</a>
+      <a href="#" class="dropdown-item">Pastille 3</a>
+    </div>
+</div>
+  </div>
+</div>
+{% set articles = [
+  {'title': 'La tétralogie pour les presques nuls', 'duration': '10', 'createdAt': '12/11/2021', 'poster': 'https://picsum.photos/id/1015/300/200', 'category': 'Opéra'},
+  {'title': 'Les pastorales', 'duration': '5', 'createdAt': '20/12/2021', 'poster': 'https://picsum.photos/id/1016/300/200', 'category': 'Noël'},
+  {'title': 'Le requiem de Mozart', 'duration': '15', 'createdAt': '06/07/2015', 'poster': 'https://picsum.photos/id/1018/300/200', 'category': 'Opéra'},
+ ] %}
+{% for article in articles %}
+<div class="container">
+  <div class="row justify-content-lg-center">
+    <div class="col-lg-9 col-12">
+      <div class="card mb-3 shadow-lg">
+        <div class="row no-gutters">
+          <div class="col-md-4 mx-auto">
+            <img src="{{ article.poster }}" class="card-img img-fluid" alt="...">
+          </div>
+          <div class="col-md-8">
             <div class="card-body">
-             <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="{{ path('article_show', {'id': article.id}) }}" class="btn btn-primary">show</a>
-            <a href="{{ path('article_edit', {'id': article.id}) }}" class="btn btn-primary">edit</a>
+              <div class="d-flex flex-column flex-lg-row justify-content-start">
+                <h5 class="card-title me-auto">Article écrit le : {{ article.createdAt }}</h5>
+                <strong class="mx-lg-auto">Temps de lecture : {{ article.duration }} minutes</strong>
+                <h5 class="ms-lg-auto">Catégorie : {{ article.category }}</h5>
+              </div>
+          <h3 class="mb-0">{{ article.title }}</h3>
+              <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit odio ullam dicta!
+                Asperiores obcaecati ducimus nihil possimus dolor eligendi, iusto aspernatur similique omnis esse deserunt deleniti officia? Nam, et deleniti.</p>
+              <a href="" class="btn btn-primary">EN LIRE PLUS</a>
             </div>
-            </div>
+<<<<<<< HEAD
         {% else %}
         {% endfor %}
 
@@ -23,4 +60,14 @@
             <img src="{{ asset('build/images/arrow-up-solid.svg') }}" class="icone">
         </button>
     </div>
+=======
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+{% endfor %}
+
+>>>>>>> 12a493601711d7249c3858dff1d6e7a6262adddb
 {% endblock %}

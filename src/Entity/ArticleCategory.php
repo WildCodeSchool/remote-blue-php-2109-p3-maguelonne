@@ -26,9 +26,9 @@ class ArticleCategory
     private string $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private string $slug;
+    private ?string $slug;
 
     /**
      * @ORM\OneToMany(targetEntity=Article::class, mappedBy="category")
