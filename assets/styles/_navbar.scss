@@ -15,7 +15,7 @@
     &.active {
         text-decoration: underline;
 
-       &:after {
+        &:after {
             content: "";
             display: block;
             position: absolute;
