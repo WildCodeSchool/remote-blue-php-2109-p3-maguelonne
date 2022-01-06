@@ -13,8 +13,8 @@
 
     &:hover,
     &.active {
-      text-decoration: underline;
-        &:after {
+        text-decoration: underline;
+          &:after {
             content: "";
             display: block;
             position: absolute;
