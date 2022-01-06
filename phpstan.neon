@@ -12,6 +12,7 @@ parameters:
         - '#is never written, only read#'
         - '#expects string, mixed given#'
         - '#object\|null given#'
+        - '#expects App\Entity\[a-zA-Z0-9\\_]+|null, object|null given#'
     reportUnmatchedIgnoredErrors: false
     checkGenericClassInNonGenericObjectType: false
     checkMissingIterableValueType: false
