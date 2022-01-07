@@ -13,6 +13,9 @@ parameters:
         - '#expects string, mixed given#'
         - '#object\|null given#'
         - '#expects App\Entity\[a-zA-Z0-9\\_]+|null, object|null given#'
+        - "#Cannot access offset 'email' on mixed#"
+        - "#Cannot access offset 'title' on mixed#"
+        - '#expects string|Symfony\Component\Mime\Address, mixed given#'
     reportUnmatchedIgnoredErrors: false
     checkGenericClassInNonGenericObjectType: false
     checkMissingIterableValueType: false
