@@ -1,7 +1,10 @@
-@import 'variables.scss';
+@import 'variables';
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
+@import 'button';
+@import 'card';
+@import 'global';
+@import 'home';
+@import 'navbar';
 
-body {
-    margin:0;
-    background-color: $wild-color;
-    color: $light;
-}
+

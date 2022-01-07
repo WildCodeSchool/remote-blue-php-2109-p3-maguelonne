@@ -3,10 +3,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}"/>
+
+		<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
 		<title>
-			{% block title %}Projet 3 Name{% endblock %}
+			{% block title %}Maguelone{% endblock %}
 		</title>
+
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
@@ -15,6 +18,9 @@
 		{% endblock %}
 	</head>
 	<body>
+		{% include '_navbar.html.twig' %}
+
 		{% block body %}{% endblock %}
+		{% include '_footer.html.twig' %}
 	</body>
 </html>

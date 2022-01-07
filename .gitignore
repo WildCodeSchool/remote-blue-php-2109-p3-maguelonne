@@ -1,4 +1,6 @@
-
+.idea
+.vscode
+.DS_Store
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -7,6 +9,7 @@
 /public/bundles/
 /var/
 /vendor/
+/.idea/
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
@@ -26,3 +29,4 @@ yarn-error.log
 /.phpcs-cache
 /phpcs.xml
 ###< squizlabs/php_codesniffer ###
+.DS_Store
