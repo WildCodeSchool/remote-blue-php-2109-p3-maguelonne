@@ -1,20 +1,34 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ArtistController!{% endblock %}
+{% block title %}Trombinoscope des artistes{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<h1 class="text-center my-5">Trombinoscope des artistes</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+{# le tableau ci-dessous est présent pour qu'il y ait des données à afficher sur la page #}
+    {% set artists = [
+        {"name": 'Cécile', 'photo': 'https://picsum.photos/id/836/260/220'},
+        {"name": 'Paul', 'photo': 'https://picsum.photos/id/835/260/220'},
+        {"name": 'Fanny', 'photo': 'https://picsum.photos/id/815/260/220'},
+        {"name": 'Nico', 'photo': 'https://picsum.photos/id/110/260/220'},
+        {"name": 'Joelle', 'photo': 'https://picsum.photos/id/264/260/220'},
+        {"name": 'Jack', 'photo': 'https://picsum.photos/id/90/260/220'},
+    ] %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/colagan/Documents/Symfony Project/MAGUELONNE/remote-blue-php-2109-p3-maguelonne/src/Controller/ArtistController.php'|file_link(0) }}">src/Controller/ArtistController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/colagan/Documents/Symfony Project/MAGUELONNE/remote-blue-php-2109-p3-maguelonne/templates/artist/index.html.twig'|file_link(0) }}">templates/artist/index.html.twig</a></code></li>
-    </ul>
+<div class="container">
+<div class="row g-3">
+{% for artist in artists %}
+    <div class="col-12 col-md-6 col-lg-4 mb-5">
+       <div class="card shadow">
+       <img class="card-img-top img-fluid" src={{ artist.photo }} alt="Card image cap">
+           <div class="card-body pt-5">
+               <h3 class="card-title text-center pb-4">{{ artist.name }}</h3>
+            <div class="text-center pb-5">
+             <a href="#" class="btn btn-primary btn-lg">Consulter sa biographie</a></div>
+           </div>
+       </div>
+   </div>
+{% endfor %}
+</div>
 </div>
 {% endblock %}

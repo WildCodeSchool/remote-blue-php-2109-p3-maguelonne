@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
-use App\Entity\Artist;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
  * @Route("/artist", name="artist_")
@@ -19,12 +17,8 @@ class ArtistController extends AbstractController
      */
     public function index(): Response
     {
-        $artists = $this->getDoctrine()
-        ->getRepository(Artist::class)
-        ->findAll();
-
-        return $this->render('artist/index.html.twig', [
-            'artists' => $artists,
+        return $this->render('admin/artist.html.twig', [
+            'controller_name' => 'ArtistController',
         ]);
     }
 }
