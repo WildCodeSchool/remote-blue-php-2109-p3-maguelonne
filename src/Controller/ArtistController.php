@@ -27,4 +27,9 @@ class ArtistController extends AbstractController
             'artists' => $artists,
         ]);
     }
+
+    /**
+     * création du formulaire d'ajout d'un artiste
+     * @Route("/new", name="new", methods = {"POST"})
+     */
 }
