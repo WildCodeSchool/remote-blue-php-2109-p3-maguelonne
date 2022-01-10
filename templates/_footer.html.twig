@@ -13,9 +13,9 @@
 					<h2>Mentions Légales</h2>
 					<ul class="nav flex-column">
 						{% set links = [
-						{'title': 'Home', 'path': 'home'},
-						{'title': 'Features', 'path': 'home'},
-						{'title': 'Pricing', 'path': 'home'},
+						{'title': 'Accueil', 'path': 'home'},
+						{'title': 'Blog', 'path': 'article_index'},
+						{'title': 'Association', 'path': 'association_index'},
 						{'title': 'Contact', 'path': 'contact'},
 						] %}
 						{% for link in links %}
@@ -28,13 +28,13 @@
 
 				<div class="col-md-4">
 					<form>
-						<h2>Subscribe to our newsletter</h2>
-						<p>Monthly digest of whats new and exciting from us.</p>
+						<h2>S'inscrire à la newsletter</h2>
+						<p>Inscrivez-vous pour recevoir réguliérement notre newsletter dans votre boîte mail.</p>
 						<div class="d-flex flex-wrap flex-lg-nowrap w-100 gap-2">
-							<label for="newsletter1" class="visually-hidden">Email address</label>
+							<label for="newsletter1" class="visually-hidden">Adresse mél</label>
 							<input type="Email" name="email" class="form-control w-md-100" required=""
 								placeholder="Email">
-							<button class="btn btn-info">Subscribe</button>
+							<button class="btn btn-info">S'abonner.</button>
 						</div>
 					</form>
 				</div>
@@ -58,7 +58,7 @@
 						</a>
 					</li>
 				</ul>
-				<p class="inline-block me-auto">&copy; 2021 Maguelone All rights reserved.</p>
+				<p class="inline-block me-auto">&copy; 2021 Maguelonne. Tous droits réservés.</p>
 			</div>
 		</div>
 		</footer>
