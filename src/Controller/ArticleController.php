@@ -5,8 +5,10 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -49,7 +51,9 @@ class ArticleController extends AbstractController
     }
 
     /**
+     * Getting an article by id
      * @Route("/{id}", name="show", methods={"GET"})
+     * @return Response
      */
     public function show(Article $article): Response
     {
