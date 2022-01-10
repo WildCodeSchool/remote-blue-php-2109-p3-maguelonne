@@ -47,7 +47,7 @@ class Artist
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private string $nationalty;
+    private string $nationality;
 
     /**
      * @ORM\Column(type="text")
@@ -156,14 +156,14 @@ class Artist
         return $this;
     }
 
-    public function getNationalty(): ?string
+    public function getNationality(): ?string
     {
-        return $this->nationalty;
+        return $this->nationality;
     }
 
-    public function setNationalty(string $nationalty): self
+    public function setNationality(string $nationality): self
     {
-        $this->nationalty = $nationalty;
+        $this->nationality = $nationality;
 
         return $this;
     }
