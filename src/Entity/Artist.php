@@ -6,6 +6,7 @@ use App\Repository\ArtistRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ArtistRepository::class)
@@ -21,51 +22,102 @@ class Artist
 
     /**
      * @ORM\Column(type="string", length=80)
+     * @Assert\NotBlank
+     * @Assert\Type("string")
+     * @Assert\Length(
+     *     min = 2,
+     *     max = 80,
+     *     minMessage = "Le nom doit faire au minimum 2 caractéres.",
+     *     maxMessage = "Le nom ne peut pas être plus long que 80 caractéres"
+     *     )
      */
     private string $name;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Type("string")
+     * @Assert\Length (
+     *     max = 255,
+     *     maxMessage = "La longueur du texte est limité à 255 caractéres."
+     * )
      */
     private ?string $repository;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Type("string")
+     * @Assert\Length (
+     *     max = 255,
+     *     maxMessage = "La longueur du texte est limité à 255 caractéres."
+     * )
      */
     private ?string $photo;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Type("string")
+     * @Assert\Length (
+     *     max = 255,
+     *     maxMessage = "La longueur du texte est limité à 255 caractéres."
+     * )
      */
     private ?string $video;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Type("string")
+     * @Assert\Length (
+     *     max = 255,
+     *     maxMessage = "La longueur du texte est limité à 255 caractéres."
+     * )
      */
     private ?string $audio;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Type("string")
+     * @Assert\Length (
+     *     max = 255,
+     *     maxMessage = "La longueur du texte est limité à 255 caractéres."
+     * )
      */
     private string $nationality;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
+     * @Assert\Type("string")
      */
     private string $body;
 
     /**
      * @ORM\Column(type="json", nullable=true)
+     * @Assert\Json(
+     *     message = "Le fichier Json que vous avez entré n'est pas valide"
+     * )
      */
     private ?array $instruments = [];
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Type("string")
+     * @Assert\Length (
+     *     max = 255,
+     *     maxMessage = "La longueur du texte est limité à 255 caractéres."
+     * )
      */
     private string $slug;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Type("string")
+     * @Assert\Length (
+     *     max = 255,
+     *     maxMessage = "La longueur du texte est limité à 255 caractéres."
+     * )
      */
     private string $alt;
 

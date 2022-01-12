@@ -1,10 +1,52 @@
 {% extends 'admin/base.html.twig' %}
 
 
-{% block title %}Hello ArticleController!{% endblock %}
+{% block title %}{% endblock %}
 
 {% block body %}
 
     <h1>Les artistes</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Groupe</th>
+                <th>Photo</th>
+                <th>Video</th>
+                <th>Audio</th>
+                <th>Nationalité</th>
+                <th>Instruments</th>
+                <th>Slug</th>
+                <th>Alt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for artist in artists %}
+            <tr>
+                <td>{{ artist.name }}</td>
+                <td>{{ artist.repository }}</td>
+                <td>{{ artist.photo }}</td>
+                <td>{{ artist.video }}</td>
+                <td>{{ artist.audio }}</td>
+                <td>{{ artist.nationality }}</td>
+                <td>{{ artist.instruments ? artist.instruments|json_encode : '' }}</td>
+                <td>{{ artist.slug }}</td>
+                <td>{{ artist.alt }}</td>
+                <td>
+                    <a href="{{ path('admin_artist_show', {'slug': artist.slug}) }}">show</a>
+                    <a href="{{ path('admin_artist_edit', {'slug': artist.slug}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">Aucun enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_artist_new') }}">Créer un nouvel artiste</a>
 
 {% endblock %}
