@@ -55,9 +55,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return (string) $this->email;
     }
 
-    public function setUsername(string $username): self
+    public function setUsername(string $email): self
     {
-        $this->username = $username;
+        $this->email = $email;
 
         return $this;
     }
