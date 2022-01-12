@@ -36,15 +36,18 @@ class ArtistType extends AbstractType
                 'label' => 'Nationalité',
             ])
             ->add('body', TextareaType::class, [
-                'label' => 'Biographie de l\' artiste'
+                'label' => 'Biographie de l\' artiste',
+                'attr' => ['rows' => 10],
             ])
-            ->add('instruments', EntityType::class, [
+            ->add('instruments', TextType::class, [
                 'required' => false,
                 ])
             ->add('slug', TextType::class, [
                 'label' => 'slug',
             ])
-            ->add('alt', TextType::class)
+            ->add('alt', TextType::class, [
+                'label' => 'Texte alternatif de l\' image.'
+            ])
             ->add('save', SubmitType::class, [
                 'label' => 'Créer un artiste',
                 ])

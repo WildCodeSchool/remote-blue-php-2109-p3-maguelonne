@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Artist;
+use App\Form\ArtistType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -20,16 +22,11 @@ class ArtistController extends AbstractController
     public function index(): Response
     {
         $artists = $this->getDoctrine()
-        ->getRepository(Artist::class)
-        ->findAll();
+            ->getRepository(Artist::class)
+            ->findAll();
 
         return $this->render('artist/index.html.twig', [
             'artists' => $artists,
         ]);
     }
-
-    /**
-     * création du formulaire d'ajout d'un artiste
-     * @Route("/new", name="new", methods = {"POST"})
-     */
 }
