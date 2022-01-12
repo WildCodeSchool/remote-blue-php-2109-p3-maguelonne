@@ -19,7 +19,7 @@ final class Version20220112093400 extends AbstractMigration
 
     public function up(Schema $schema): void
     {
-        // this up() migration is auto-generated, please modify it to your needs
+        //
         $this->addSql('ALTER TABLE article CHANGE slug slug VARCHAR(255) DEFAULT NULL');
         $this->addSql('ALTER TABLE article_category CHANGE slug slug VARCHAR(255) DEFAULT NULL');
         $this->addSql('ALTER TABLE artist CHANGE nationalty nationality VARCHAR(255) NOT NULL');
