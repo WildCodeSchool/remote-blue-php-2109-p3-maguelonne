@@ -7,44 +7,48 @@
 
     <table class="table">
         <tbody>
-            <tr>
+            {# <tr>
                 <th>Id</th>
                 <td>{{ article.id }}</td>
-            </tr>
+            </tr> #}
             <tr>
                 <th>Title</th>
                 <td>{{ article.title }}</td>
             </tr>
-            <tr>
+            {# <tr>
                 <th>Slug</th>
                 <td>{{ article.slug }}</td>
+            </tr> #}
+            <tr>
+                <th>Catégorie</th>
+                <td>{{ article.category.name }}</td>
             </tr>
             <tr>
-                <th>Body</th>
+                <th>Descriptif</th>
                 <td>{{ article.body }}</td>
             </tr>
             <tr>
-                <th>Poster</th>
+                <th>Photo</th>
                 <td>{{ article.poster }}</td>
             </tr>
             <tr>
-                <th>CreatedAt</th>
+                <th>Créé le</th>
                 <td>{{ article.createdAt ? article.createdAt|date('d-m-Y') : '' }}</td>
             </tr>
             <tr>
-                <th>Duration</th>
+                <th>Temps de lecture</th>
                 <td>{{ article.duration }}</td>
             </tr>
             <tr>
-                <th>Alt</th>
+                <th>Texte alternatif à l'image</th>
                 <td>{{ article.alt }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('article_index') }}">back to list</a>
+    <a href="{{ path('article_index') }}">Retour à la liste d'articles</a>
 
-    <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
+    <a href="{{ path('article_edit', {'id': article.id}) }}">Modifier l'article</a>
 
     {{ include('article/_delete_form.html.twig') }}
 {% endblock %}

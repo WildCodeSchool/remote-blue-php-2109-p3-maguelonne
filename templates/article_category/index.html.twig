@@ -8,18 +8,16 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Slug</th>
-                <th>actions</th>
+                <th>Catégories :</th>
+                <th>Actions :</th>
             </tr>
         </thead>
         <tbody>
         {% for article_category in article_categories %}
             <tr>
-                <td>{{ article_category.id }}</td>
+                {# <td>{{ article_category.id }}</td> #}
                 <td>{{ article_category.name }}</td>
-                <td>{{ article_category.slug }}</td>
+                {# <td>{{ article_category.slug }}</td> #}
                 <td>
                     <a href="{{ path('article_category_show', {'id': article_category.id}) }}">show</a>
                     <a href="{{ path('article_category_edit', {'id': article_category.id}) }}">edit</a>

@@ -2,10 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\ArticleRepository;
 use DateTime;
+use App\Entity\ArticleCategory;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\ManyToOne;
+use App\Repository\ArticleRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
@@ -22,6 +26,9 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="ne me laisse pas tout vide")
+     * @Assert\Length(max="255",
+     * maxMessage="Le Titre saisi {{ value }} est trop long, il ne devrait pas dépasser {{ limit }} caractères")
      */
     private string $title;
 
@@ -53,6 +60,7 @@ class Article
 
     /**
      * @ORM\ManyToOne(targetEntity=ArticleCategory::class, inversedBy="articles")
+     * @ORM\JoinColumn(nullable=false)
      */
     private ?ArticleCategory $category;
 
@@ -83,7 +91,7 @@ class Article
         return $this->slug;
     }
 
-    public function setSlug(string $slug): self
+    public function setSlug(?string $slug): self
     {
         $this->slug = $slug;
 

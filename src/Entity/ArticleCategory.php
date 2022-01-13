@@ -2,10 +2,11 @@
 
 namespace App\Entity;
 
+use App\Entity\Article;
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
 use App\Repository\ArticleCategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
-use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleCategoryRepository::class)
@@ -98,5 +99,9 @@ class ArticleCategory
         }
 
         return $this;
+    }
+    public function __toString()
+    {
+        return $this->name;
     }
 }
