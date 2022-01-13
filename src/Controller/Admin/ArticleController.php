@@ -82,5 +82,4 @@ class ArticleController extends AbstractController
 
         return $this->redirectToRoute('admin_article_index', [], Response::HTTP_SEE_OTHER);
     }
-
 }
