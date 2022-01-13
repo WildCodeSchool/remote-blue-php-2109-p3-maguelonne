@@ -24,8 +24,15 @@ class ArtistType extends AbstractType
             ->add('name', TextType::class, [
                 'label' => "Nom de l'artiste"
             ])
-            ->add('instruments', TextType::class, [
-                'required' => false,
+            ->add('instruments', ChoiceType::class, [
+                'choices' => [
+                    'chant' => 'voice',
+                    'Violoncelle' => 'cello',
+                    'violon' => 'violin',
+                    'piano' => 'piano',
+                ],
+                'multiple' => true,
+                'expanded' => true,
             ])
             ->add('nationality', TextType::class, [
                 'label' => 'Nationalité',
@@ -44,9 +51,6 @@ class ArtistType extends AbstractType
             ->add('body', TextareaType::class, [
                 'label' => 'Biographie de l\' artiste',
                 'attr' => ['rows' => 10],
-            ])
-            ->add('slug', TextType::class, [
-                'label' => 'slug',
             ])
             ->add('alt', TextType::class, [
                 'label' => 'Texte alternatif de l\' image.'

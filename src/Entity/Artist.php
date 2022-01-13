@@ -93,9 +93,7 @@ class Artist
 
     /**
      * @ORM\Column(type="json", nullable=true)
-     * @Assert\Json(
-     *     message = "Le fichier Json que vous avez entré n'est pas valide"
-     * )
+     *
      */
     private ?array $instruments = [];
 

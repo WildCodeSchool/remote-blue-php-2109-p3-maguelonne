@@ -80,14 +80,14 @@ class ArtistController extends AbstractController
         }
 
         return $this->renderForm('admin/artist/edit.html.twig', [
-            'artists' => $artist,
+            'artist' => $artist,
             'form' => $form
         ]);
     }
 
     /**
      * formulaire de suppression d'un artiste
-     * @Route("/{slug}", name="delete", methods={"POST"})
+     * @Route("/{id}", name="delete", methods={"POST"})
      */
     public function delete(Request $request, Artist $artist, EntityManagerInterface $entityManager): Response
     {
