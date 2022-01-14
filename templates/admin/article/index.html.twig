@@ -4,7 +4,8 @@
 {% block title %}Admin : tous les articles{% endblock %}
 
 {% block body %}
-<h1 class="d-flex justify-content-center">Admin : tous les articles</h1> 
+<h1 class="d-flex justify-content-center">Admin : tous les articles</h1>
+
 <div class="container-fluid my-2 my-lg-5">
     <div class="row d-flex flex-lg-row justify-content-lg-evenly justify-content-center">
       <div class="btn-group col-12 col-lg-3 mb-4 mb-lg-0">
@@ -13,11 +14,16 @@
             <a href="#" class="dropdown-item">tétralogie</a>
             <a href="#" class="dropdown-item">Sainte barbe</a>
         </div>
-    </div>
+      </div>
     </div>
   </div>
 {# <a href="{{ path('admin_article_category_edit', {'id': article_category.id}) }}" class="btn btn-primary">{{ 'MODIFIER'|trans }}</a>
  #}
+ <div class="container my-2 my-lg-5">
+  <div class="row d-flex flex-lg-row justify-content-center">
+  <a href="{{ path('admin_article_new') }}" class="btn btn-success col-12 col-lg-5 col-xl-3 py-3 mb-4 mb-lg-0">{{ 'Ajouter un nouvel article'|trans }}</a>
+  </div>
+</div>
 
 {% for article in articles %}
 <div class="container">
