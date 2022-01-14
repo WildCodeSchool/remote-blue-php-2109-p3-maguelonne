@@ -34,6 +34,14 @@ class ArticleType extends AbstractType
                 ],
             )
             ->add(
+                'summary',
+                TextareaType::class,
+                [
+                    'label' => 'Résumé de l\'article',
+                    'attr' => ['rows' => '5'],
+                ],
+            )
+            ->add(
                 'body',
                 TextareaType::class,
                 [
