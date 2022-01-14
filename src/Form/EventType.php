@@ -2,18 +2,17 @@
 
 namespace App\Form;
 
-use App\Entity\Article;
-use App\Entity\ArticleCategory;
+use App\Entity\Event;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
-class ArticleType extends AbstractType
+class EventType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -26,26 +25,10 @@ class ArticleType extends AbstractType
                 ],
             )
             ->add(
-                'category',
-                EntityType::class,
-                [
-                    'label' => 'Catégorie',
-                    'class' => ArticleCategory::class,
-                ],
-            )
-            ->add(
-                'summary',
+                'text',
                 TextareaType::class,
                 [
-                    'label' => 'Résumé de l\'article',
-                    'attr' => ['rows' => '5'],
-                ],
-            )
-            ->add(
-                'body',
-                TextareaType::class,
-                [
-                    'label' => 'Contenu de l\'article',
+                    'label' => 'Description de l\'évenement',
                     'attr' => ['rows' => '10'],
                 ],
             )
@@ -53,36 +36,44 @@ class ArticleType extends AbstractType
                 'poster',
                 TextType::class,
                 [
-                    'label' => 'Photo de l\'article',
+                    'label' => 'Photo de l\'évenement',
                 ],
             )
             ->add(
-                'createdAt',
+                'video',
+                UrlType::class,
+                [
+                    'label' => 'Video de l\'évenement',
+                ],
+            )
+            ->add(
+                'date',
                 DateType::class,
                 [
-                    'label' => 'Date de création de l\'article',
+                    'label' => 'Horaire de l\'évenement',
                 ],
             )
             ->add(
                 'duration',
                 NumberType::class,
                 [
-                    'label' => 'Durée de lecture',
-                ],
+                    'label' => 'Durée de l\'évenement',
+                ]
             )
             ->add(
                 'alt',
                 TextType::class,
                 [
-                    'label' => 'Texte Alternatif à l\'image',
+                    'label' => 'Texte alternatif à l\'image',
                 ],
-            );
+            )
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Article::class,
+            'data_class' => Event::class,
         ]);
     }
 }

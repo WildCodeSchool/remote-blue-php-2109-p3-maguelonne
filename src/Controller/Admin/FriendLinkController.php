@@ -17,7 +17,7 @@ class FriendLinkController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('admin/friendLink.html.twig', [
+        return $this->render('admin/friendlink.html.twig', [
             'controller_name' => 'FriendLinkController',
         ]);
     }

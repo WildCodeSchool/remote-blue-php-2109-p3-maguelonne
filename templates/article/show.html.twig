@@ -3,48 +3,41 @@
 {% block title %}Article{% endblock %}
 
 {% block body %}
-    <h1>Article</h1>
+    <h1>{{ 'Article'|trans }}</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ article.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
+                <th class="col-3">{{ 'Titre'|trans }}</th>
                 <td>{{ article.title }}</td>
             </tr>
             <tr>
-                <th>Slug</th>
-                <td>{{ article.slug }}</td>
+                <th>{{ 'Catégorie'|trans }}</th>
+                <td>{{ article.category.name }}</td>
             </tr>
             <tr>
-                <th>Body</th>
+                <th>{{ 'Descriptif'|trans }}</th>
                 <td>{{ article.body }}</td>
             </tr>
             <tr>
-                <th>Poster</th>
+                <th>{{ 'Photo (click-droit: copier l\'adresse de l\'image)'|trans }}</th>
                 <td>{{ article.poster }}</td>
             </tr>
             <tr>
-                <th>CreatedAt</th>
+                <th>{{ 'Créé le'|trans }}</th>
                 <td>{{ article.createdAt ? article.createdAt|date('d-m-Y') : '' }}</td>
             </tr>
             <tr>
-                <th>Duration</th>
-                <td>{{ article.duration }}</td>
+                <th>{{ 'Temps de lecture (en chiffre)'|trans }}</th>
+                <td>{{ article.duration }}min</td>
             </tr>
             <tr>
-                <th>Alt</th>
+                <th>{{ 'Texte alternatif à l\'image'|trans }}</th>
                 <td>{{ article.alt }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('article_index') }}">back to list</a>
+    <a href="{{ path('article_index') }}">{{ 'Retour à la liste d\'articles'|trans }}</a>
 
-    <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
-
-    {{ include('article/_delete_form.html.twig') }}
 {% endblock %}
