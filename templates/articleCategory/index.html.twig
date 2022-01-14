@@ -19,8 +19,8 @@
                 <td>{{ article_category.name }}</td>
                 {# <td>{{ article_category.slug }}</td> #}
                 <td>
-                    <a href="{{ path('article_category_show', {'id': article_category.id}) }}">show</a>
-                    <a href="{{ path('article_category_edit', {'id': article_category.id}) }}">edit</a>
+                    <a href="{{ path('articleCategory_show', {'id': articleCategory.id}) }}">show</a>
+                    <a href="{{ path('articleCategory_edit', {'id': articleCategory.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +31,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('article_category_new') }}">Create new</a>
+    <a href="{{ path('articleCategory_new') }}">Create new</a>
 {% endblock %}
