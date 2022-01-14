@@ -31,7 +31,14 @@ class ArticleType extends AbstractType
                 [
                     'label' => 'Catégorie',
                     'class' => ArticleCategory::class,
-                    /* 'choice_label' => 'name', */
+                ],
+            )
+            ->add(
+                'summary',
+                TextareaType::class,
+                [
+                    'label' => 'Résumé de l\'article',
+                    'attr' => ['rows' => '5'],
                 ],
             )
             ->add(

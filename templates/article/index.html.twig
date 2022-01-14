@@ -7,11 +7,7 @@
 <div class="container-fluid mt-2 mb-4">
   <div class="row d-flex flex-lg-row justify-content-lg-evenly justify-content-center">
     <div class="btn-group col-12 col-lg-3 mb-4 mb-lg-0">
-<<<<<<< HEAD
       <button type="button" class="btn btn-lg btn-primary dropdown-toggle shadow " data-bs-display="static" data-bs-toggle="dropdown">{{ 'CATEGORIES'|trans }}</button>
-=======
-      <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-bs-display="static" data-bs-toggle="dropdown">{{ 'CATEGORIES'|trans }}</button>
->>>>>>> 93a450afd20e899126e9b2c3ec77f2439969b983
       <div class="dropdown-menu dropdown-menu-lg-end" >
           <a href="#" class="dropdown-item">tétralogie</a>
           <a href="#" class="dropdown-item">Sainte barbe</a>
@@ -36,7 +32,7 @@
                 <h5 class="ms-lg-auto">{{ 'Catégorie'|trans }} : {{ article.category.name }}</h5>
               </div>
           <h3 class="mb-0">{{ article.title }}</h3>
-              <p class="card-text">{{ article.body }}</p>
+              <p class="card-text">{{ article.summary }}</p>
               <a href="{{ path('article_show', {'id': article.id}) }}" class="btn btn-primary">{{ 'EN LIRE PLUS'|trans }}</a>
             </div>
           </div>

@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/article/category", name="articleCategory_")
+ * @Route("/articleCategory", name="articleCategory_")
  */
 class ArticleCategoryController extends AbstractController
 {
