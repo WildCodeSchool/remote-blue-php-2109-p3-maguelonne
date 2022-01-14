@@ -1,0 +1,13 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Edit artist{% endblock %}
+
+{% block body %}
+    <h1>Modifier un artiste</h1>
+
+    {{ include('/admin/artist/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_artist_index') }}">Revenir à la liste des artistes</a>
+
+    {{ include('/admin/artist/_delete_form.html.twig') }}
+{% endblock %}

@@ -6,8 +6,8 @@
 <div>
     <h1 class="d-flex justify-content-center">{{ 'Édition de la catégorie d\'article'|trans }}</h1>
 
-    {{ include('admin/article_category/_form.html.twig', {'button_save_label': {{ 'Publier'|trans}}}) }}
+    {{ include('admin/articleCategory/_form.html.twig', {'button_save_label': {{ 'Publier'|trans}}}) }}
 
-    <a href="{{ path('admin_article_category_index') }}">{{ 'Retour à la liste des catégories d\'article'|trans }}</a>
+    <a href="{{ path('admin_articleCategory_index') }}">{{ 'Retour à la liste des catégories d\'article'|trans }}</a>
 </div>
 {% endblock %}

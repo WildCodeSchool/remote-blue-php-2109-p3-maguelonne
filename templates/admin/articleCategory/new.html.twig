@@ -5,7 +5,7 @@
 {% block body %}
     <h1 class="d-flex justify-content-center">{{ 'Création d\'une nouvelle catégorie d\'article'|trans }}</h1>
 
-    {{ include('admin/article_category/_form.html.twig') }}
+    {{ include('admin/articleCategory/_form.html.twig') }}
 
-    <a href="{{ path('admin_article_category_index') }}">{{ 'Revenir à la liste des catégories d\'articles'|trans }}</a>
+    <a href="{{ path('admin_articleCategory_index') }}">{{ 'Revenir à la liste des catégories d\'articles'|trans }}</a>
 {% endblock %}

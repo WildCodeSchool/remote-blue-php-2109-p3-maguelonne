@@ -59,12 +59,13 @@ class ArticleController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($article);
             $entityManager->flush();
 
             return $this->redirectToRoute('admin_article_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('admin/article/edit.html.twig', [
+        return $this->renderForm('admin/article/new.html.twig', [
             'article' => $article,
             'form' => $form,
         ]);
@@ -82,5 +83,4 @@ class ArticleController extends AbstractController
 
         return $this->redirectToRoute('admin_article_index', [], Response::HTTP_SEE_OTHER);
     }
-
 }
