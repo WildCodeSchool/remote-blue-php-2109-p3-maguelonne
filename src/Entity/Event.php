@@ -64,6 +64,12 @@ class Event
      * @ORM\ManyToOne(targetEntity=EventCategory::class, inversedBy="events")
      */
     private ?EventCategory $category;
+
+    /**
+     * @ORM\Column(type="time")
+     */
+    private ?DateTimeInterface $hour;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -173,6 +179,18 @@ class Event
     public function setCategory(?EventCategory $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getHour(): ?\DateTimeInterface
+    {
+        return $this->hour;
+    }
+
+    public function setHour(\DateTimeInterface $hour): self
+    {
+        $this->hour = $hour;
 
         return $this;
     }
