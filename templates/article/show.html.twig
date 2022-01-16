@@ -3,6 +3,14 @@
 {% block title %}Article{% endblock %}
 
 {% block body %}
+
+<div class="my-5 mx-5">
+    <a href="{{ path('home') }}">{{ 'Accueil'|trans }}</a>
+    <a href="{{ path('article_index') }}">/{{ 'Tous les articles'|trans }}</a>
+    <a href="#">/Nom de la catégorie</a>
+    <a href="#">/{{ article.title }}</a>
+</div>
+
 <div class="container my-5 mb-4 p-0 border d-flex">
 <section class="col-5 col-lg-4">
     <div class="p-4">
