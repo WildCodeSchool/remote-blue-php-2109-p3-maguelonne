@@ -67,7 +67,7 @@ class ArticleType extends AbstractType
                 'duration',
                 NumberType::class,
                 [
-                    'label' => 'Temps de lecture (en minutes, ex: 10 pour 1Ominutes)',
+                    'label' => 'Temps de lecture (en minutes, ex: 10 pour 1O minutes)',
                 ],
             )
             ->add(
