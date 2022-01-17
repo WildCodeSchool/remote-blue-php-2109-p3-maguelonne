@@ -4,6 +4,7 @@
 
 {% block body %}
     <h1 class="d-flex justify-content-center">{{ 'Édition de l\'article'|trans }}</h1>
+
     <div class="col-md-4 ">
         <img src="{{ article.poster }}" class="card-img img-fluid" alt="...">
       </div>
@@ -12,6 +13,5 @@
     {{ include('admin/article/_form.html.twig', {
         'button_save_label': 'Publier'|trans,
      }) }}
-
 
 {% endblock %}
