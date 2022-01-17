@@ -26,7 +26,7 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="ne me laisse pas tout vide")
+     * @Assert\NotBlank(message="merci de remplir ce champs de texte")
      * @Assert\Length(max="255",
      * maxMessage="Le Titre saisi {{ value }} est trop long, il ne devrait pas dépasser {{ limit }} caractères")
      */
