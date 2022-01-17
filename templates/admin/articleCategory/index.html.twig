@@ -1,0 +1,32 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Admin : tous les articles{% endblock %}
+
+{% block body %}
+<h1 class="d-flex justify-content-center">Admin : toutes les Catégories</h1>
+<div class="container my-2 my-lg-5">
+    <div class="row d-flex flex-lg-row justify-content-center">
+        <a href="{{ path('admin_articleCategory_new') }}"
+            class="btn btn-success col-12 col-lg-5 col-xl-3 py-3 mb-4 mb-lg-0">
+            {{ 'Ajouter une nouvelle catégorie'|trans }}</a>
+    </div>
+</div>
+<div class="container d-flex justify-content-lg-around col-lg-7 " >
+    <div class="row">
+{% for article_category in articleCategories %}
+        <div class="col-lg-6 ">
+            <div class="card m-3 shadow-lg">
+                <div class="card-body">
+                    <h3 class="m-0">{{ article_category.name }}</h3>
+                    <a href="{{ path('admin_articleCategory_edit', {'id': article_category.id}) }}" class="btn btn-primary">{{ 'Modifier'|trans }}</a>
+                </div>
+            </div>
+        </div>
+{% else %}
+<tr>
+    <td colspan="4">no records found</td>
+</tr>
+{% endfor %}
+    </div>
+</div>
+{% endblock %}
