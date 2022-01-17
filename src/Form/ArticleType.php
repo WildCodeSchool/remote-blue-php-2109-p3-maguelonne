@@ -53,7 +53,7 @@ class ArticleType extends AbstractType
                 'poster',
                 TextType::class,
                 [
-                    'label' => 'Photo de l\'article (click-droit: copier l\'adresse de l\'image)',
+                    'label' => 'Photo de l\'article (clic-droit: copier l\'adresse de l\'image)',
                 ],
             )
             ->add(
