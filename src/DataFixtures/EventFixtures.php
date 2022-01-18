@@ -7,26 +7,28 @@ use App\Entity\EventCategory;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
-use Symfony\Component\Validator\Constraints\DateTime;
+use DateTimeInterface;
 
 class EventFixtures extends Fixture
 {
+    public const EVENT_NB = 5;
+
     public function load(ObjectManager $manager): void
     {
-        $event = new Event();
-        $faker = Factory::create('fr_FR');
+        for ($i = 0; $i < self::EVENT_NB; $i++) {
+            $event = new Event();
+            $faker = Factory::create('fr_FR');
+            $event->setTitle($faker->sentence());
+            $event->setText($faker->realText());
+            $event->setPoster('https://picsum.photos/300/300');
+            $event->setAlt($faker->word);
+            $event->setDate($faker->dateTime(DateTimeInterface::ATOM));
+            $event->setCategory($this->getReference('event_category_0'));
+            $event->setSlug($faker->text(15));
+            $event->setVideo($faker->imageUrl());
+            $manager->persist($event);
+        }
 
-        $event->setTitle($faker->sentence());
-        $event->setText($faker->realText());
-        $event->setPoster('https://picsum.photos/300/300');
-        $event->setAlt($faker->word);
-        $event->setDate(new DateTime($faker->date('d-m-Y')));
-        $event->setHour(new DateTime($faker->time()));
-        $event->setCategory($this->getReference('event_category_0'));
-        $event->setSlug($faker->text(15));
-
-
-        $manager->persist($event);
 
         $manager->flush();
     }
@@ -37,4 +39,9 @@ class EventFixtures extends Fixture
             EventCategoryFixtures::class,
         ];
     }
+
+    /*public function format($format)
+    {
+        // TODO: Implement format() method.
+    }*/
 }

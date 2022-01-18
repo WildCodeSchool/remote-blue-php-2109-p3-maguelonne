@@ -65,10 +65,8 @@ class Event
      */
     private ?EventCategory $category;
 
-    /**
-     * @ORM\Column(type="time")
-     */
-    private ?DateTimeInterface $hour;
+
+
 
     public function getId(): ?int
     {
@@ -179,18 +177,6 @@ class Event
     public function setCategory(?EventCategory $category): self
     {
         $this->category = $category;
-
-        return $this;
-    }
-
-    public function getHour(): ?\DateTimeInterface
-    {
-        return $this->hour;
-    }
-
-    public function setHour(\DateTimeInterface $hour): self
-    {
-        $this->hour = $hour;
 
         return $this;
     }
