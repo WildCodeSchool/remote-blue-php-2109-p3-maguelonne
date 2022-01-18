@@ -13,12 +13,12 @@
 </div>
 <div class="container d-flex justify-content-lg-around col-lg-7 " >
     <div class="row">
-{% for articleCategory in articleCategories %}
+{% for article_category in articleCategories %}
         <div class="col-lg-6 ">
             <div class="card m-3 shadow-lg">
                 <div class="card-body">
-                    <h3 class="m-0">{{ articleCategory.name }}</h3>
-                    <a href="{{ path('admin_articleCategory_edit', {'id': articleCategory.id}) }}" class="btn btn-primary">{{ 'Modifier'|trans }}</a>
+                    <h3 class="m-0">{{ article_category.name }}</h3>
+                    <a href="{{ path('admin_articleCategory_edit', {'id': article_category.id}) }}" class="btn btn-primary">{{ 'Modifier'|trans }}</a>
                 </div>
             </div>
         </div>
