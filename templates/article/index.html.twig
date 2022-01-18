@@ -9,8 +9,9 @@
     <div class="btn-group col-12 col-lg-3 mb-4 mb-lg-0">
       <button type="button" class="btn btn-lg btn-primary dropdown-toggle shadow " data-bs-display="static" data-bs-toggle="dropdown">{{ 'CATEGORIES'|trans }}</button>
       <div class="dropdown-menu dropdown-menu-lg-end" >
-          <a href="#" class="dropdown-item">tétralogie</a>
-          <a href="#" class="dropdown-item">Sainte barbe</a>
+{{ form_start(formCategoryFilter) }}
+{{ form_widget(formCategoryFilter) }}
+{{ form_end(formCategoryFilter) }}
       </div>
   </div>
   </div>

@@ -25,7 +25,7 @@ class ArticleFixtures extends Fixture
             $article->setCreatedAt($faker->dateTimeBetween('-4  weeks', 'now'));
             $article->setDuration($faker->randomNumber());
             $article->setAlt($faker->text(25));
-            $article->setCategory($this->getReference('article_category'));
+            $article->setCategory($this->getReference('articleCategory'));
 
             $manager->persist($article);
         }
