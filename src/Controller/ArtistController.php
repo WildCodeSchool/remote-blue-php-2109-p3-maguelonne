@@ -4,6 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Artist;
 use App\Form\ArtistType;
+use App\Repository\ArtistRepository;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,14 +22,23 @@ class ArtistController extends AbstractController
     /**
      * @Route("/", name="index")
      */
-    public function index(): Response
+    public function index(ArtistRepository $artistRepository): Response
     {
-        $artists = $this->getDoctrine()
-            ->getRepository(Artist::class)
-            ->findAll();
-
         return $this->render('artist/index.html.twig', [
-            'artists' => $artists,
+            'artists' => $artistRepository->findAll(),
         ]);
     }
+
+    /**
+     * Getting an artist by id
+     * @Route("/{id}", name="show")
+     * @return Response
+     */
+    public function show(Artist $artist): Response
+    {
+        return $this->render('artist/show.html.twig', [
+            'artist' => $artist,
+        ]);
+    }
+
 }
