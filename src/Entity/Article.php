@@ -9,13 +9,17 @@ use Doctrine\ORM\Mapping\ManyToOne;
 use App\Repository\ArticleRepository;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use Knp\DoctrineBehaviors\Contract\Entity\TranslatableInterface;
+use Knp\DoctrineBehaviors\Model\Translatable\TranslatableTrait;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
  */
-class Article
+class Article implements TranslatableInterface
 {
+    use TranslatableTrait;
+
    /**
     * @var int
     * @ORM\Id
@@ -23,24 +27,6 @@ class Article
     * @ORM\GeneratedValue
     */
     private int $id;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="ne me laisse pas tout vide")
-     * @Assert\Length(max="255",
-     * maxMessage="Le Titre saisi {{ value }} est trop long, il ne devrait pas dépasser {{ limit }} caractères")
-     */
-    private string $title;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private ?string $slug;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    private string $body;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -64,55 +50,9 @@ class Article
      */
     private ?ArticleCategory $category;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private string $alt;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private string $summary;
-
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getTitle(): ?string
-    {
-        return $this->title;
-    }
-
-    public function setTitle(string $title): self
-    {
-        $this->title = $title;
-
-        return $this;
-    }
-
-    public function getSlug(): ?string
-    {
-        return $this->slug;
-    }
-
-    public function setSlug(?string $slug): self
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
-
-    public function getBody(): ?string
-    {
-        return $this->body;
-    }
-
-    public function setBody(string $body): self
-    {
-        $this->body = $body;
-
-        return $this;
     }
 
     public function getPoster(): ?string
@@ -163,27 +103,28 @@ class Article
         return $this;
     }
 
-    public function getAlt(): ?string
+    public function getTitle(): string
     {
-        return $this->alt;
+        return $this->translate()->getTitle();
     }
 
-    public function setAlt(string $alt): self
+    public function getSlug(): ?string
     {
-        $this->alt = $alt;
+        return $this->translate()->getSlug();
+    }
 
-        return $this;
+    public function getBody(): ?string
+    {
+        return $this->translate()->getBody();
     }
 
     public function getSummary(): ?string
     {
-        return $this->summary;
+        return $this->translate()->getSummary();
     }
 
-    public function setSummary(string $summary): self
+    public function getAlt(): ?string
     {
-        $this->summary = $summary;
-
-        return $this;
+        return $this->translate()->getAlt();
     }
 }
