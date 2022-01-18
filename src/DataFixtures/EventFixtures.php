@@ -7,11 +7,11 @@ use App\Entity\EventCategory;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
-use DateTimeInterface;
 
 class EventFixtures extends Fixture
 {
     public const EVENT_NB = 5;
+
 
     public function load(ObjectManager $manager): void
     {
@@ -22,7 +22,7 @@ class EventFixtures extends Fixture
             $event->setText($faker->realText());
             $event->setPoster('https://picsum.photos/300/300');
             $event->setAlt($faker->word);
-            $event->setDate($faker->dateTime(DateTimeInterface::ATOM));
+            $event->setDate($faker->dateTimeBetween('-2 years', 'now'));
             $event->setCategory($this->getReference('event_category_0'));
             $event->setSlug($faker->text(15));
             $event->setVideo($faker->imageUrl());
@@ -39,9 +39,4 @@ class EventFixtures extends Fixture
             EventCategoryFixtures::class,
         ];
     }
-
-    /*public function format($format)
-    {
-        // TODO: Implement format() method.
-    }*/
 }
