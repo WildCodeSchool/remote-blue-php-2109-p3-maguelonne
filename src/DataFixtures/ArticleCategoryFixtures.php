@@ -13,7 +13,15 @@ class ArticleCategoryFixtures extends Fixture
 
         $articleCategory = new ArticleCategory();
         $articleCategory->setName('Opéra');
-        $this->addReference('articleCategory', $articleCategory);
+        $this->addReference('articleCategory_1', $articleCategory);
+        $manager->persist($articleCategory);
+        $articleCategory = new ArticleCategory();
+        $articleCategory->setName('Ballet');
+        $this->addReference('articleCategory_2', $articleCategory);
+        $manager->persist($articleCategory);
+        $articleCategory = new ArticleCategory();
+        $articleCategory->setName('Symphonies');
+        $this->addReference('articleCategory_3', $articleCategory);
         $manager->persist($articleCategory);
 
         $manager->flush();

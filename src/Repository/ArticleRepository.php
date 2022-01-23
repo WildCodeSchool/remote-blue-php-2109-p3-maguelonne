@@ -19,22 +19,28 @@ class ArticleRepository extends ServiceEntityRepository
         parent::__construct($registry, Article::class);
     }
 
-    // /**
-    //  * @return Article[] Returns an array of Article objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @param array $categories
+     * @return \Doctrine\ORM\Query
+     */
+    public function findByCategory(array $categories)
     {
         return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('a.id', 'ASC')
-            ->setMaxResults(10)
+            ->andWhere('a.category IN (:categories)')
+            ->setParameter('categories', $categories)
+            ->orderBy('a.createdAt', 'DESC')
             ->getQuery()
-            ->getResult()
+//            ->getResult()
         ;
     }
-    */
+
+    /**
+     * @return \Doctrine\ORM\QueryBuilder
+     */
+    public function queryFindAll()
+    {
+        return $this->createQueryBuilder('a');
+    }
 
     /*
     public function findOneBySomeField($value): ?Article
