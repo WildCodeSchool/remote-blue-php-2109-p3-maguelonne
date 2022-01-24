@@ -1,46 +1,46 @@
-<nav class="navbar row p-3 navbar-light navbar-expand-lg bg-secondary fixed-top shadow">
+<nav class="navbar row p-3 navbar-light navbar-expand-lg bg-secondary fixed-top ">
     <div class="container col-2 justify-content-center"><a class="navbar-brand fs-2 logo ms-lg-0" href="{{ path('home') }}">Maguelonne</a>
     </div>
-        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarNav">
-            <span class="visually-hidden">Toggle navigation</span>
-            <span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav ">
-                {% set links = [
-                    {'title': 'Accueil', 'path': 'home'},
-                    {'title': 'Blog', 'path': 'article_index'},
-                    {'title': 'Association', 'path': 'association_index'},
-                    {'title': 'Calendrier', 'path': 'event_index'},
-                    {'title': 'Artistes', 'path': 'artist_index'},
-                    {'title': 'Sites amis', 'path': 'friendLink_index'},
-                    ] %}
-                {% for link in links %}
+    <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarNav">
+        <span class="visually-hidden">Toggle navigation</span>
+        <span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav ">
+            {% set links = [
+                {'title': 'Accueil', 'path': 'home'},
+                {'title': 'Blog', 'path': 'article_index'},
+                {'title': 'Association', 'path': 'association_index'},
+                {'title': 'Calendrier', 'path': 'event_index'},
+                {'title': 'Artistes', 'path': 'artist_index'},
+                {'title': 'Sites amis', 'path': 'friendLink_index'},
+            ] %}
+            {% for link in links %}
                 <li class="nav-item mx-4 my-auto">
                     <a class="nav-link text-decoration-none hover {{ app.request.pathinfo == path(link.path) ? 'active' }}"
-                    {{ app.request.pathinfo == path(link.path) ? 'aria-current="page"' }} href="{{ path(link.path) }}">
-                    {{ link.title }}
+                            {{ app.request.pathinfo == path(link.path) ? 'aria-current="page"' }} href="{{ path(link.path) }}">
+                        {{ link.title }}
                     </a>
                 </li>
-                {% endfor %}
-                {% set flags = [
-                    {"alias": 'Français', 'url': 'https://flagcdn.com/40x30/fr.png'},
-                    {"alias": 'Allemand', 'url': 'https://flagcdn.com/40x30/de.png'},
-                    {"alias": 'Russe', 'url': 'https://flagcdn.com/40x30/ru.png'},
-                    {"alias": 'Japonais', 'url': 'https://flagcdn.com/40x30/jp.png'},
-                    {"alias": 'Anglais', 'url': 'https://flagcdn.com/40x30/gb.png'},
-                ] %}
-                <li class="nav-item mx-2 ms-lg-4 dropdown">
-                    <button class="btn btn-primary border rounded dropdown-toggle" type="button" id="translationAvailable" data-bs-toggle="dropdown"
-                            aria-expanded="false">Choisir la langue</button>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="translationAvailable">
-                        {% for flag in flags|sort %}
-                            <li class="dropdown-item">
-                                <img src="{{ flag.url }}" alt="{{ flag.alias }}">
-                                {{ flag.alias }}
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </li>
-            </ul>
-        </div>
+            {% endfor %}
+            {% set flags = [
+                {"alias": 'Français', 'url': 'https://flagcdn.com/40x30/fr.png'},
+                {"alias": 'Allemand', 'url': 'https://flagcdn.com/40x30/de.png'},
+                {"alias": 'Russe', 'url': 'https://flagcdn.com/40x30/ru.png'},
+                {"alias": 'Japonais', 'url': 'https://flagcdn.com/40x30/jp.png'},
+                {"alias": 'Anglais', 'url': 'https://flagcdn.com/40x30/gb.png'},
+            ] %}
+            <li class="nav-item mx-2 ms-lg-4 dropdown">
+                <button class="btn btn-primary btn-lg border rounded dropdown-toggle" type="button" id="translationAvailable" data-bs-toggle="dropdown"
+                        aria-expanded="false">Choisir la langue</button>
+                <ul class="dropdown-menu" aria-labelledby="translationAvailable">
+                    {% for flag in flags|sort %}
+                        <li class="dropdown-item">
+                            <img src="{{ flag.url }}" alt="{{ flag.alias }}">
+                            {{ flag.alias }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+    </div>
 </nav>
