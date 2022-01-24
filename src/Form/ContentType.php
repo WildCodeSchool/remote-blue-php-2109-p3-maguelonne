@@ -29,6 +29,20 @@ class ContentType extends AbstractType
                     'attr' => ['rows' => '30'],
                 ],
             )
+            ->add(
+                'poster',
+                TextType::class,
+                [
+                    'label' => 'Image d\'en-tête',
+                ],
+            )
+            ->add(
+                'alt',
+                TextType::class,
+                [
+                    'label' => 'Texte Alternatif à l\'image',
+                ],
+            )
             ->add('slug');
     }
 
