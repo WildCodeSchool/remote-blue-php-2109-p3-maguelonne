@@ -1,0 +1,43 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Liste des évènements{% endblock %}
+
+{% block body %}
+    <h1>Liste des évènements</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Texte</th>
+                <th>Poster</th>
+                <th>Video</th>
+                <th>Date</th>
+                <th>Durée</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for event in events %}
+            <tr>
+                <td>{{ event.title }}</td>
+                <td>{{ event.text }}</td>
+                <td>{{ event.poster }}</td>
+                <td>{{ event.video }}</td>
+                <td>{{ event.date ? event.date|date('Y-m-d') : '' }}</td>
+                <td>{{ event.duration }}</td>
+                <td>
+                    <a href="{{ path('admin_event_show', {'id': event.id}) }}">Voir</a>
+                    <a href="{{ path('admin_event_edit', {'id': event.id}) }}">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">aucun évènement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_event_new') }}">Ajouter un nouvel évènement</a>
+{% endblock %}

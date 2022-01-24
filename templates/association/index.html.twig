@@ -6,21 +6,24 @@
 
     <main>
         <section class="container">
-            <img class="img-fluid image-home mb-3" src="{{ asset('build/images/image5.jpg') }}">
+            <div class="d-flex p-5 align-items-center opacity-75 justify-content-center Asso position-relative"
+                 style="background-image: url( '{{ asset("build/images/imageAsso.jpeg") }}' )">
+                <h1 class="position-absolute display-4 text-light text-center">{{ 'Présentation de l\'association Maguelonne'|trans }}</h1>
+            </div>
             <p class="fs-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu
             </p>
         </section>
-        <section class="container" >
+        <section class="container">
             <div class="row justify-content-around">
                 {% set links = [
-                    {'title': 'Agenda', 'path': 'home'},
-                    {'title': 'Artistes', 'path': 'home'},
+                    {'title': 'Agenda', 'path': 'event_index'},
+                    {'title': 'Artistes', 'path': 'artist_index'},
                     ] %}
             {% for link in links %}
                 <div class="col-md-4">
                     <a href="{{ path(link.path) }}"
-                    class="btn btn-primary d-block mb-2 p-lg-5 p-2 p-md-4 fs-lg-2 fs-4 text-uppercase">
+                    class="btn btn-primary shadow d-block mb-2 p-lg-5 p-2 p-md-4 fs-lg-2 fs-4 text-uppercase">
                     {{ link.title }}
                     </a>
                 </div>

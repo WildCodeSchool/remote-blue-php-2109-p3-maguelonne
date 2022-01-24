@@ -14,14 +14,14 @@
         <section class="container" >
             <div class="row">
                 {% set links = [
-                    {'title': 'Blog', 'path': 'home'},
+                    {'title': 'Blog', 'path': 'article_index'},
                     {'title': 'Association', 'path': 'association_index'},
-                    {'title': 'Sites amis', 'path': 'home'},
+                    {'title': 'Sites amis', 'path': 'friendLink_index'},
                     ] %}
             {% for link in links %}
                 <div class="col-md-4">
                     <a href="{{ path(link.path) }}"
-                    class="btn btn-primary d-block mb-2 p-lg-5 p-2 p-md-4 fs-lg-2 fs-4 text-uppercase">
+                    class="btn btn-primary shadow d-block mb-2 p-lg-5 p-2 p-md-4 fs-lg-2 fs-4 text-uppercase">
                     {{ link.title }}
                     </a>
                 </div>
