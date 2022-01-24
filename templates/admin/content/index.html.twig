@@ -1,0 +1,26 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Administration du contenu
+{% endblock %}
+
+{% block body %}
+	<h1 class="d-flex justify-content-center">Administration du contenu web</h1>
+	<div class="container d-flex justify-content-lg-around col-lg-7 ">
+		<div class="row">
+			{% for content in contents %}
+				<div class="col-lg-6 ">
+					<div class="card m-3 shadow-lg">
+						<div class="card-body">
+							<h3 class="m-0">{{ content.title }}</h3>
+							<a href="{{ path('admin_content_edit', {'id': content.id}) }}" class="btn btn-primary">{{ 'Modifier'|trans }}</a>
+						</div>
+					</div>
+				</div>
+			{% else %}
+				<tr>
+					<td colspan="5">Aucun contenu web trouvé.</td>
+				</tr>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
