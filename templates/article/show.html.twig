@@ -3,40 +3,44 @@
 {% block title %}Article{% endblock %}
 
 {% block body %}
-    <h1>{{ 'Article'|trans }}</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th class="col-3">{{ 'Titre'|trans }}</th>
-                <td>{{ article.title }}</td>
-            </tr>
-            <tr>
-                <th>{{ 'Catégorie'|trans }}</th>
-                <td>{{ article.category.name }}</td>
-            </tr>
-            <tr>
-                <th>{{ 'Descriptif'|trans }}</th>
-                <td>{{ article.body }}</td>
-            </tr>
-            <tr>
-                <th>{{ 'Photo (click-droit: copier l\'adresse de l\'image)'|trans }}</th>
-                <td>{{ article.poster }}</td>
-            </tr>
-            <tr>
-                <th>{{ 'Créé le'|trans }}</th>
-                <td>{{ article.createdAt ? article.createdAt|date('d-m-Y') : '' }}</td>
-            </tr>
-            <tr>
-                <th>{{ 'Temps de lecture (en chiffre)'|trans }}</th>
-                <td>{{ article.duration }}min</td>
-            </tr>
-            <tr>
-                <th>{{ 'Texte alternatif à l\'image'|trans }}</th>
-                <td>{{ article.alt }}</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="my-5 mx-5">
+    <a href="{{ path('home') }}">{{ 'Accueil'|trans }}</a>
+    <a href="{{ path('article_index') }}">/{{ 'Tous les articles'|trans }}</a>
+    <a href="#">/Nom de la catégorie</a>
+    <a href="#">/{{ article.title }}</a>
+</div>
 
-    <a href="{{ path('article_index') }}">{{ 'Retour à la liste d\'articles'|trans }}</a>
+<div class="container my-5 mb-4 p-0 border d-flex">
+<section class="col-5 col-lg-4">
+    <div class="p-4">
+    <img src="{{ article.poster }}" class="card-img img-fluid" alt="{{ article.alt }}">
+    <div class="pt-4 pb-2">{{ article.createdAt ? article.createdAt|date('d-m-Y') : '' }}</div>
+    <div class="py-2">{{ article.duration }}min</div>
+    </div>
+    <div class="">
+        <div class="p-4">
+        <a href="{{ path('article_index') }}">{{ 'Retour à la liste d\'articles'|trans }}</a>
+        </div>
+    </div>
+
+</section>
+
+<section class="col-7 col-lg-8 p-4">
+    <div class="d-flex justify-content-end">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary shadow ">{{ article.category.name }}</button>
+        </div>
+        </div>
+    <h1 class="mt-3">{{ article.title }}</h1>
+    <div class="my-5">{{ article.body }}</div>
+    <div class="h3">{{ 'Articles liés :'|trans }}</div>
+    <div class="d-flex flex-direction-row">
+        <div class="mr-2">Article n°1</div>
+        <div class="mx-2">Article n°2</div>
+        <div class="mx-2">Article n°3</div>
+    </div>
+</section>
+
+</div>
 {% endblock %}
