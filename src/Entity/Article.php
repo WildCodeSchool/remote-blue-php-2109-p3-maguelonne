@@ -16,7 +16,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Article
 {
-   /**
+    /**
     * @var int
     * @ORM\Id
     * @ORM\Column(type="integer")
@@ -26,7 +26,7 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="merci de remplir ce champs de texte")
+     * @Assert\NotBlank(message="merci de remplir ce champ de texte")
      * @Assert\Length(max="255",
      * maxMessage="Le Titre saisi {{ value }} est trop long, il ne devrait pas dépasser {{ limit }} caractères")
      */
@@ -68,11 +68,6 @@ class Article
      * @ORM\Column(type="string", length=255)
      */
     private string $alt;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private string $summary;
 
     public function getId(): ?int
     {
@@ -171,18 +166,6 @@ class Article
     public function setAlt(string $alt): self
     {
         $this->alt = $alt;
-
-        return $this;
-    }
-
-    public function getSummary(): ?string
-    {
-        return $this->summary;
-    }
-
-    public function setSummary(string $summary): self
-    {
-        $this->summary = $summary;
 
         return $this;
     }
