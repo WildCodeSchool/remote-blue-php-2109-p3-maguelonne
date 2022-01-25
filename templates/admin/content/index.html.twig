@@ -8,10 +8,10 @@
 	<div class="container d-flex justify-content-lg-around col-lg-7 ">
 		<div class="row">
 			{% for content in contents %}
-				<div class="col-lg-6 ">
+				<div class="col-sm-6 ">
 					<div class="card m-3 shadow-lg">
 						<div class="card-body">
-							<h3 class="m-0">{{ content.title }}</h3>
+							<h5>{{ content.title }}</h5>
 							<a href="{{ path('admin_content_edit', {'id': content.id}) }}" class="btn btn-primary">{{ 'Modifier'|trans }}</a>
 						</div>
 					</div>
