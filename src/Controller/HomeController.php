@@ -11,7 +11,15 @@ use App\Repository\ContentRepository;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/", name="index_no_locale")
+     */
+    public function indexNoLocale(): Response
+    {
+        return $this->redirectToRoute('home');
+    }
+
+    /**
+     * @Route("/{_locale}", name="home")
      */
     public function index(ContentRepository $contentRepository): Response
     {
