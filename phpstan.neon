@@ -16,6 +16,10 @@ parameters:
         - "#Cannot access offset 'email' on mixed#"
         - "#Cannot access offset 'title' on mixed#"
         - '#expects string|Symfony\Component\Mime\Address, mixed given#'
+        - '#Call to an undefined method Knp\DoctrineBehaviors\Contract\Entity\TranslationInterface#'
+        - '#ArticleFixtures.php:19  UnusedLocalVariable#'
+        - '#ArticleFixtures.php:20  UnusedLocalVariable#'
+        - '#ArticleFixtures.php:21  UnusedLocalVariable#'
     reportUnmatchedIgnoredErrors: false
     checkGenericClassInNonGenericObjectType: false
     checkMissingIterableValueType: false
