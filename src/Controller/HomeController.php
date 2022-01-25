@@ -18,11 +18,9 @@ class HomeController extends AbstractController
         return $this->render(
             'home/index.html.twig',
             [
-                'content' => $contentRepository->findOneBy(
-                    [
-                        'id' => 1
-                    ]
-                )
+                'content' => $contentRepository->findOneBy([
+                    'id' => 1,
+                ])
             ]
         );
     }

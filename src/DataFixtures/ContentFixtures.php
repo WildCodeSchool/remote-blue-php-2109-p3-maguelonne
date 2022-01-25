@@ -21,6 +21,7 @@ class ContentFixtures extends Fixture
         $content->setAlt($faker->text(25));
         $this->addReference('content_1', $content);
         $manager->persist($content);
+
         $content = new Content();
         $content->setTitle('Présentation de l\'association');
         $content->setBody($faker->realtext(500));
@@ -29,11 +30,26 @@ class ContentFixtures extends Fixture
         $content->setSlug($content->getTitle());
         $this->addReference('content_2', $content);
         $manager->persist($content);
+
         $content = new Content();
         $content->setTitle('Footer');
         $content->setBody($faker->realtext(200));
         $content->setSlug($content->getTitle());
         $this->addReference('content_3', $content);
+        $manager->persist($content);
+
+        $content = new Content();
+        $content->setTitle('Politique de confidentialité');
+        $content->setBody($faker->realtext(500));
+        $content->setSlug($content->getTitle());
+        $this->addReference('content_4', $content);
+        $manager->persist($content);
+
+        $content = new Content();
+        $content->setTitle('Mentions légales');
+        $content->setBody($faker->realtext(500));
+        $content->setSlug($content->getTitle());
+        $this->addReference('content_5', $content);
         $manager->persist($content);
 
         $manager->flush();

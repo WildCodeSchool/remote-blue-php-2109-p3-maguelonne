@@ -9,8 +9,7 @@
 	</h1>
 	{{ include('admin/content/_form.html.twig',
 	 {
-		 'button_save_label': 'Sauvegarder'|trans,
-		 }) 
-		 }}
+		'button_save_label': 'Sauvegarder'|trans,
+		}) }}
 	<a href="{{ path('admin_content_index') }}">{{ 'Revenir à la liste des contenus'|trans }}</a>
 {% endblock %}

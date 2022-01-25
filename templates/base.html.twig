@@ -7,7 +7,8 @@
 		<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
 		<title>
-			{% block title %}Maguelone{% endblock %}
+			{% block title %}Maguelone
+			{% endblock %}
 		</title>
 
 		{% block stylesheets %}
@@ -21,6 +22,8 @@
 		{% include '_navbar.html.twig' %}
 
 		{% block body %}{% endblock %}
-		{% include '_footer.html.twig' %}
+		{{ render(controller(
+        'App\\Controller\\FooterController::footer'
+    )) }}
 	</body>
 </html>
