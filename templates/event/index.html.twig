@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Calendrier des évenements{% endblock %}
+
+{% block body %}
+
+
+
+
+    <h1 class="text-center">{{ 'Calendrier des événements'|trans }}</h1>
+    <div class="container-fluid">
+        {% for event in events|sort((a, b) => a.date|date('dm') > b.date|date('dm') or (a.date|date('dm') == b.date|date('dm') and a.date|date('Y') < b.date|date('Y'))) %}
+            <div class="card mb-0 col-12 col-lg-6">
+                <div class="row g-0">
+                    <div class="col-md-4 ">
+                        <img src="{{ event.poster }}" class="img-fluid rounded-start" alt="{{ event.alt }}">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ event.title }}</h5>
+                            <p class="card-text">{{ event.text }}</p>
+                            <p class="card-text"><small
+                                        class="text-muted">Le {{ event.date|format_date('full', locale=app.request.locale) }}
+                                    à {{ event.date|format_time('short', locale=app.request.locale) }}</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}
