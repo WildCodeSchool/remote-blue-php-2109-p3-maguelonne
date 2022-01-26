@@ -28,9 +28,9 @@ class Content
     private string $body;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private string $slug;
+    private ?string $slug;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -76,7 +76,7 @@ class Content
         return $this->slug;
     }
 
-    public function setSlug(string $slug): self
+    public function setSlug(?string $slug): self
     {
         $this->slug = $slug;
 

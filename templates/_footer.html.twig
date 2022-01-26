@@ -14,14 +14,14 @@
 				<h2>Mentions Légales</h2>
 				<ul class="nav flex-column">
 					{% set links = [
-						{'title': 'Accueil', 'path': 'home'},
-						{'title': 'Mentions Légales', 'path': 'legal_pages_informations'},
-						{'title': 'Politique de confidentialité', 'path': 'legal_pages_privacy'},
-						{'title': 'Contact', 'path': 'contact'},
+						{'title': 'Accueil', 'path': 'home', 'slug': null},
+						{'title': 'Contact', 'path': 'contact', 'slug': null},
+						{'title': 'Mentions Légales', 'path': 'page_show', 'slug': 'mentions-legales'},
+						{'title': 'Politique de confidentialité', 'path': 'page_show', 'slug': 'politique-de-confidentialite'},
 						] %}
 					{% for link in links %}
 						<li class="nav-item mb-2 list-unstyled">
-							<a href="{{ path(link.path) }}" class="nav-link p-0">{{ link.title }}</a>
+							<a href="{{ path(link.path, {'slug': link.slug}) }}" class="nav-link p-0">{{ link.title }}</a>
 						</li>
 					{% endfor %}
 				</ul>

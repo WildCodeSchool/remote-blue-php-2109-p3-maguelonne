@@ -6,12 +6,14 @@ use App\Entity\Content;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Faker\Factory;
+use Symfony\Component\String\Slugger\AsciiSlugger;
 
 class ContentFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
         $faker = Factory::create('fr_FR');
+        $slugger = new AsciiSlugger();
 
         $content = new Content();
         $content->setTitle('Présentation du site');
@@ -19,7 +21,6 @@ class ContentFixtures extends Fixture
         $content->setBody($faker->realtext(500));
         $content->setPoster('https://zupimages.net/up/22/04/b2d6.jpg');
         $content->setAlt($faker->text(25));
-        $this->addReference('content_1', $content);
         $manager->persist($content);
 
         $content = new Content();
@@ -28,28 +29,26 @@ class ContentFixtures extends Fixture
         $content->setPoster('https://zupimages.net/up/22/04/ivos.jpeg');
         $content->setAlt($faker->text(25));
         $content->setSlug($content->getTitle());
-        $this->addReference('content_2', $content);
         $manager->persist($content);
 
         $content = new Content();
         $content->setTitle('Footer');
         $content->setBody($faker->realtext(200));
-        $content->setSlug($content->getTitle());
-        $this->addReference('content_3', $content);
         $manager->persist($content);
 
         $content = new Content();
-        $content->setTitle('Politique de confidentialité');
+        $title = 'Politique de confidentialité';
+        $content->setTitle($title);
         $content->setBody($faker->realtext(500));
-        $content->setSlug($content->getTitle());
-        $this->addReference('content_4', $content);
+        $content->setSlug($slugger->slug(strtolower($title)));
         $manager->persist($content);
 
         $content = new Content();
-        $content->setTitle('Mentions légales');
+        $title = 'Mentions légales';
+        $content->setTitle($title);
         $content->setBody($faker->realtext(500));
         $content->setSlug($content->getTitle());
-        $this->addReference('content_5', $content);
+        $content->setSlug($slugger->slug(strtolower($title)));
         $manager->persist($content);
 
         $manager->flush();
