@@ -19,7 +19,7 @@ class EventFixtures extends Fixture implements DependentFixtureInterface
         for ($i = 0; $i < self::EVENT_NB; $i++) {
             $event = new Event();
             $faker = Factory::create('fr_FR');
-            $event->setTitle($faker->sentence());
+            $event->setTitle($faker->word());
             $event->setText($faker->realText());
             $event->setPoster('https://picsum.photos/300/300');
             $event->setAlt($faker->word);

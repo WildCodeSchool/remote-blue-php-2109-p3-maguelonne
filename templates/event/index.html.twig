@@ -10,11 +10,10 @@
 
     <div class="container-fluid mt-4">
         <h1 class="text-center">{{ 'Calendrier des événements'|trans }}</h1>
-        {% for event in events|sort((a, b) => a.date|date('dm') > b.date|date('dm') or (a.date|date('dm') == b.date|date('dm') and a.date|date('Y') < b.date|date('Y'))) %}
-
+        {% for event in events|sort((a, b) => a.date|date('dm') > b.date|date('dm') or (a.date|date('dm') == b.date|date('dm') and a.date|date('Y') > b.date|date('Y'))) %}
             <div class="card mb-0 col-12 offset-md-2 col-md-8 g-0">
                 <div class="row g-0">
-                    <h2 class="text-center text-primary text-capitalize card-header">{{ event.date|date('F Y') }}</h2>
+                    <h2 class="text-center text-primary text-capitalize card-header">{{ event.date|date('F - Y') }}</h2>
                     <div class="col-md-3 bg-primary d-flex flex-column justify-content-center">
                         <h3 class="card-text text-light text-center">{{ event.date|format_date('full', locale=app.request.locale) }}
                         </h3>
@@ -22,8 +21,8 @@
                     <div class="col-md-3 ">
                         <img src="{{ event.poster }}" class="img-fluid rounded-start" alt="{{ event.alt }}">
                     </div>
-                    <div class="col-md-6 d-flex flex-column justify-content-between">
-                        <div class="card-body">
+                    <div class="col-md-6 d-flex flex-column justify-content-center">
+                        <div class="card-body d-flex flex-column justify-content-around">
                             <div class="d-flex justify-content-between">
                                 <h5 class="card-title me-auto">{{ event.date|format_time('short', locale=app.request.locale) }} </h5>
                                 <h5 class="card-title">{{ event.title }}</h5>
@@ -31,7 +30,7 @@
 
                             <p class="card-text">{{ event.text }}</p>
                         </div>
-                        <div class="card-footer">
+                        <div class="card-footer text-center">
                             <a href="#" class="card-link">{{ "Pour en savoir plus"|trans }}</a>
                         </div>
 
