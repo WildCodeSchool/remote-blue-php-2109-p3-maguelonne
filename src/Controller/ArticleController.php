@@ -3,12 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\Article;
-use App\Form\ArticleType;
+use App\Entity\ArticleCategory;
 use App\Repository\ArticleRepository;
-use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\ArticleCategoryRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,12 +20,59 @@ use Symfony\Component\Routing\Annotation\Route;
 class ArticleController extends AbstractController
 {
     /**
-     * @Route("/", name="index", methods={"GET"})
+     * @var array
      */
-    public function index(ArticleRepository $articleRepository): Response
-    {
-        return $this->render('article/index.html.twig', [
-            'articles' => $articleRepository->findAll(),
+    private array $filters;
+    /**
+     * @Route("/", name="index", methods={"GET","POST"})
+     */
+    public function index(
+        ArticleRepository $articleRepository,
+        ArticleCategoryRepository $articleCatRepo,
+        Request $request,
+        PaginatorInterface $paginator
+    ): Response {
+
+        /*filters*/
+        $hasFilters = isset($_GET['form']['categories']);
+        $this->filters = $hasFilters ? $_GET['form']['categories'] : [];
+        $categories = $articleCatRepo->findBy(['id' => $this->filters]);
+        $queryArticles = $hasFilters ?
+            $articleRepository->findByCategory($categories) :
+            $articleRepository->queryFindAll();
+
+        /*pagination*/
+        $limit = 10;
+        $pagination = $paginator->paginate(
+            $queryArticles, /* query NOT result */
+            $request->query->getInt('page', 1), /*page number*/
+            $limit /*limit per page*/
+        );
+
+        /*form*/
+        $form = $this->createFormBuilder([], ['csrf_protection' => false])
+        ->add('categories', EntityType::class, [
+            'class' => ArticleCategory::class,
+            'choice_label' => function (ArticleCategory $articleCategory) {
+                return $articleCategory;
+            },
+            'choice_attr' => function (ArticleCategory $articleCategory) {
+                return in_array($articleCategory->getId(), $this->filters) ? ['checked' => 'true'] : [];
+            },
+            'multiple' => true,
+            'expanded' => true,
+        ])
+        ->add('submit', SubmitType::class, [
+            'label' => 'filtrer'])
+        ->getForm();
+
+
+        return $this->renderForm('article/index.html.twig', [
+            'categories' => $categories,
+            'pagination' => $pagination,
+            'articleCategories' => $articleCatRepo->findAll(),
+            'formCategoryFilter' => $form,
+            'paginationLimit' => $limit
         ]);
     }
 
