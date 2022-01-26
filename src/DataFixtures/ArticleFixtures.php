@@ -31,10 +31,10 @@ class ArticleFixtures extends Fixture
             }
 
             $article->setPoster('https://fakeimg.pl/350x200/?text=article ' . $i);
-            $article->setCreatedAt($fakerFactory->dateTimeBetween('-4  weeks', 'now'));
-            $article->setDuration($fakerFactory->randomNumber());
-            $article->setCategory($this->getReference('article_category'));
 
+            $article->setCreatedAt($fakerFactory->dateTimeBetween('-4  weeks', 'now'));
+            $article->setDuration($fakerFactory->randomNumber(2));
+            $article->setCategory($this->getReference('articleCategory_' . rand(1, 3)));
             $manager->persist($article);
             $article->mergeNewTranslations();
         }
