@@ -24,7 +24,7 @@ class ContentController extends AbstractController
     }
 
     /**
-     * @Route("/{slug}", name="show")
+     * @Route("/{slug}", name="show", priority="-1")
      */
     public function show(Content $content): Response
     {

@@ -16,7 +16,7 @@ class ContentFixtures extends Fixture
         $slugger = new AsciiSlugger();
 
         $content = new Content();
-        $content->setTitle('Présentation du site');
+        $content->setTitle('Presentation du site');
         $content->setSlug($content->getTitle());
         $content->setBody($faker->realtext(500));
         $content->setPoster('https://zupimages.net/up/22/04/b2d6.jpg');
@@ -24,7 +24,7 @@ class ContentFixtures extends Fixture
         $manager->persist($content);
 
         $content = new Content();
-        $content->setTitle('Présentation de l\'association');
+        $content->setTitle('Presentation de l\'association');
         $content->setBody($faker->realtext(500));
         $content->setPoster('https://zupimages.net/up/22/04/ivos.jpeg');
         $content->setAlt($faker->text(25));
@@ -37,14 +37,14 @@ class ContentFixtures extends Fixture
         $manager->persist($content);
 
         $content = new Content();
-        $title = 'Politique de confidentialité';
+        $title = 'Politique de confidentialite';
         $content->setTitle($title);
         $content->setBody($faker->realtext(500));
         $content->setSlug($slugger->slug(strtolower($title)));
         $manager->persist($content);
 
         $content = new Content();
-        $title = 'Mentions légales';
+        $title = 'Mentions legales';
         $content->setTitle($title);
         $content->setBody($faker->realtext(500));
         $content->setSlug($content->getTitle());
