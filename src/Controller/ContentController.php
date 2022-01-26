@@ -23,7 +23,7 @@ class ContentController extends AbstractController
         ]);
     }
 
-    /** 
+    /**
      * @Route("/{slug}", name="show")
      */
     public function show(Content $content): Response
