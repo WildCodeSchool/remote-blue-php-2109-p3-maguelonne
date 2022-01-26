@@ -9,7 +9,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/", name="index_no_locale")
+     */
+    public function indexNoLocale(): Response
+    {
+        return $this->redirectToRoute('home');
+    }
+
+    /**
+     * @Route("/{_locale}", name="home")
      */
     public function index(): Response
     {

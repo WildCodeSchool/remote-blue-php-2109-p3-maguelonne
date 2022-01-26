@@ -13,6 +13,7 @@
 </div>
 <div class="container d-flex justify-content-lg-around col-lg-7 " >
     <div class="row">
+
 {% for article_category in article_categories %}
         <div class="col-lg-6 ">
             <div class="card m-3 shadow-lg">
@@ -22,11 +23,9 @@
                 </div>
             </div>
         </div>
-{% else %}
-<tr>
-    <td colspan="4">no records found</td>
-</tr>
+
 {% endfor %}
     </div>
 </div>
+
 {% endblock %}
