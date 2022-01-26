@@ -21,7 +21,7 @@ class EventFixtures extends Fixture implements DependentFixtureInterface
             $faker = Factory::create('fr_FR');
             $event->setTitle($faker->word());
             $event->setText($faker->realText());
-            $event->setPoster('https://picsum.photos/300/300');
+            $event->setPoster($faker->imageUrl(300, 300, 'event'));
             $event->setAlt($faker->word);
             $event->setDate($faker->dateTimeBetween('-2 years', 'now'));
             $event->setCategory($this->getReference('event_category_0'));
