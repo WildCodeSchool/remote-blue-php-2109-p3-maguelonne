@@ -21,5 +21,11 @@ btn.addEventListener('click', () => {
         left: 0,
         behavior: 'smooth',
     });
-    window.onscroll = () => window.scrollY > 350 ? btn.style.opacity = 1 : btn.style.opacity = 0
+    window.onscroll = () => {
+        if (window.scrollY > 350) {
+            btn.style.opacity = 1;
+        } else {
+            btn.style.opacity = 0;
+        }
+    };
 });
