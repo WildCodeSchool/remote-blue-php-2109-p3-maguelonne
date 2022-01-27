@@ -23,7 +23,7 @@ class EventFixtures extends Fixture implements DependentFixtureInterface
             $event->setText($faker->realText());
             $event->setPoster($faker->imageUrl(300, 300, 'event'));
             $event->setAlt($faker->word);
-            $event->setDate($faker->dateTimeBetween('-2 years', 'now'));
+            $event->setDate($faker->dateTimeBetween('-3 years', 'now'));
             $event->setCategory($this->getReference('event_category_0'));
             $event->setSlug($faker->text(15));
             $event->setVideo($faker->imageUrl());

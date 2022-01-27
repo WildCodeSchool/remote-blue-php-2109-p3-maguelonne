@@ -16,7 +16,7 @@ class EventCategoryFixtures extends Fixture
 
         for ($i = 0; $i < self::CATEGORY_NUMBER; $i++) {
             $eventCategory = new EventCategory();
-            $eventCategory->setName($faker->text(80));
+            $eventCategory->setName($faker->word());
             $eventCategory->setSlug($faker->text(80));
             $manager->persist($eventCategory);
             $this->addReference('event_category_' . $i, $eventCategory);

@@ -3,18 +3,25 @@
 {% block title %}Calendrier des évenements{% endblock %}
 
 {% block body %}
+{# afficher l'année si et seulement si elle est différente de la précédente
+mettre l'année précendente dans une variable
+    previous_year = 2020
 
+#}
 
 
 
 
     <div class="container-fluid mt-4">
         <h1 class="text-center">{{ 'Calendrier des événements'|trans }}</h1>
+
         {% for event in pagination %}
+            {% set previous_year = event.date|date('Y') - 1 %}
             <div class="card mb-0 col-12 offset-md-2 col-md-8 g-0 mb-md-4 shadow">
-                {{ dump(event.date) }}
                 <div class="row g-0">
-                    <h2 class="text-lg-start text-center text-primary text-capitalize card-header">{{ event.date|date('F - Y') }}</h2>
+                    {% if event.date|date('Y') == previous_year + 1 %}
+                        <h2 class="text-lg-start text-center text-primary text-capitalize card-header">{{ event.date|date('Y') }}</h2>
+                    {% endif %}
                     <div class="col-md-3 bg-primary d-flex flex-column justify-content-center">
                         <h3 class="card-text text-light text-center">{{ event.date|format_date('full', locale=app.request.locale) }}
                         </h3>
@@ -22,23 +29,30 @@
                     <div class="col-md-3 ">
                         <img src="{{ event.poster }}" class="img-fluid rounded-start" alt="{{ event.alt }}">
                     </div>
-                    <div class="col-md-6 d-flex flex-column justify-content-center">
-                        <div class="card-body d-flex flex-column justify-content-around">
-                            <div class="d-flex justify-content-between">
-                                <h5 class="card-title me-auto">{{ event.date|format_time('short', locale=app.request.locale) }} </h5>
-                                <h5 class="card-title">{{ event.title }}</h5>
+                    <div class="col-md-6 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex justify-content-between mt-lg-2">
+                                <h5 class="card-title">{{ event.date|format_time('short', locale=app.request.locale) }} </h5>
+                                <h5 class="card-title">{{ event.title|trans }}</h5>
+                                <h5>{{ 'Catégorie'|trans }}
+                                    : <span class="badge bg-info rounded-pill text-dark">{{ event.category.name }}</span></h5>
+                            </div>
+
                             </div>
 
                             <p class="card-text">{{ event.text }}</p>
                         </div>
-                        <div class="text-center mb-1">
+                        <div class="text-center mb-1 py-lg-2">
                             <a href="#" class="card-link">{{ "Pour en savoir plus"|trans }}</a>
                         </div>
 
                     </div>
                 </div>
             </div>
+
+            {% previous_year = 0 %}
         {% endfor %}
+
         {{ knp_pagination_render(pagination) }}
     </div>
 
