@@ -7,12 +7,16 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Knp\DoctrineBehaviors\Contract\Entity\TranslatableInterface;
+use Knp\DoctrineBehaviors\Model\Translatable\TranslatableTrait;
 
 /**
  * @ORM\Entity(repositoryClass=ArtistRepository::class)
  */
-class Artist
+class Artist implements TranslatableInterface
 {
+    use TranslatableTrait;
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -32,16 +36,6 @@ class Artist
      *     )
      */
     private string $name;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\Type("string")
-     * @Assert\Length (
-     *     max = 255,
-     *     maxMessage = "La longueur du texte est limité à 255 caractéres."
-     * )
-     */
-    private ?string $repository;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -73,8 +67,8 @@ class Artist
      */
     private ?string $audio;
 
-    /**
-     * @ORM\Column(type="string", length=255)
+     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\NotBlank
      * @Assert\Type("string")
      * @Assert\Length (
@@ -82,42 +76,7 @@ class Artist
      *     maxMessage = "La longueur du texte est limité à 255 caractéres."
      * )
      */
-    private string $nationality;
-
-    /**
-     * @ORM\Column(type="text")
-     * @Assert\NotBlank
-     * @Assert\Type("string")
-     */
-    private string $body;
-
-    /**
-     * @ORM\Column(type="json", nullable=true)
-     *
-     */
-    private ?array $instruments = [];
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
-     * @Assert\Type("string")
-     * @Assert\Length (
-     *     max = 255,
-     *     maxMessage = "La longueur du texte est limité à 255 caractéres."
-     * )
-     */
-    private string $slug;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
-     * @Assert\Type("string")
-     * @Assert\Length (
-     *     max = 255,
-     *     maxMessage = "La longueur du texte est limité à 255 caractéres."
-     * )
-     */
-    private string $alt;
+    private ?string $slug;
 
     /**
      * @ORM\OneToMany(targetEntity=Company::class, mappedBy="artist")
@@ -158,18 +117,6 @@ class Artist
         return $this;
     }
 
-    public function getRepository(): ?string
-    {
-        return $this->repository;
-    }
-
-    public function setRepository(?string $repository): self
-    {
-        $this->repository = $repository;
-
-        return $this;
-    }
-
     public function getPhoto(): ?string
     {
         return $this->photo;
@@ -206,62 +153,14 @@ class Artist
         return $this;
     }
 
-    public function getNationality(): ?string
-    {
-        return $this->nationality;
-    }
-
-    public function setNationality(string $nationality): self
-    {
-        $this->nationality = $nationality;
-
-        return $this;
-    }
-
-    public function getBody(): ?string
-    {
-        return $this->body;
-    }
-
-    public function setBody(string $body): self
-    {
-        $this->body = $body;
-
-        return $this;
-    }
-
-    public function getInstruments(): ?array
-    {
-        return $this->instruments;
-    }
-
-    public function setInstruments(?array $instruments): self
-    {
-        $this->instruments = $instruments;
-
-        return $this;
-    }
-
     public function getSlug(): ?string
     {
         return $this->slug;
     }
 
-    public function setSlug(string $slug): self
+    public function setSlug(?string $slug): self
     {
         $this->slug = $slug;
-
-        return $this;
-    }
-
-    public function getAlt(): ?string
-    {
-        return $this->alt;
-    }
-
-    public function setAlt(string $alt): self
-    {
-        $this->alt = $alt;
 
         return $this;
     }
@@ -354,5 +253,30 @@ class Artist
         }
 
         return $this;
+    }
+
+    public function getRepository(): ?string
+    {
+        return $this->translate()->getRepository();
+    }
+
+    public function getNationality(): ?string
+    {
+        return $this->translate()->getNationality();
+    }
+
+    public function getBody(): ?string
+    {
+        return $this->translate()->getBody();
+    }
+
+    public function getInstruments(): ?array
+    {
+        return $this->translate()->getInstruments();
+    }
+
+    public function getAlt(): ?string
+    {
+        return $this->translate()->getAlt();
     }
 }
