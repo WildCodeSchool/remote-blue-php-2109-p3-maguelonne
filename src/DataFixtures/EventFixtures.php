@@ -11,7 +11,7 @@ use Faker\Factory;
 
 class EventFixtures extends Fixture implements DependentFixtureInterface
 {
-    public const EVENT_NB = 5;
+    public const EVENT_NB = 30;
 
 
     public function load(ObjectManager $manager): void

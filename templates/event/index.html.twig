@@ -10,8 +10,9 @@
 
     <div class="container-fluid mt-4">
         <h1 class="text-center">{{ 'Calendrier des événements'|trans }}</h1>
-        {% for event in events|sort((a, b) => a.date|date('dm') > b.date|date('dm') or (a.date|date('dm') == b.date|date('dm') and a.date|date('Y') > b.date|date('Y'))) %}
+        {% for event in pagination %}
             <div class="card mb-0 col-12 offset-md-2 col-md-8 g-0 mb-md-4 shadow">
+                {{ dump(event.date) }}
                 <div class="row g-0">
                     <h2 class="text-lg-start text-center text-primary text-capitalize card-header">{{ event.date|date('F - Y') }}</h2>
                     <div class="col-md-3 bg-primary d-flex flex-column justify-content-center">
@@ -38,6 +39,7 @@
                 </div>
             </div>
         {% endfor %}
+        {{ knp_pagination_render(pagination) }}
     </div>
 
 
