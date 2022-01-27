@@ -16,7 +16,10 @@
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.10",
         "fakerphp/faker": "^1.17",
+<<<<<<< HEAD
         "friendsofsymfony/ckeditor-bundle": "^2.4",
+=======
+>>>>>>> 8d35d45c7997ef41cce6dfad6538a413183af704
         "knplabs/doctrine-behaviors": "^2.2",
         "knplabs/knp-paginator-bundle": "^5.8",
         "phpdocumentor/reflection-docblock": "^5.3",
