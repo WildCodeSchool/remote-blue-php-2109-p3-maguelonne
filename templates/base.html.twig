@@ -18,11 +18,10 @@
 		{% endblock %}
 	</head>
 
-		{% block body %}{% endblock %}
-		{% include '_scroll_button.html.twig' %}
 	<body class="d-flex flex-column h-100">
 		{% include '_navbar.html.twig' %}
 		<main class="flex-shrink-0">
+		{% include '_scroll_button.html.twig' %}
 			{% block body %}{% endblock %}
 		</main>
 		{% include '_footer.html.twig' %}
