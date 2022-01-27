@@ -10,7 +10,7 @@
       <div class="btn-group col-12 col-lg-3 mb-4 mb-lg-0">
         <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-bs-display="static" data-bs-toggle="dropdown">{{ 'CATEGORIES'|trans }}</button>
         <div class="dropdown-menu dropdown-menu-lg-end" >
-{% for article_category in article_categories %}
+{% for article_category in articleCategories %}
 <h3 class="mb-0">{{ article_category.name }}</h3>
 {% endfor %}
         </div>
