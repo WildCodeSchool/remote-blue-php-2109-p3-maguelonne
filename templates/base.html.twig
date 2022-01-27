@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="h-100">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,10 +17,12 @@
 			{{ encore_entry_script_tags('app') }}
 		{% endblock %}
 	</head>
-	<body>
-		{% include '_navbar.html.twig' %}
 
-		{% block body %}{% endblock %}
+	<body class="d-flex flex-column h-100">
+		{% include '_navbar.html.twig' %}
+		<main class="flex-shrink-0">
+			{% block body %}{% endblock %}
+		</main>
 		{% include '_footer.html.twig' %}
 	</body>
 </html>
