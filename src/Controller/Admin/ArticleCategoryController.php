@@ -23,7 +23,7 @@ class ArticleCategoryController extends AbstractController
     public function index(ArticleCategoryRepository $articleCatRepo): Response
     {
         return $this->render('admin/articleCategory/index.html.twig', [
-            'articleCategories' => $articleCatRepo->findAll(),
+            'article_categories' => $articleCatRepo->findAll(),
         ]);
     }
 
@@ -44,7 +44,6 @@ class ArticleCategoryController extends AbstractController
         }
 
         return $this->renderForm('admin/articleCategory/new.html.twig', [
-            'articleCategory' => $articleCategory,
             'form' => $form,
         ]);
     }

@@ -10,20 +10,17 @@ use Symfony\Component\String\Slugger\AsciiSlugger;
 
 class ArtistFixtures extends Fixture
 {
-    public const ARTIST_NUMS = 6;
+    public const ARTIST_NUMS = 30;
     public const LOCALES = ['fr' => 'FR', 'en' => 'EN'];
 
     public function load(ObjectManager $manager): void
     {
-        // $product = new Product();
-        // $manager->persist($product);
         $fakerFactory = Factory::create();
         $slugger = new AsciiSlugger();
         $fakerFR = Factory::create('fr_FR');
         $fakerEN = Factory::create('en_EN');
         for ($i = 0; $i < self::ARTIST_NUMS; $i++) {
             $artist = new Artist();
-
             foreach (self::LOCALES as $key => $locale) {
                 $faker = 'faker' . $locale;
                 $artist->translate($key)->setRepository($$faker->realtext(20));
@@ -38,7 +35,6 @@ class ArtistFixtures extends Fixture
             $manager->persist($artist);
             $artist->mergeNewTranslations();
         }
-
         $manager->flush();
     }
 }
