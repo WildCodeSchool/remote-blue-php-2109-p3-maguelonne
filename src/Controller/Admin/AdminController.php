@@ -20,4 +20,11 @@ class AdminController extends AbstractController
             'controller_name' => 'AdminController',
         ]);
     }
+
+    /**
+     * @Route("/logout", name="logout", methods={"GET"})
+     */
+    public function logout(): void
+    {
+    }
 }
