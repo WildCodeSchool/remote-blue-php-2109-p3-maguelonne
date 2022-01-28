@@ -7,46 +7,45 @@
 
     <h1>Les artistes</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nom</th>
-                <th>Groupe</th>
-                <th>Photo</th>
-                <th>Video</th>
-                <th>Audio</th>
-                <th>Nationalité</th>
-                <th>Instruments</th>
-                <th>Slug</th>
-                <th>Alt</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+        <div class="container my-2 my-lg-5">
+        <div class="row d-flex flex-lg-row justify-content-center">
+        <a href="{{ path('admin_artist_new') }}" class="btn btn-success col-12 col-lg-5 col-xl-3 py-3 mb-4 mb-lg-0">{{ 'Ajouter un nouvel artiste'|trans }}</a>
+        </div>
+        </div>
         {% for artist in artists %}
-            <tr>
-                <td>{{ artist.name }}</td>
-                <td>{{ artist.repository }}</td>
-                <td>{{ artist.photo }}</td>
-                <td>{{ artist.video }}</td>
-                <td>{{ artist.audio }}</td>
-                <td>{{ artist.nationality }}</td>
-                <td>{{ artist.instruments ? artist.instruments|json_encode : '' }}</td>
-                <td>{{ artist.slug }}</td>
-                <td>{{ artist.alt }}</td>
-                <td>
-                    <a href="{{ path('admin_artist_show', {'slug': artist.slug}) }}">show</a>
-                    <a href="{{ path('admin_artist_edit', {'slug': artist.slug}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="10">Aucun enregistrement trouvé</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+           
+<div class="container">
+<div class="row justify-content-lg-center">
+  <div class="col-lg-9 col-12">
+    <div class="card mb-3 shadow-lg">
+      <div class="row no-gutters">
+        <div class="col-md-4 mx-auto">
+          <img src="{{ artist.photo }}" class="card-img img-fluid" alt="{{ artist.alt }}">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <div class="d-flex flex-column flex-lg-row justify-content-start">
+              <h5 class="card-title me-auto">{{ 'Nom de l\'artiste'|trans }} : {{ artist.name }}</h5>
+              <strong class="mx-lg-auto">{{ 'Registre musicale'|trans }} :  {{ artist.repository }}</strong>
+              <h5 class="ms-lg-auto">{{ 'Instruments'|trans }} : {{ artist.instruments ? artist.instruments|json_encode : '' }}</h5>
+              <h5 class="ms-lg-auto">{{ 'Nationalité'|trans }} : {{ artist.nationality }}</h5>
+              <h5 class="ms-lg-auto">{{ 'Vidéo'|trans }} : {{ artist.video }}</h5>
+              <h5 class="ms-lg-auto">{{ 'Audio'|trans }} : {{ artist.audio }}</h5>
+          
+          </div>
 
-    <a href="{{ path('admin_artist_new') }}">Créer un nouvel artiste</a>
+        <h3 class="mb-0">Biographie</h3>
+            <p class="card-text">{{ artist.body }}</p>
+            <a href="{{ path('admin_artist_edit', {'slug': artist.slug}) }}" class="btn btn-primary">{{ 'Modifier'|trans }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+            
+        {% endfor %}
 
 {% endblock %}
+
