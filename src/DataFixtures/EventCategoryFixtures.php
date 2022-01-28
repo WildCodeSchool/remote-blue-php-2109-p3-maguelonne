@@ -9,17 +9,22 @@ use Faker\Factory;
 
 class EventCategoryFixtures extends Fixture
 {
-    public const CATEGORY_NUMBER = 4;
+    public const EVENT_CATEGORIES =
+        [
+            'Opéra',
+            'Musique sacrée',
+            'Musique de chambre',
+            'Musique symphonique',
+        ];
+
     public function load(ObjectManager $manager): void
     {
-        $faker = Factory::create('fr_FR');
-
-        for ($i = 0; $i < self::CATEGORY_NUMBER; $i++) {
+        foreach (self::EVENT_CATEGORIES as $key => $eventCategoryName) {
             $eventCategory = new EventCategory();
-            $eventCategory->setName($faker->word());
-            $eventCategory->setSlug($faker->text(80));
+            $eventCategory->setName($eventCategoryName);
+            $eventCategory->setSlug($eventCategoryName);
             $manager->persist($eventCategory);
-            $this->addReference('event_category_' . $i, $eventCategory);
+            $this->addReference('event_category_' . $key, $eventCategory);
         }
 
 

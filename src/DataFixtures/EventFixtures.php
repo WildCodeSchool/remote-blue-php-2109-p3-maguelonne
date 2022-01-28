@@ -27,6 +27,7 @@ class EventFixtures extends Fixture implements DependentFixtureInterface
             $event->setCategory($this->getReference('event_category_0'));
             $event->setSlug($faker->text(15));
             $event->setVideo($faker->imageUrl());
+            $event->setDuration($faker->numberBetween(0, 180));
             $manager->persist($event);
         }
 

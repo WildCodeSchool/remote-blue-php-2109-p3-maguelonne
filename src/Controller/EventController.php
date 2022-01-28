@@ -23,11 +23,9 @@ class EventController extends AbstractController
      */
     public function index(
         EventRepository $eventRepository,
-        EventCategoryRepository $eventCatRepository,
         PaginatorInterface $paginator,
         Request $request
     ): Response {
-        $evenCategories = $eventCatRepository->findAll();
         $queryEvents = $eventRepository->queryFindAll();
         /*pagination*/
         $limit = 10;
@@ -40,7 +38,6 @@ class EventController extends AbstractController
 
         return $this->render('event/index.html.twig', [
             'pagination' => $pagination,
-            'eventCategories' => $evenCategories,
         ]);
     }
 
