@@ -12,3 +12,4 @@ import './styles/admin/admin.scss';
 import './bootstrap';
 
 window.bootstrap = require('bootstrap');
+
