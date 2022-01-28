@@ -20,6 +20,9 @@ parameters:
         - '#ArticleFixtures.php:19#'
         - '#ArticleFixtures.php:20#'
         - '#ArticleFixtures.php:21#'
+        - '#ArtistFixtures.php:21#'
+        - '#ArtistFixtures.php:22#'
+        - '#ArtistFixtures.php:23#'
     reportUnmatchedIgnoredErrors: false
     checkGenericClassInNonGenericObjectType: false
     checkMissingIterableValueType: false

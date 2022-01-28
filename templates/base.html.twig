@@ -7,7 +7,7 @@
 		<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
 		<title>
-			{% block title %}Maguelone{% endblock %}
+			{% block title %}Maguelonne{% endblock %}
 		</title>
 
 		{% block stylesheets %}
@@ -21,8 +21,10 @@
 	<body class="d-flex flex-column h-100">
 		{% include '_navbar.html.twig' %}
 		<main class="flex-shrink-0">
+			{% include '_scroll_button.html.twig' %}
 			{% block body %}{% endblock %}
 		</main>
-		{% include '_footer.html.twig' %}
+		{{ render(controller('App\\Controller\\ContentController::renderTwig', {'id': 3})) }}
+		</html>
 	</body>
 </html>
