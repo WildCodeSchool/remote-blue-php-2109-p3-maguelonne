@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\FriendLinkRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,10 +16,10 @@ class FriendLinkController extends AbstractController
     /**
      * @Route("/", name="index")
      */
-    public function index(): Response
+    public function index(FriendLinkRepository $friendLinkRepository): Response
     {
         return $this->render('friendLink/index.html.twig', [
-            'controller_name' => 'FriendLinkController',
+            'friend_links' => $friendLinkRepository->findAll(),
         ]);
     }
 }
