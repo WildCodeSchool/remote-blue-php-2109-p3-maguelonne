@@ -3,26 +3,20 @@
 {% block title %}Calendrier des évenements{% endblock %}
 
 {% block body %}
-    {# afficher l'année si et seulement si elle est différente de la précédente
-mettre l'année précendente dans une variable
-    afficher l'année
-
-
-    #}
-
-
-
 
     <div class="container-fluid mt-4">
-    <h1 class="text-center">{{ 'Calendrier des événements'|trans }}</h1>
+    <h1 class="text-center text-uppercase">{{ 'concerts et spectacles'|trans }}</h1>
+    {% set previous_year = '' %}
+    {% set previous_month = '' %}
 
     {% for event in pagination %}
-
-        <div class="card mb-0 col-12 offset-md-2 col-md-8 g-0 mb-md-4 shadow">
+        <article class="card mb-0 col-12 offset-md-2 col-md-8 g-0 mb-md-4 shadow">
             <div class="row g-0">
-                {% set previous_year = event.date|date('Y') - 1 %}
-                {% if event.date|date('Y') != previous_year %}
-                    <h2 class="text-lg-start text-center text-primary text-capitalize card-header">{{ event.date|date('Y') }}</h2>
+                {% if event.date|date('Y') != previous_year or event.date|date('F') != previous_month %}
+                    <div class="card-header d-flex justify-content-center">
+                        <h2 class="text-primary text-uppercase me-3">{{ event.date|date('F')|format_date('medium', locale=app.request.locale, pattern="MMMM") }}</h2>
+                        <h2 class="text-primary text-capitalize"> {{ event.date|date('Y') }}</h2>
+                    </div>
                 {% endif %}
                 <div class="col-md-3 bg-primary d-flex flex-column justify-content-center">
                     <h3 class="card-text text-light text-center">{{ event.date|format_date('full', locale=app.request.locale) }}</h3>
@@ -39,21 +33,17 @@ mettre l'année précendente dans une variable
                                 : {{ event.duration }} minutes.
                             </h5>
                         </div>
-
                     </div>
-
                     <p class="card-text px-lg-2">{{ event.text }}</p>
                 </div>
-
-
             </div>
+        </article>
         </div>
-        </div>
-
+        {% set previous_year = event.date|date('Y') %}
+        {% set previous_month = event.date|date('F') %}
     {% endfor %}
 
     {{ knp_pagination_render(pagination) }}
-    </div>
 
 
 {% endblock %}
