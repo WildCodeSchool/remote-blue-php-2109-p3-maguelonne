@@ -13,7 +13,7 @@ import './bootstrap';
 
 window.bootstrap = require('bootstrap');
 
-const btn = document.querySelector('#btn-scroll');
+const btn = document.getElementById('btn-scroll');
 
 btn.addEventListener('click', () => {
     window.scrollTo({
@@ -21,11 +21,12 @@ btn.addEventListener('click', () => {
         left: 0,
         behavior: 'smooth',
     });
-    window.onscroll = () => {
-        if (window.scrollY > 350) {
-            btn.style.opacity = 1;
-        } else {
-            btn.style.opacity = 0;
-        }
-    };
 });
+
+window.onscroll = () => {
+    if (window.scrollY > 350) {
+        btn.classList.add('show');
+    } else {
+        btn.classList.remove('show');
+    }
+};
