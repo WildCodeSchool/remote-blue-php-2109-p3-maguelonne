@@ -18,7 +18,6 @@ class ArtistRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Artist::class);
     }
-    
     /**
     * @return \Doctrine\ORM\Query
     */

@@ -25,7 +25,6 @@ class ArtistController extends AbstractController
      */
     public function index(ArtistRepository $artistRepository, PaginatorInterface $paginator, Request $request): Response
     {
-        
             $queryArtist = $artistRepository->queryFindAll();
             /*pagination*/
             $limit = 10;
