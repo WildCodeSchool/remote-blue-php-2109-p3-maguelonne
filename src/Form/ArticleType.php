@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Article;
 use App\Entity\ArticleCategory;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -34,10 +35,20 @@ class ArticleType extends AbstractType
                 ],
             )
             ->add(
+                'summary',
+                CKEditorType::class,
+                [
+                    'label' => 'Résumé de l\'article',
+                    'config_name' => 'light',
+                    'attr' => ['rows' => '4'],
+                ],
+            )
+            ->add(
                 'body',
-                TextareaType::class,
+                CKEditorType::class,
                 [
                     'label' => 'Contenu de l\'article',
+                    'config_name' => 'full',
                     'attr' => ['rows' => '10'],
                 ],
             )
