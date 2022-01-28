@@ -16,12 +16,13 @@ class EventFixtures extends Fixture implements DependentFixtureInterface
 
     public function load(ObjectManager $manager): void
     {
+        $faker = Factory::create('fr_FR');
         for ($i = 0; $i < self::EVENT_NB; $i++) {
             $event = new Event();
-            $faker = Factory::create('fr_FR');
-            $event->setTitle($faker->word());
+            $title = $faker->word();
+            $event->setTitle($title);
             $event->setText($faker->realText());
-            $event->setPoster($faker->imageUrl(300, 300, 'event'));
+            $event->setPoster("https://fakeimg.pl/300x300/?text=" . $title);
             $event->setAlt($faker->word);
             $event->setDate($faker->dateTimeBetween('-3 years', 'now'));
             $event->setCategory($this->getReference('event_category_0'));
