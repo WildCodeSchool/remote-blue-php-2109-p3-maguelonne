@@ -25,7 +25,8 @@ security:
                 check_path: login
                 enable_csrf: true
             logout:
-                path: app_logout
+                path: admin_home_logout
+                target: index_no_locale
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication

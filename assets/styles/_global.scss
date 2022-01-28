@@ -5,3 +5,15 @@ body {
 footer{
     background-color: $blue-100;
 }
+
+.btn-scroll {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+    transform: translateX(calc(100% + 20px));
+    transition: transform .4s ease;
+    &.show {
+        transform: translateX(0);
+    }
+}
