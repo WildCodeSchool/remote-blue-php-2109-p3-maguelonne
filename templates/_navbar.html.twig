@@ -1,4 +1,4 @@
-<nav class="navbar row p-3 navbar-light navbar-expand-lg bg-secondary fixed-top ">
+<nav class="navbar row p-3 navbar-light navbar-expand-lg bg-secondary fixed-top shadow">
     <div class="container col-2 justify-content-center"><a class="navbar-brand fs-2 logo ms-lg-0" href="{{ path('home') }}">Maguelonne</a>
     </div>
     <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarNav">
@@ -30,7 +30,7 @@
                 {"alias": 'Anglais', 'url': 'https://flagcdn.com/40x30/gb.png'},
             ] %}
             <li class="nav-item mx-2 ms-lg-4 dropdown">
-                <button class="btn btn-primary btn-lg border rounded dropdown-toggle" type="button" id="translationAvailable" data-bs-toggle="dropdown"
+                <button class="btn btn-primary p-2 border rounded dropdown-toggle" type="button" id="translationAvailable" data-bs-toggle="dropdown"
                         aria-expanded="false">Choisir la langue</button>
                 <ul class="dropdown-menu" aria-labelledby="translationAvailable">
                     {% for flag in flags|sort %}
