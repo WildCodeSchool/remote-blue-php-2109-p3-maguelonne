@@ -40,7 +40,7 @@
                 <h5 class="ms-lg-auto">{{ 'Catégorie'|trans }} : {{ article.category.name }}</h5>
               </div>
           <h3 class="mb-0">{{ article.title }}</h3>
-              <p class="card-text">{{ article.body }}</p>
+              <p class="card-text">{{ article.summary|raw }}</p>
               <a href="{{ path('admin_article_edit', {'id': article.id}) }}" class="btn btn-primary">{{ 'Modifier'|trans }}</a>
             </div>
           </div>

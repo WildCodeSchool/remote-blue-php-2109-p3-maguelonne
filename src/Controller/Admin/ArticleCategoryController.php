@@ -23,7 +23,7 @@ class ArticleCategoryController extends AbstractController
     public function index(ArticleCategoryRepository $articleCatRepo): Response
     {
         return $this->render('admin/articleCategory/index.html.twig', [
-            'article_categories' => $articleCatRepo->findAll(),
+            'articleCategories' => $articleCatRepo->findAll(),
         ]);
     }
 

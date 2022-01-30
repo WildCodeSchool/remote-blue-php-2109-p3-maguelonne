@@ -26,7 +26,7 @@ class ContentType extends AbstractType
                 TextareaType::class,
                 [
                     'label' => 'Contenu de la page',
-                    'attr' => ['rows' => '30'],
+                    'attr' => ['rows' => '20'],
                 ],
             )
             ->add(

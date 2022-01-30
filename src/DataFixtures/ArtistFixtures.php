@@ -26,6 +26,7 @@ class ArtistFixtures extends Fixture
                 $artist->translate($key)->setRepository($$faker->realtext(20));
                 $artist->translate($key)->setNationality($$faker->realtext(20));
                 $artist->translate($key)->setBody($$faker->realText());
+                $artist->translate($key)->setInstruments($$faker->text());
                 $artist->translate($key)->setAlt($$faker->text());
             }
             $name = $fakerFactory->name();

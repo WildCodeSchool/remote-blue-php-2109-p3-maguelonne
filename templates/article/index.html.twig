@@ -48,14 +48,14 @@
 
                 {% if categories %}
                 <div class="mb-4">
-                    <h3>Filtres sélectionnés</h3>
+                    <h3>{{ 'Filtres sélectionnés'|trans }}</h3>
                     {% for category in categories %}
                         <button data-id="{{ category.id }}" data-remove-filter="" class="btn btn-info fs-5">{{ category.name }} x</button>
                     {% endfor %}
                 </div>
                 {% endif %}
                 <div class="mb-3 d-flex justify-content-between">
-                    <span>{{ pagination.getTotalItemCount }} articles</span>
+                    <span>{{ pagination.getTotalItemCount }} {{ 'articles'|trans }}</span>
 
                     <span>page {{ pagination.currentPageNumber }} / {{ (pagination.getTotalItemCount / paginationLimit)|round(0, 'ceil') }}</span>
                 </div>

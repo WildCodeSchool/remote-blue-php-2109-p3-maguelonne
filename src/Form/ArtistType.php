@@ -54,7 +54,26 @@ class ArtistType extends AbstractType
             ])
             ->add('alt', TextType::class, [
                 'label' => 'Texte alternatif de l\' image.'
-            ]);
+            ])
+            ->add('reward', CollectionType::class, [
+                'entry_type' => RewardType::class,
+                'allow_add' => true,
+                'allow_delete' => true,
+                'by_reference' => false,
+            ])
+            ->add('company', CollectionType::class, [
+                'entry_type' => CompanyType::class,
+                'allow_add' => true,
+                'allow_delete' => true,
+                'by_reference' => false,
+                ])
+            ->add('study', CollectionType::class, [
+                'entry_type' => StudyType::class,
+                'allow_add' => true,
+                'allow_delete' => true,
+                'by_reference' => false,
+                ])
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

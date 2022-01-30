@@ -28,6 +28,7 @@ class ArticleFixtures extends Fixture
                 $article->translate($key)->setSummary($$faker->realtext(150));
                 $article->translate($key)->setBody($$faker->realtext(500));
                 $article->translate($key)->setAlt($$faker->text(25));
+                $article->translate($key)->setSlug($$faker->realtext(45));
             }
 
             $article->setPoster('https://fakeimg.pl/350x200/?text=article ' . $i);

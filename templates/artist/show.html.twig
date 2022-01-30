@@ -11,31 +11,38 @@
         </div>
           <div class="container mt-3">
             <div class="row justify-content-center">
-                <div class="col-10 col-md-8 col-lg-4 mb-5">
+                <div class="col-10 col-md-4 col-lg-4 mb-5">
                     <div class="card shadow border-primary">
                     <img class="card-img-top img-fluid" src="{{ artist.photo }}" alt="{{ artist.alt }}">
                         <div class="card-body p-2-4">
                             <ul class="list-unstyled mb-4">
-                                <li class="mb-3">Nationalité : {{ artist.nationality }}</li>
-                                <li class="mb-3">Registre musical : {{ artist.repository }}</li>
-                                <li class="mb-3">Instruments : </li>
+                                <li class="mb-3">{{ 'Nationalité'|trans }} : {{ artist.nationality }}</li>
+                                <li class="mb-3">{{ 'Registre musical'|trans }} : {{ artist.repository }}</li>
+                                <li class="mb-3">{{ 'Instruments'|trans }} : </li>
                           </ul>
-                        <a href="#" class="btn border-primary mt-0 my-4">Vidéo</a>
-                        <a href="#" class="btn border-primary mt-0 my-4 m-5">Audio</a>
-                            <div class="col-10">
-                             <h4 class="text">Compagnie-Brand :</h4>
+                        <a href="#" class="btn border-primary mt-0 my-4">{{ artist.video }}</a>
+                        <a href="#" class="btn border-primary mt-0 my-4 m-5">{{ artist.audio }}</a>
+                            <div class="col-12">
+                             <h4 class="text">{{ 'Compagnie'|trans }}:</h4>
                               <ul class="list-inline">
                                <li class="list-inline-item">2020-2021 :</li>
-                               <li class="list-inline-item">Nom de la compagnie</li>
+                               <li class="list-inline-item">{{ artist.company.name }}</li>
                               </ul>
                           </div>
-                          <div class="col-10">
-                             <h4 class="text">Études/ Prix:</h4>
+                          <div class="col-12">
+                             <h4 class="text">{{ 'Etude'|trans }}:</h4>
                               <ul class="list-inline">
-                               <li class="list-inline-item">2020-2021 :</li>
-                               <li class="list-inline-item">Nom da la compagnie</li>
+                               <li class="list-inline-item">{{ artist.study.date }} :</li>
+                               <li class="list-inline-item">{{ artist.study.name }}</li>
                               </ul>
                           </div>
+                          <div class="col-12">
+                            <h4 class="text">{{ 'Prix'|trans }}:</h4>
+                             <ul class="list-inline">
+                              <li class="list-inline-item">{{ artist.reward.date }} :</li>
+                              <li class="list-inline-item">{{ artist.reward.name }}</li>
+                             </ul>
+                         </div>
                         </div>
                     </div>
                 </div>

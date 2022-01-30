@@ -1,27 +1,29 @@
-Contactez-nous!: __Contactez-nous!
-'Présentation de l''association Maguelonne': '__Présentation de l''association Maguelonne'
-'Création d''une nouvelle catégorie d''article': '__Création d''une nouvelle catégorie d''article'
-'Revenir à la liste des catégories d''articles': '__Revenir à la liste des catégories d''articles'
-Supprimer: __Supprimer
-'Édition de l''article': '__Édition de l''article'
-'Revenir à la liste des articles': '__Revenir à la liste des articles'
-Publier: __Publier
-'Nouvel Article': '__Nouvel Article'
-'Création d''un nouvel article': '__Création d''un nouvel article'
-CATEGORIES: __CATEGORIES
-'Ajouter un nouvel article': '__Ajouter un nouvel article'
-'Article écrit le': '__Article écrit le'
-'Temps de lecture': '__Temps de lecture'
-Catégorie: __Catégorie
-MODIFIER: __MODIFIER
-'EN LIRE PLUS': '__EN LIRE PLUS'
-Article: __Article
-Titre: __Titre
-Descriptif: __Descriptif
-'Photo (click-droit: copier l''adresse de l''image)': '__Photo (click-droit: copier l''adresse de l''image)'
-'Créé le': '__Créé le'
-'Temps de lecture (en chiffre)': '__Temps de lecture (en chiffre)'
-'Texte alternatif à l''image': '__Texte alternatif à l''image'
-'Retour à la liste d''articles': '__Retour à la liste d''articles'
-'Mot de passe': '__Mot de passe'
-'Se connecter': '__Se connecter'
+Contactez-nous!: связаться с нами!
+'Édition de la catégorie d''articles': 'Редактирование категории статьи'
+Publier: Публиковать
+'Retour à la liste des catégories d''articles': 'Вернуться к списку категорий статей'
+'Création d''une nouvelle catégorie d''articles': 'Создание новой категории статей'
+'Revenir à la liste des catégories d''articles': 'Вернуться к списку категорий статей'
+'Ajouter une nouvelle catégorie': 'Добавить новую категорию'
+Modifier: Модифицировать
+'Édition du contenu de la page': 'Редактирование содержимого страницы'
+Sauvegarder: __Sauvegarder
+'Revenir à la liste des contenus': '__Revenir à la liste des contenus'
+Supprimer: Для защиты
+'Édition de l''article': 'Редактирование статьи'
+'Revenir à la liste des articles': 'Вернуться к списку статей'
+'Création d''un nouvel article': 'Создание новой статьи'
+CATEGORIES: КАТЕГОРИИ
+'Ajouter un nouvel article': 'Добавить новый элемент'
+'Article écrit le': 'Статья написана на'
+'Temps de lecture': 'Время чтения'
+Catégorie: Категория
+Accueil: __Accueil
+'Tous les articles': 'Все элементы'
+Catégories: Категории
+'En lire plus': 'н читать дальше'
+'Il n''y a encore aucune publication dans cette catégorie': 'В этой категории пока нет сообщений'
+'Retour à la liste d''articles': 'Вернуться к списку статей'
+'Articles liés :': 'Статьи по Теме :'
+'Mot de passe': 'Пароль'
+'Se connecter': 'Чтобы залогиниться'

@@ -260,14 +260,32 @@ class Artist implements TranslatableInterface
         return $this->translate()->getRepository();
     }
 
+    public function setRepository(string $repository): self
+    {
+        $this->translate()->setRepository($repository);
+        return $this;
+    }
+
     public function getNationality(): ?string
     {
         return $this->translate()->getNationality();
     }
 
+    public function setNationality(string $nationality): self
+    {
+        $this->translate()->setNationality($nationality);
+        return $this;
+    }
+    
     public function getBody(): ?string
     {
         return $this->translate()->getBody();
+    }
+
+    public function setBody(string $body): self
+    {
+        $this->translate()->setBody($body);
+        return $this;
     }
 
     public function getInstruments(): ?array
@@ -275,8 +293,20 @@ class Artist implements TranslatableInterface
         return $this->translate()->getInstruments();
     }
 
+    public function setInstruments(array $instruments): self
+    {
+        $this->translate()->setInstruments($instruments);
+        return $this;
+    }
+
     public function getAlt(): ?string
     {
         return $this->translate()->getAlt();
+    }
+
+    public function setAlt(string $alt): self
+    {
+        $this->translate()->setAlt($alt);
+        return $this;
     }
 }

@@ -15,7 +15,7 @@
 		</section>
 		<section class="container">
 			<div class="row">
-				{% set links = [
+				{# {% set links = [
                     {'title': 'Blog', 'path': 'article_index'},
                     {'title': 'Association', 'path': 'association_index'},
                     {'title': 'Sites amis', 'path': 'friendLink_index'},
@@ -23,10 +23,25 @@
 				{% for link in links %}
 					<div class="col-md-4">
 						<a href="{{ path(link.path) }}" class="btn btn-primary shadow d-block mb-2 p-lg-5 p-2 p-md-4 fs-lg-2 fs-4 text-uppercase">
-							{{ link.title }}
+							{{ link.title|trans }}
 						</a>
 					</div>
-				{% endfor %}
+				{% endfor %} #}
+				<div class="col-md-4">
+				<a href="{{ path('article_index') }}" class="btn btn-primary shadow d-block mb-2 p-lg-5 p-2 p-md-4 fs-lg-2 fs-4 text-uppercase">
+					{{ 'Blog'|trans }}
+				</a>
+				</div>
+				<div class="col-md-4">
+				<a href="{{ path('association_index') }}" class="btn btn-primary shadow d-block mb-2 p-lg-5 p-2 p-md-4 fs-lg-2 fs-4 text-uppercase">
+					{{ 'Association'|trans }}
+				</a>
+				</div>
+				<div class="col-md-4">
+				<a href="{{ path('friendLink_index') }}" class="btn btn-primary shadow d-block mb-2 p-lg-5 p-2 p-md-4 fs-lg-2 fs-4 text-uppercase">
+					{{ 'Sites amis'|trans }}
+				</a>
+				</div>
 			</div>
 		</section>
 	</main>

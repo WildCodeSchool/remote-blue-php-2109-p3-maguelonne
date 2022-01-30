@@ -28,7 +28,7 @@ class ArticleTranslation implements TranslationInterface
      * @Assert\Length(max="255",
      * maxMessage="Le Titre saisi {{ value }} est trop long, il ne devrait pas dépasser {{ limit }} caractères")
      */
-    private string $title;
+    private string $title = "";
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -48,7 +48,7 @@ class ArticleTranslation implements TranslationInterface
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private string $summary;
+    private string $summary = "";
 
     public function getId(): ?int
     {

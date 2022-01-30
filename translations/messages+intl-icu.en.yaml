@@ -17,12 +17,29 @@ MODIFIER: EDIT
 Article: Article
 Titre: Title
 Descriptif: Description
-'Photo (click-droit: copier l''adresse de l''image)': '__Photo (click-droit: copier l''adresse de l''image)'
+'Photo (click-droit: copier l''adresse de l''image)': 'Picture (click-right: copy link of picture)'
 'Créé le': 'Created at'
 'Temps de lecture (en chiffre)': 'Reading time (in number)'
-'Texte alternatif à l''image': '__Texte alternatif à l''image'
-'Retour à la liste d''articles': '__Retour à la liste d''articles'
+'Texte alternatif à l''image': 'Alternatif text of picture'
+'Retour à la liste d''articles': 'Back to the list of Articles'
 'Mot de passe': Password
 'Se connecter': Login
 'Présentation de l''association Maguelonne': 'Maguelonne Association'
 page.link.path: '%link_start%link.title%link_end%'
+'Édition du contenu de la page': 'Editing page content'
+Sauvegarder: Save
+'Revenir à la liste des contenus': 'Back to content list'
+'Édition de la catégorie d''articles': 'Editing the article category'
+'Retour à la liste des catégories d''articles': 'Back to the list of article categories'
+'Création d''une nouvelle catégorie d''articles': 'Creation of a new category of articles'
+'Ajouter une nouvelle catégorie': 'Add a new category'
+Modifier: Edit
+Accueil: Homepage
+'Tous les articles': 'All articles'
+Catégories: Category
+'En lire plus': 'Read More'
+'Il n''y a encore aucune publication dans cette catégorie': 'There are no posts in this category yet'
+'Articles liés :': 'Related Articles :'
+Blog: Blog
+Association: Association
+'Sites amis': 'Friendlinks'
