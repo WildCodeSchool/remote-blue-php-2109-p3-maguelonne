@@ -42,10 +42,14 @@ FROM php:8.0-fpm-alpine as phpserver
 
 # add cli tools
 RUN apk update \
-    && apk upgrade \    
+    && apk upgrade \
     && apk add nginx
 
-    
+RUN apk add --no-cache \
+      libzip-dev \
+      zip \
+    && docker-php-ext-install zip
+
 # silently install 'docker-php-ext-install' extensions
 RUN set -x
 
