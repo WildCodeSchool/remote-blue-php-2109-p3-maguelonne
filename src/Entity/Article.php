@@ -108,9 +108,23 @@ class Article implements TranslatableInterface
         return $this->translate()->getTitle();
     }
 
+    public function setTitle(string $title): self
+    {
+        $this->translate()->setTitle($title);
+
+        return $this;
+    }
+
     public function getSlug(): ?string
     {
         return $this->translate()->getSlug();
+    }
+
+    public function setSlug(?string $slug): self
+    {
+        $this->translate()->setSlug($slug);
+
+        return $this;
     }
 
     public function getBody(): ?string
@@ -118,13 +132,34 @@ class Article implements TranslatableInterface
         return $this->translate()->getBody();
     }
 
+    public function setBody(string $body): self
+    {
+        $this->translate()->setBody($body);
+
+        return $this;
+    }
+
     public function getAlt(): ?string
     {
         return $this->translate()->getAlt();
     }
 
+    public function setAlt(string $alt): self
+    {
+        $this->translate()->setAlt($alt);
+
+        return $this;
+    }
+
     public function getSummary(): ?string
     {
         return $this->translate()->getSummary();
+    }
+
+    public function setSummary(string $summary): self
+    {
+        $this->translate()->setSummary($summary);
+
+        return $this;
     }
 }
