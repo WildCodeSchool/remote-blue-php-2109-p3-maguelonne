@@ -15,8 +15,6 @@ parameters:
         - '#expects App\Entity\[a-zA-Z0-9\\_]+|null, object|null given#'
         - "#Cannot access offset 'email' on mixed#"
         - "#Cannot access offset 'title' on mixed#"
-        - '#expects string|Symfony\Component\Mime\Address, mixed given#'
-        - '#Call to an undefined method Knp\DoctrineBehaviors\Contract\Entity\TranslationInterface#'
         - '#ArticleFixtures.php:19#'
         - '#ArticleFixtures.php:20#'
         - '#ArticleFixtures.php:21#'
@@ -33,6 +31,18 @@ parameters:
         - '#TranslationInterface\:\:setAlt#'
         - '#TranslationInterface\:\:getSummary#'
         - '#TranslationInterface\:\:setSummary#'
+        - '#TranslationInterface\:\:getText#'
+        - '#TranslationInterface\:\:setText#'
+        - '#TranslationInterface\:\:getPoster#'
+        - '#TranslationInterface\:\:setPoster#'
+        - '#TranslationInterface\:\:getVideo#'
+        - '#TranslationInterface\:\:setVideo#'
+        - '#TranslationInterface\:\:getDate#'
+        - '#TranslationInterface\:\:setDate#'
+        - '#TranslationInterface\:\:getDuration#'
+        - '#TranslationInterface\:\:setDuration#'
+        - '#TranslationInterface\:\:getCategory#'
+        - '#TranslationInterface\:\:setCategory#'
     reportUnmatchedIgnoredErrors: false
     checkGenericClassInNonGenericObjectType: false
     checkMissingIterableValueType: false
