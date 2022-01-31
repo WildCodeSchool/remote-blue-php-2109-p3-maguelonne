@@ -1,44 +1,45 @@
-
-		<footer class="p-4 mt-4">
-			<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-4">
-					<h2>Maguelonne</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus
-						tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.
-						Maecenas ligula massa, varius a, semper congue, euismod non, mi.</p>
-				</div>
-
-				<div class="col-md-4">
-					<h2>Mentions Légales</h2>
-					<ul class="nav flex-column">
-						{% set links = [
-						{'title': 'Accueil', 'path': 'home'},
-						{'title': 'Blog', 'path': 'article_index'},
-						{'title': 'Association', 'path': 'association_index'},
-						{'title': 'Contact', 'path': 'contact'},
-						] %}
-						{% for link in links %}
-						<li class="nav-item mb-2 list-unstyled">
-							<a href="{{ path(link.path) }}" class="nav-link p-0">{{ link.title }}</a>
-						</li>
-						{% endfor %}
-					</ul>
-				</div>
-
-				<div class="col-md-4">
-					<form>
-						<h2>S'inscrire à la newsletter</h2>
-						<p>Inscrivez-vous pour recevoir réguliérement notre newsletter dans votre boîte mail.</p>
-						<div class="d-flex flex-wrap flex-lg-nowrap w-100 gap-2">
-							<label for="newsletter1" class="visually-hidden">Adresse mail</label>
-							<input type="Email" name="email" class="form-control w-md-100" required=""
-								placeholder="Email">
-							<button class="btn btn-info">S'abonner</button>
-						</div>
-					</form>
-				</div>
+<div class="mt-5"></div>
+<footer class="p-4 mt-auto">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4">
+				<h2>
+					{{ content.title }}
+				</h2>
+				<p>
+					{{ content.body }}
+				</p>
 			</div>
+
+			<div class="col-md-4">
+				<h2>Mentions Légales</h2>
+				<ul class="nav flex-column">
+					{% set links = [
+						{'title': 'Accueil', 'path': 'home', 'slug': null},
+						{'title': 'Contact', 'path': 'contact', 'slug': null},
+						{'title': 'Mentions Légales', 'path': 'page_show', 'slug': 'mentions-legales'},
+						{'title': 'Politique de confidentialité', 'path': 'page_show', 'slug': 'politique-de-confidentialite'},
+						] %}
+					{% for link in links %}
+						<li class="nav-item mb-2 list-unstyled">
+							<a href="{{ path(link.path, {'slug': link.slug}) }}" class="nav-link p-0">{{ link.title }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+
+			<div class="col-md-4">
+				<form>
+					<h2>S'inscrire à la newsletter</h2>
+					<p>Inscrivez-vous pour recevoir réguliérement notre newsletter dans votre boîte mail.</p>
+					<div class="d-flex flex-wrap flex-lg-nowrap w-100 gap-2">
+						<label for="newsletter1" class="visually-hidden">Adresse mail</label>
+						<input type="Email" name="email" class="form-control w-md-100" required="" placeholder="Email">
+						<button class="btn btn-info">S'abonner</button>
+					</div>
+				</form>
+			</div>
+		</div>
 
 			<div class="nav d-flex justify-content-center border-top">
 				<ul class="social list-unstyled d-flex flex-row me-auto align-self-center">
@@ -58,7 +59,7 @@
 						</a>
 					</li>
 				</ul>
-				<p class="inline-block me-auto">&copy; 2021 Maguelonne. Tous droits réservés.</p>
+				<p class="inline-block me-auto">&copy; {{ "now"|date("Y") }} Maguelonne. Tous droits réservés.</p>
 			</div>
 		</div>
 		</footer>

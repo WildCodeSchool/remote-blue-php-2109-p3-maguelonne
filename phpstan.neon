@@ -16,6 +16,23 @@ parameters:
         - "#Cannot access offset 'email' on mixed#"
         - "#Cannot access offset 'title' on mixed#"
         - '#expects string|Symfony\Component\Mime\Address, mixed given#'
+        - '#Call to an undefined method Knp\DoctrineBehaviors\Contract\Entity\TranslationInterface#'
+        - '#ArticleFixtures.php:19#'
+        - '#ArticleFixtures.php:20#'
+        - '#ArticleFixtures.php:21#'
+        - '#ArtistFixtures.php:21#'
+        - '#ArtistFixtures.php:22#'
+        - '#ArtistFixtures.php:23#'
+        - '#TranslationInterface\:\:getTitle#'
+        - '#TranslationInterface\:\:setTitle#'
+        - '#TranslationInterface\:\:getSlug#'
+        - '#TranslationInterface\:\:setSlug#'
+        - '#TranslationInterface\:\:getBody#'
+        - '#TranslationInterface\:\:setBody#'
+        - '#TranslationInterface\:\:getAlt#'
+        - '#TranslationInterface\:\:setAlt#'
+        - '#TranslationInterface\:\:getSummary#'
+        - '#TranslationInterface\:\:setSummary#'
     reportUnmatchedIgnoredErrors: false
     checkGenericClassInNonGenericObjectType: false
     checkMissingIterableValueType: false

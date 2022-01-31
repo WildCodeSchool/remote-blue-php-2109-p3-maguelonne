@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="h-100">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -7,7 +7,7 @@
 		<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
 		<title>
-			{% block title %}Maguelone{% endblock %}
+			{% block title %}Maguelonne{% endblock %}
 		</title>
 
 		{% block stylesheets %}
@@ -17,10 +17,14 @@
 			{{ encore_entry_script_tags('app') }}
 		{% endblock %}
 	</head>
-	<body>
-		{% include '_navbar.html.twig' %}
 
-		{% block body %}{% endblock %}
-		{% include '_footer.html.twig' %}
+	<body class="d-flex flex-column h-100">
+		{% include '_navbar.html.twig' %}
+		<main class="flex-shrink-0">
+			{% include '_scroll_button.html.twig' %}
+			{% block body %}{% endblock %}
+		</main>
+		{{ render(controller('App\\Controller\\ContentController::renderTwig', {'id': 3})) }}
+		</html>
 	</body>
 </html>

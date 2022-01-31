@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Article;
 use App\Entity\ArticleCategory;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -35,17 +36,19 @@ class ArticleType extends AbstractType
             )
             ->add(
                 'summary',
-                TextareaType::class,
+                CKEditorType::class,
                 [
                     'label' => 'Résumé de l\'article',
-                    'attr' => ['rows' => '5'],
+                    'config_name' => 'light',
+                    'attr' => ['rows' => '4'],
                 ],
             )
             ->add(
                 'body',
-                TextareaType::class,
+                CKEditorType::class,
                 [
                     'label' => 'Contenu de l\'article',
+                    'config_name' => 'full',
                     'attr' => ['rows' => '10'],
                 ],
             )
@@ -53,7 +56,7 @@ class ArticleType extends AbstractType
                 'poster',
                 TextType::class,
                 [
-                    'label' => 'Photo de l\'article',
+                    'label' => 'Photo de l\'article (clic-droit: copier l\'adresse de l\'image)',
                 ],
             )
             ->add(
@@ -67,14 +70,14 @@ class ArticleType extends AbstractType
                 'duration',
                 NumberType::class,
                 [
-                    'label' => 'Durée de lecture',
+                    'label' => 'Temps de lecture (en minutes, ex: 10 pour 1O minutes)',
                 ],
             )
             ->add(
                 'alt',
                 TextType::class,
                 [
-                    'label' => 'Texte Alternatif à l\'image',
+                    'label' => 'Texte alternatif à l\'image',
                 ],
             );
     }

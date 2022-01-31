@@ -12,3 +12,21 @@ import './styles/app.scss';
 import './bootstrap';
 
 window.bootstrap = require('bootstrap');
+
+const btn = document.getElementById('btn-scroll');
+
+btn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+    });
+});
+
+window.onscroll = () => {
+    if (window.scrollY > 350) {
+        btn.classList.add('show');
+    } else {
+        btn.classList.remove('show');
+    }
+};

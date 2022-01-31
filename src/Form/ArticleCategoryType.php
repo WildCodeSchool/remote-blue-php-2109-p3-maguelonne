@@ -20,9 +20,7 @@ class ArticleCategoryType extends AbstractType
                 [
                     'label' => 'Name',
                 ],
-            )
-            /* ->add(
-                'slug',) */;
+            );
     }
 
     public function configureOptions(OptionsResolver $resolver): void
