@@ -32,7 +32,7 @@
             <li class="nav-item mx-2 ms-lg-4 dropdown">
                 <button class="btn btn-primary border rounded dropdown-toggle" type="button" id="translationAvailable" data-bs-toggle="dropdown"
                         aria-expanded="false">Choisir la langue</button>
-                <ul class="dropdown-menu" aria-labelledby="translationAvailable">
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="translationAvailable">
                     {% for flag in flags|sort %}
                         <li class="dropdown-item">
                             <img src="{{ flag.url }}" alt="{{ flag.alias }}">

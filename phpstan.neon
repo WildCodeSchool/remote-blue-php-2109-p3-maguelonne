@@ -23,6 +23,16 @@ parameters:
         - '#ArtistFixtures.php:21#'
         - '#ArtistFixtures.php:22#'
         - '#ArtistFixtures.php:23#'
+        - '#TranslationInterface\:\:getTitle#'
+        - '#TranslationInterface\:\:setTitle#'
+        - '#TranslationInterface\:\:getSlug#'
+        - '#TranslationInterface\:\:setSlug#'
+        - '#TranslationInterface\:\:getBody#'
+        - '#TranslationInterface\:\:setBody#'
+        - '#TranslationInterface\:\:getAlt#'
+        - '#TranslationInterface\:\:setAlt#'
+        - '#TranslationInterface\:\:getSummary#'
+        - '#TranslationInterface\:\:setSummary#'
     reportUnmatchedIgnoredErrors: false
     checkGenericClassInNonGenericObjectType: false
     checkMissingIterableValueType: false
