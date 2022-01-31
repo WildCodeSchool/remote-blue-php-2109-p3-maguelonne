@@ -21,6 +21,7 @@
         "knplabs/knp-paginator-bundle": "^5.8",
         "phpdocumentor/reflection-docblock": "^5.3",
         "sensio/framework-extra-bundle": "^6.1",
+        "symfony-bundles/slugify": "^1.0",
         "symfony/asset": "5.3.*",
         "symfony/console": "5.3.*",
         "symfony/dotenv": "5.3.*",
@@ -43,13 +44,14 @@
         "symfony/serializer": "5.3.*",
         "symfony/string": "5.3.*",
         "symfony/translation": "5.3.*",
+        "symfony/translation-contracts": "^2.5",
         "symfony/twig-bundle": "5.3.*",
         "symfony/validator": "5.3.*",
         "symfony/web-link": "5.3.*",
         "symfony/webpack-encore-bundle": "^1.11",
         "symfony/yaml": "5.3.*",
         "symfonycasts/verify-email-bundle": "^1.7",
-        "twig/extra-bundle": "^2.12|^3.0",
+        "twig/extra-bundle": "^3.3",
         "twig/intl-extra": "^3.3",
         "twig/twig": "^2.12|^3.0"
     },
@@ -97,7 +99,6 @@
     },
     "scripts": {
         "auto-scripts": {
-            "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd",
             "ckeditor:install": "symfony-cmd"
         },

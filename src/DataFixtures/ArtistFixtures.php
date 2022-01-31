@@ -11,7 +11,13 @@ use Symfony\Component\String\Slugger\AsciiSlugger;
 class ArtistFixtures extends Fixture
 {
     public const ARTIST_NUMS = 30;
-    public const LOCALES = ['fr' => 'FR', 'en' => 'EN'];
+    public const LOCALES = [
+        'fr' => 'FR',
+        'en' => 'EN',
+        'de' => 'DE',
+        'ja' => 'JP',
+        'ru' => 'RU'
+    ];
 
     public function load(ObjectManager $manager): void
     {
@@ -19,6 +25,9 @@ class ArtistFixtures extends Fixture
         $slugger = new AsciiSlugger();
         $fakerFR = Factory::create('fr_FR');
         $fakerEN = Factory::create('en_EN');
+        $fakerDE = Factory::create('de_DE');
+        $fakerJP = Factory::create('ja_JP');
+        $fakerRU = Factory::create('ru_RU');
         for ($i = 0; $i < self::ARTIST_NUMS; $i++) {
             $artist = new Artist();
             foreach (self::LOCALES as $key => $locale) {

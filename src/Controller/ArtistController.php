@@ -31,7 +31,7 @@ class ArtistController extends AbstractController
 
     /**
      * Getting an artist by id
-     * @Route("/{id}", name="show")
+     * @Route("/{slug}", name="show")
      * @return Response
      */
     public function show(Artist $artist): Response

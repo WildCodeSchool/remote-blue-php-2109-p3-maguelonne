@@ -82,7 +82,7 @@
                                     </div>
                                     <h3 class="mb-0">{{ article.title }}</h3>
                                     <div class="card-text">{{ article.summary|raw }}</div>
-                                    <a href="{{ path('article_show', {'id': article.id}) }}"
+                                    <a href="{{ path('article_show', {'slug': article.slug}) }}"
                                        class="btn btn-primary text-uppercase stretched-link">{{ 'En lire plus'|trans }}</a>
                                 </div>
                             </div>
