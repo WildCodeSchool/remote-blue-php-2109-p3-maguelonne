@@ -11,7 +11,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 class ArticleFixtures extends Fixture
 {
     public const ARTICLENUMS = 30;
-    public const LOCALES = ['fr' => 'FR', 'en' => 'EN', 'ru' => 'RU'];
+    public const LOCALES = ['fr' => 'FR', 'en' => 'EN', 'ru' => 'RU', 'ja' => 'JA', 'de' => 'DE'];
 
     public function load(ObjectManager $manager): void
     {
@@ -19,6 +19,8 @@ class ArticleFixtures extends Fixture
         $fakerFR = Factory::create('fr_FR');
         $fakerEN = Factory::create('en_EN');
         $fakerRU = Factory::create('ru_RU');
+        $fakerRU = Factory::create('ja_JA');
+        $fakerRU = Factory::create('de_DE');
         for ($i = 0; $i < self::ARTICLENUMS; $i++) {
             $article = new Article();
 
