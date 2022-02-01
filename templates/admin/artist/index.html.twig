@@ -13,7 +13,6 @@
         </div>
         </div>
         {% for artist in artists %}
-           
 <div class="container">
 <div class="row justify-content-lg-center">
   <div class="col-lg-9 col-12">
@@ -26,7 +25,7 @@
           <div class="card-body">
             <div class="d-flex flex-column flex-lg-row justify-content-start">
              <dl>
-              <dt class="card-title me-auto">{{ 'Nom de l\'artiste'|trans }} :</dt> 
+              <dt class="card-title me-auto">{{ 'Nom de l\'artiste'|trans }} :</dt>
                 <dd>{{ artist.name }}</dd>
               <dt class="mx-lg-auto">{{ 'Registre musicale'|trans }} :</dt>
                 <dd>{{ artist.repository }}</dd>
@@ -51,8 +50,7 @@
   </div>
 </div>
 </div>
-            
-        {% endfor %}
+{% endfor %}
 
 {% endblock %}
 
