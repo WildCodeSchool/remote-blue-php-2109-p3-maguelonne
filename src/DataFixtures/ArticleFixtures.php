@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use Becklyn\Slug\Generator\SlugGenerator;
 use Symfony\Component\String\Slugger\AsciiSlugger;
 use DateTime;
 use Faker\Factory;
@@ -23,6 +24,7 @@ class ArticleFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
+        $slugger = new AsciiSlugger();
         $fakerFactory = Factory::create();
         $fakerFR = Factory::create('fr_FR');
         $fakerEN = Factory::create('en_EN');
@@ -35,7 +37,8 @@ class ArticleFixtures extends Fixture
                 $faker = 'faker' . $locale;
                 $title = $$faker->realtext(45);
                 $article->translate($key)->setTitle($title);
-                $article->translate($key)->setSlug(Slugify::create($title, ''));
+                $slugger->setLocale($key);
+                $article->translate($key)->setSlug($slugger->slug($title));
                 $article->translate($key)->setSummary($$faker->realtext(150));
                 $article->translate($key)->setBody($$faker->realtext(500));
                 $article->translate($key)->setAlt($$faker->text(25));
