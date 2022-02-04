@@ -209,7 +209,9 @@
         "version": "1.2.0"
     },
     "phpstan/phpstan": {
+
         "version": "1.4.3"
+
     },
     "phpstan/phpstan-doctrine": {
         "version": "1.2.8"
@@ -664,7 +666,9 @@
         "version": "v5.3.14"
     },
     "symfonycasts/verify-email-bundle": {
+
         "version": "v1.7.0"
+
     },
     "twig/extra-bundle": {
         "version": "v3.3.7"

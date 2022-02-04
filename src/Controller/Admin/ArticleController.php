@@ -41,6 +41,7 @@ class ArticleController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($article);
+            $article->mergeNewTranslations();
             $entityManager->flush();
 
             return $this->redirectToRoute('admin_article_index', [], Response::HTTP_SEE_OTHER);
