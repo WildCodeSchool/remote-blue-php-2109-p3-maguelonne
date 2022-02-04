@@ -3,15 +3,10 @@
 namespace App\Entity;
 
 use DateTime;
-use App\Entity\ArticleCategory;
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\ORM\Mapping\ManyToOne;
 use App\Repository\ArticleRepository;
-use Doctrine\Common\Collections\Collection;
-use Doctrine\Common\Collections\ArrayCollection;
 use Knp\DoctrineBehaviors\Contract\Entity\TranslatableInterface;
 use Knp\DoctrineBehaviors\Model\Translatable\TranslatableTrait;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
