@@ -64,13 +64,13 @@
                     <div class="card mb-4 shadow">
                         <div class="row no-gutters">
                             <div class="col-md-4 mx-auto">
-                                <img src="{{ article.poster }}" class="card-img img-fluid" alt="...">
+                                <img src="{{ article.poster }}" class="card-img img-fluid" alt="{{ 'aperçu de l\'article'|trans }} {{ article.title }}">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <div class="d-flex flex-column flex-lg-row justify-content-start">
                                         <time class="card-title me-auto">
-                                            <strong>{{ 'Article écrit le'|trans }}</strong>
+                                            <strong>{{ 'Date de publication'|trans }}</strong>
                                             <br> {{ article.createdAt ? article.createdAt|date('d-m-Y') : '' }}
                                         </time>
                                         <div>
@@ -81,7 +81,7 @@
                                             : <span class="badge bg-info rounded-pill text-dark">{{ article.category.name }}</span></h5>
                                     </div>
                                     <h3 class="mb-0">{{ article.title }}</h3>
-                                    <p class="card-text">{{ article.summary }}</p>
+                                    <div class="card-text">{{ article.summary|raw }}</div>
                                     <a href="{{ path('article_show', {'id': article.id}) }}"
                                        class="btn btn-primary text-uppercase stretched-link">{{ 'En lire plus'|trans }}</a>
                                 </div>

@@ -10,5 +10,10 @@
         "files": [
             "config/packages/fos_ckeditor.yaml"
         ]
+
+    },
+    "twig/intl-extra": {
+        "version": "v3.3.5"
+
     }
 }

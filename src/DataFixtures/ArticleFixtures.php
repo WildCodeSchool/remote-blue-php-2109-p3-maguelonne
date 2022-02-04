@@ -10,7 +10,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 
 class ArticleFixtures extends Fixture
 {
-    public const ARTICLENUMS = 5;
+    public const ARTICLENUMS = 30;
     public const LOCALES = ['fr' => 'FR', 'en' => 'EN', 'ru' => 'RU'];
 
     public function load(ObjectManager $manager): void
