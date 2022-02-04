@@ -22,22 +22,18 @@
                     </a>
                 </li>
             {% endfor %}
-            {% set flags = [
-                {"alias": 'Français', 'url': 'https://flagcdn.com/40x30/fr.png'},
-                {"alias": 'Allemand', 'url': 'https://flagcdn.com/40x30/de.png'},
-                {"alias": 'Russe', 'url': 'https://flagcdn.com/40x30/ru.png'},
-                {"alias": 'Japonais', 'url': 'https://flagcdn.com/40x30/jp.png'},
-                {"alias": 'Anglais', 'url': 'https://flagcdn.com/40x30/gb.png'},
-            ] %}
             <li class="nav-item mx-2 ms-lg-4 dropdown">
-
-                <button class="btn btn-primary border rounded dropdown-toggle" type="button" id="translationAvailable" data-bs-toggle="dropdown"
-                        aria-expanded="false">Choisir la langue</button>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="translationAvailable">
-                    {% for flag in flags|sort %}
-                        <li class="dropdown-item">
-                            <img src="{{ flag.url }}" alt="{{ flag.alias }}">
-                            {{ flag.alias }}
+                <button class="btn border rounded dropdown-toggle" type="button" id="translationAvailable" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                    <img src="{{ asset('build/images/flags/' ~ app.request.locale ~ '.png') }}" alt="{{ app.request.locale }}" >
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-label="{{ 'Changer de langue'|trans }}">
+                    {% for lang in navigation.langs|sort %}
+                        <li>
+                            <a class="dropdown-item" href="{{ lang.path }}">
+                                 <img class="me-2" src="{{ asset('build/images/flags/' ~ lang.locale ~ '.png') }}" alt="{{ lang.title }}" >
+                                {{ lang.title }}
+                            </a>
                         </li>
                     {% endfor %}
                 </ul>

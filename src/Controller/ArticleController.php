@@ -4,8 +4,10 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Entity\ArticleCategory;
+use App\Entity\ArticleTranslation;
 use App\Repository\ArticleRepository;
 use App\Repository\ArticleCategoryRepository;
+use App\Repository\ArticleTranslationRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -15,7 +17,13 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/article", name="article_")
+ * @Route({
+ *     "fr": "/blog",
+ *     "en": "/blog",
+ *     "de": "/blog",
+ *     "ru": "/блог",
+ *     "ja": "/ブロッグ"
+ * }, name="article_")
  */
 class ArticleController extends AbstractController
 {
@@ -78,11 +86,12 @@ class ArticleController extends AbstractController
 
     /**
      * Getting an article by id
-     * @Route("/{id}", name="show", methods={"GET"})
+     * @Route("/{slug}", name="show", methods={"GET"})
      * @return Response
      */
-    public function show(Article $article): Response
+    public function show(string $slug, ArticleTranslation $articleTranslation): Response
     {
+        $article = $articleTranslation->getTranslatable();
         return $this->render('article/show.html.twig', [
             'article' => $article,
         ]);

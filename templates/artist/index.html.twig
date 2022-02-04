@@ -14,7 +14,7 @@
            <div class="card-body pt-5">
                <h3 class="card-title text-center pb-4">{{ artist.name }}</h3>
              <div class="text-center pb-5">
-                 <a href="{{ path('artist_show', {'id': artist.id}) }}" class="btn btn-primary btn-lg">Consulter sa biographie</a>
+                 <a href="{{ path('artist_show', {'slug': artist.slug}) }}" class="btn btn-primary btn-lg">Consulter sa biographie</a>
              </div>
            </div>
        </div>
