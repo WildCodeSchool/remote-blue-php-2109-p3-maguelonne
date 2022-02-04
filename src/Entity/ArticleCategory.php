@@ -7,12 +7,17 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;
 use App\Repository\ArticleCategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
+use Knp\DoctrineBehaviors\Contract\Entity\TranslatableInterface;
+use Knp\DoctrineBehaviors\Model\Translatable\TranslatableTrait;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleCategoryRepository::class)
  */
-class ArticleCategory
+class ArticleCategory implements TranslatableInterface
 {
+    use TranslatableTrait;
+
     /**
     * @var int
     * @ORM\Id
@@ -20,16 +25,6 @@ class ArticleCategory
     * @ORM\GeneratedValue
     */
     private int $id;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private string $name;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private ?string $slug;
 
     /**
      * @ORM\OneToMany(targetEntity=Article::class, mappedBy="category")
@@ -45,30 +40,6 @@ class ArticleCategory
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-
-    public function setName(string $name): self
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    public function getSlug(): ?string
-    {
-        return $this->slug;
-    }
-
-    public function setSlug(string $slug): self
-    {
-        $this->slug = $slug;
-
-        return $this;
     }
 
     /**
@@ -100,8 +71,33 @@ class ArticleCategory
 
         return $this;
     }
+
+    public function getName(): ?string
+    {
+        return $this->translate()->getName();
+    }
+
+    public function setName(string $name): self
+    {
+        $this->translate()->setName($name);
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->translate()->getSlug();
+    }
+
+    public function setSlug(?string $slug): self
+    {
+        $this->translate()->setSlug($slug);
+
+        return $this;
+    }
+
     public function __toString()
     {
-        return $this->name;
+        return $this->getName();
     }
 }

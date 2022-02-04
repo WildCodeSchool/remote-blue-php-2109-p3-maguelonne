@@ -1,34 +1,18 @@
 Contactez-nous!: __Contactez-nous!
-'Présentation de l''association Maguelonne': '__Présentation de l''association Maguelonne'
-'Création d''une nouvelle catégorie d''article': '__Création d''une nouvelle catégorie d''article'
-'Revenir à la liste des catégories d''articles': '__Revenir à la liste des catégories d''articles'
+'Édition du contenu de la page': '__Édition du contenu de la page'
+Sauvegarder: __Sauvegarder
+'Revenir à la liste des contenus': '__Revenir à la liste des contenus'
+Modifier: __Modifier
 Supprimer: __Supprimer
 'Édition de l''article': '__Édition de l''article'
 'Revenir à la liste des articles': '__Revenir à la liste des articles'
 Publier: __Publier
-'Nouvel Article': '__Nouvel Article'
 'Création d''un nouvel article': '__Création d''un nouvel article'
 CATEGORIES: __CATEGORIES
 'Ajouter un nouvel article': '__Ajouter un nouvel article'
 'Article écrit le': '__Article écrit le'
 'Temps de lecture': '__Temps de lecture'
 Catégorie: __Catégorie
-MODIFIER: __MODIFIER
-'EN LIRE PLUS': '__EN LIRE PLUS'
-Article: __Article
-Titre: __Titre
-Descriptif: __Descriptif
-'Photo (click-droit: copier l''adresse de l''image)': '__Photo (click-droit: copier l''adresse de l''image)'
-'Créé le': '__Créé le'
-'Temps de lecture (en chiffre)': '__Temps de lecture (en chiffre)'
-'Texte alternatif à l''image': '__Texte alternatif à l''image'
-'Retour à la liste d''articles': '__Retour à la liste d''articles'
-'Mot de passe': '__Mot de passe'
-'Se connecter': '__Se connecter'
-'Édition du contenu de la page': '__Édition du contenu de la page'
-Sauvegarder: __Sauvegarder
-'Revenir à la liste des contenus': '__Revenir à la liste des contenus'
-Modifier: __Modifier
 'Ajouter un nouvel artiste': '__Ajouter un nouvel artiste'
 'Nom de l''artiste': '__Nom de l''artiste'
 'Registre musicale': '__Registre musicale'
@@ -49,6 +33,9 @@ Catégories: __Catégories
 'Date de publication': '__Date de publication'
 'En lire plus': '__En lire plus'
 'Il n''y a encore aucune publication dans cette catégorie': '__Il n''y a encore aucune publication dans cette catégorie'
+'Retour à la liste d''articles': '__Retour à la liste d''articles'
 'Articles liés :': '__Articles liés :'
 'concerts et spectacles': '__concerts et spectacles'
 Durée: __Durée
+'Mot de passe': '__Mot de passe'
+'Se connecter': '__Se connecter'
