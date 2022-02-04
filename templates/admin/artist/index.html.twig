@@ -24,14 +24,22 @@
         <div class="col-md-8">
           <div class="card-body">
             <div class="d-flex flex-column flex-lg-row justify-content-start">
-              <h5 class="card-title me-auto">{{ 'Nom de l\'artiste'|trans }} : {{ artist.name }}</h5>
-              <strong class="mx-lg-auto">{{ 'Registre musicale'|trans }} :  {{ artist.repository }}</strong>
-              <h5 class="ms-lg-auto">{{ 'Instruments'|trans }} : {{ artist.instruments ? artist.instruments|json_encode : '' }}</h5>
-              <h5 class="ms-lg-auto">{{ 'Nationalité'|trans }} : {{ artist.nationality }}</h5>
-              <h5 class="ms-lg-auto">{{ 'Vidéo'|trans }} : {{ artist.video }}</h5>
-              <h5 class="ms-lg-auto">{{ 'Audio'|trans }} : {{ artist.audio }}</h5>
-        </div>
 
+             <dl>
+              <dt class="card-title me-auto">{{ 'Nom de l\'artiste'|trans }} :</dt>
+                <dd>{{ artist.name }}</dd>
+              <dt class="mx-lg-auto">{{ 'Registre musicale'|trans }} :</dt>
+                <dd>{{ artist.repository }}</dd>
+              <dt class="ms-lg-auto">{{ 'Instruments'|trans }} :</dt>
+                <dd>{{ artist.instruments ? artist.instruments|json_encode : '' }}</dd>
+              <dt class="ms-lg-auto">{{ 'Nationalité'|trans }} :<dt>
+                <dd>{{ artist.nationality }}</dd>
+              <dt class="ms-lg-auto">{{ 'Vidéo'|trans }} :</dt>
+                <dd>{{ artist.video }}</dd>
+              <dt> class="ms-lg-auto">{{ 'Audio'|trans }} :</dt>
+                <dd>{{ artist.audio }}</dd>
+             </dl>
+          </div>
         <h3 class="mb-0">Biographie</h3>
             <p class="card-text">{{ artist.body }}</p>
             <a href="{{ path('admin_artist_edit', {'slug': artist.slug}) }}" class="btn btn-primary">{{ 'Modifier'|trans }}</a>
@@ -43,5 +51,6 @@
 </div>
 </div>
 {% endfor %}
+
 {% endblock %}
 
