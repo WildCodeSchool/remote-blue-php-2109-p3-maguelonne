@@ -50,7 +50,7 @@ class ArticleController extends AbstractController
         );
 
         /*form*/
-        $form = $this->createFormBuilder([], ['csrf_protection' => false])
+        $form = $this->createFormBuilder([])
         ->add('categories', EntityType::class, [
             'class' => ArticleCategory::class,
             'choice_label' => function (ArticleCategory $articleCategory) {
