@@ -33,6 +33,7 @@ class ArticleType extends AbstractType
                 [
                     'label' => 'Catégorie',
                     'class' => ArticleCategory::class,
+                    'choice_label' => 'name',
                 ],
             )
             ->add(

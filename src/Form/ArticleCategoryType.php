@@ -5,7 +5,6 @@ namespace App\Form;
 use App\Entity\ArticleCategory;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
@@ -18,8 +17,8 @@ class ArticleCategoryType extends AbstractType
                 'name',
                 TextType::class,
                 [
-                    'label' => 'Name',
-                ],
+                    'label' => 'Name'
+                ]
             );
     }
 

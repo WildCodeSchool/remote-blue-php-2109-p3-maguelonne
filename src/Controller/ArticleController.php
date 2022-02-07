@@ -62,7 +62,7 @@ class ArticleController extends AbstractController
         ->add('categories', EntityType::class, [
             'class' => ArticleCategory::class,
             'choice_label' => function (ArticleCategory $articleCategory) {
-                return $articleCategory;
+                return $articleCategory->getName();
             },
             'choice_attr' => function (ArticleCategory $articleCategory) {
                 return in_array($articleCategory->getId(), $this->filters) ? ['checked' => 'true'] : [];
