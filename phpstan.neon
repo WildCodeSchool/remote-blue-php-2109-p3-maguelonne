@@ -32,6 +32,10 @@ parameters:
         - '#TranslationInterface\:\:setAlt#'
         - '#TranslationInterface\:\:getSummary#'
         - '#TranslationInterface\:\:setSummary#'
+        - '#Cannot call method getTitle\(\) on mixed#'
+        - '#Cannot call method getSummary\(\) on mixed#'
+        - '#Cannot call method getBody\(\) on mixed#'
+        - '#Cannot call method getAlt\(\) on mixed#'
     reportUnmatchedIgnoredErrors: false
     checkGenericClassInNonGenericObjectType: false
     checkMissingIterableValueType: false

@@ -51,7 +51,7 @@
         "version": "1.6.8"
     },
     "doctrine/common": {
-        "version": "3.2.2"
+        "version": "3.2.1"
     },
     "doctrine/data-fixtures": {
         "version": "1.5.2"
@@ -131,7 +131,7 @@
         "version": "3.1.2"
     },
     "fakerphp/faker": {
-        "version": "v1.19.0"
+        "version": "v1.18.0"
     },
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.5"
@@ -203,19 +203,21 @@
         "version": "2.11.1"
     },
     "phpro/grumphp": {
-        "version": "v1.5.1"
+        "version": "v1.5.0"
     },
     "phpstan/phpdoc-parser": {
         "version": "1.2.0"
     },
     "phpstan/phpstan": {
-        "version": "1.4.6"
+
+        "version": "1.4.3"
+
     },
     "phpstan/phpstan-doctrine": {
         "version": "1.2.8"
     },
     "phpstan/phpstan-symfony": {
-        "version": "1.1.5"
+        "version": "1.1.2"
     },
     "phpunit/php-file-iterator": {
         "version": "3.0.6"
@@ -664,16 +666,18 @@
         "version": "v5.3.14"
     },
     "symfonycasts/verify-email-bundle": {
-        "version": "v1.8.0"
+
+        "version": "v1.7.0"
+
     },
     "twig/extra-bundle": {
-        "version": "v3.3.8"
+        "version": "v3.3.7"
     },
     "twig/intl-extra": {
         "version": "v3.3.5"
     },
     "twig/twig": {
-        "version": "v3.3.8"
+        "version": "v3.3.7"
     },
     "webmozart/assert": {
         "version": "1.10.0"
