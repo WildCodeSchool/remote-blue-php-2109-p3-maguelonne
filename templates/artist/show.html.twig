@@ -44,11 +44,15 @@
                         <h2 class="mb-0 text-primary">Biographie</h2>
                        </div>
                           <p class="mb-0">{{ artist.body }}</p>
+                        {% if artist.video %}
                         <div class ="video__container">
                           <iframe class="w-100" src="{{ artist.video }}"></iframe>
                         </div>
+                      {% endif %}
+                      {% if artist.audio %}
                         <div class ="audio__container">
                           <iframe class="w-100" src="{{ artist.audio }}"></iframe>
+                        {% endif %}
                         </div>
                       </div>
                    </div>
