@@ -6,21 +6,21 @@
     <h1 class="text-center my-5">Sites amis</h1>
 
     <div class="container">
-        <div class="row justify-content-center">
-            {% for friend_link in friend_links %}
-                <div class="col-9">
-                    <div class="card shadow">
-                        <img class="card-img-top img-fluid" src="{{ friend_link.image }}" alt="Card image cap">
-                        <div class="card-body">
-                            <h3 class="card-title text-center pb-4">{{ friend_link.name }}</h3>
-                            <p class="card-title text-center pb-4">{{ friend_link.description }}</p>
-                            <div class="text-center">
-                                <a href="{{ friend_link.link }}" class="btn btn-primary">Aller sur le site</a>
-                            </div>
+        {% for friend_link in friend_links %}
+            <div class="row mb-3 justify-content-center">
+                <div class="col-md-6 mx-auto friendlinkcontent">
+                    <img class="card-img-top img-fluid" src="{{ friend_link.image }}" alt="Card image cap">
+                </div>
+                <div class="col-6 align-self-center friendlinkcontent">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">{{ friend_link.name }}</h3>
+                        <p class="card-title text-center">{{ friend_link.description }}</p>
+                        <div class="text-center">
+                            <a href="{{ friend_link.link }}" class="btn btn-primary">Aller sur le site</a>
                         </div>
                     </div>
                 </div>
-            {% endfor %}
-        </div>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

@@ -1,7 +1,5 @@
-{#@todo add CKEditor to form.body #}
 {{ form_start(form) }}
-
-    <div class="form-group position-relative pb-5 d-flex flex-column mb-3 offset-1 col-12 col-md-10 ">
+<div class="mb-4">
     {{ form_row(form.title) }}
     {{ form_row(form.category) }}
     {{ form_row(form.summary) }}
@@ -10,8 +8,6 @@
     {{ form_row(form.createdAt) }}
     {{ form_row(form.duration) }}
     {{ form_row(form.alt) }}
-    <button class="btn btn-danger position-absolute bottom-0 end-0 border">{{ button_delete_label|default('Supprimer') }}</button>
-    <button class="btn row btn-primary bottom-0 border">{{ button_save_label|default('Publier') }} </button>
-    </div>
-
+    <button class="btn btn-success d-block w-100">{{ button_save_label|default('Publier') }} </button>
+</div>
 {{ form_end(form) }}
