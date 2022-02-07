@@ -32,6 +32,11 @@ parameters:
         - '#TranslationInterface\:\:setAlt#'
         - '#TranslationInterface\:\:getSummary#'
         - '#TranslationInterface\:\:setSummary#'
+        - '#TranslationInterface\:\:getName#'
+        - '#TranslationInterface\:\:setName#'
+        - '#TranslationInterface\:\:getRepository#'
+        - '#TranslationInterface\:\:getNationality#'
+        - '#TranslationInterface\:\:getInstruments#'
     reportUnmatchedIgnoredErrors: false
     checkGenericClassInNonGenericObjectType: false
     checkMissingIterableValueType: false
