@@ -39,6 +39,8 @@ class ArtistFixtures extends Fixture
             }
             $name = $fakerFactory->name();
             $artist->setName($name);
+            $artist->setAudio('https://soundcloud.com/vensharo-holwijn/to-the-moon-jnr-choi?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing');
+            $artist->setVideo('https://youtu.be/Mx0xCI1jaUM');
             $artist->setPhoto('https://fakeimg.pl/350x200/?text=artist ' . $i);
             $artist->setSlug($slugger->slug(strtolower($name)));
             $manager->persist($artist);
