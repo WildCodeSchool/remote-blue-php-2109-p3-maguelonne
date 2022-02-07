@@ -28,7 +28,7 @@ class ArticleType extends AbstractType
                 ],
             )
             ->add(
-                'category',
+                'category', 
                 EntityType::class,
                 [
                     'label' => 'Catégorie',
