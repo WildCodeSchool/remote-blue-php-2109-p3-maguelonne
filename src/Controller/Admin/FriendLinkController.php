@@ -73,7 +73,7 @@ class FriendLinkController extends AbstractController
      */
     public function delete(Request $request, FriendLink $friendLink, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$friendLink->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $friendLink->getId(), $request->request->get('_token'))) {
             $entityManager->remove($friendLink);
             $entityManager->flush();
         }
