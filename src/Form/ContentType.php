@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Content;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -23,9 +24,10 @@ class ContentType extends AbstractType
             )
             ->add(
                 'body',
-                TextareaType::class,
+                CKEditorType::class,
                 [
                     'label' => 'Contenu de la page',
+                    'config_name' => 'full',
                     'attr' => ['rows' => '30'],
                 ],
             )
