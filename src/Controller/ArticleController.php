@@ -89,7 +89,7 @@ class ArticleController extends AbstractController
      * @Route("/{slug}", name="show", methods={"GET"})
      * @return Response
      */
-    public function show(string $slug, ArticleTranslation $articleTranslation): Response
+    public function show(ArticleTranslation $articleTranslation): Response
     {
         $article = $articleTranslation->getTranslatable();
         return $this->render('article/show.html.twig', [

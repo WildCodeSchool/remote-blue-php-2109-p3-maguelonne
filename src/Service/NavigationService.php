@@ -3,6 +3,7 @@
 namespace App\Service;
 
 use App\Repository\ArticleTranslationRepository;
+use phpDocumentor\Reflection\Types\Self_;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
@@ -10,7 +11,7 @@ use Symfony\Component\Routing\RequestContext;
 
 class NavigationService
 {
-    public const LANGS = [
+    public const LOCALES = [
         ["title" => 'Français', 'locale' => 'fr'],
         ["title" => 'Deutsch', 'locale' => 'de'],
         ["title" => 'Русский', 'locale' => 'ru'],
@@ -39,13 +40,18 @@ class NavigationService
         $this->articleRepos = $translationRepos;
     }
 
-    public function langs(): array
+    public function locales(): array
+    {
+        return self::LOCALES;
+    }
+
+    public function links(): array
     {
         $languages = [];
-        foreach (self::LANGS as $key => $lang) {
-            if ($lang['locale'] !== $this->currentLocale) {
-                $languages[$key] = $lang;
-                $languages[$key]['path'] = $this->generateUrl($lang['locale']);
+        foreach (self::LOCALES as $key => $locale) {
+            if ($locale['locale'] !== $this->currentLocale) {
+                $languages[$key] = $locale;
+                $languages[$key]['path'] = $this->generateUrl($locale['locale']);
             }
         }
         return $languages;
@@ -61,9 +67,10 @@ class NavigationService
             ->setParameter('_locale', $locale));
         $request = $this->request;
         if (array_key_exists('slug', $request->get('_route_params'))) {
+            $slug = $this->getSlugByLocale($locale);
             $url = $this->urlGenerator->generate(
                 $request->get('_route'),
-                ['slug' => $this->getSlugByLocale($locale)]
+                ['slug' => $slug]
             );
         } else {
             $url = $this->urlGenerator->generate($request->get('_route'));
@@ -83,8 +90,10 @@ class NavigationService
                 ->findOneBy([
                     'slug' => $this->request->get('_route_params')['slug']
                 ])->getTranslatable();
-            $slug = $this->articleRepos
-                ->findOneBy(['translatable' => $currentTranslation, 'locale' => $locale])->getSlug();
+            $translation = $this->articleRepos
+                ->findOneBy(['translatable' => $currentTranslation, 'locale' => $locale]);
+
+            $slug = $translation ? $translation->getSlug() : $this->request->get('_route_params')['slug'];
         }
 
         if (

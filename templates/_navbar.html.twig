@@ -28,7 +28,7 @@
                     <img src="{{ asset('build/images/flags/' ~ app.request.locale ~ '.png') }}" alt="{{ app.request.locale }}" >
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end" aria-label="{{ 'Changer de langue'|trans }}">
-                    {% for lang in navigation.langs|sort %}
+                    {% for lang in navigation.links|sort %}
                         <li>
                             <a class="dropdown-item" href="{{ lang.path }}">
                                  <img class="me-2" src="{{ asset('build/images/flags/' ~ lang.locale ~ '.png') }}" alt="{{ lang.title }}" >

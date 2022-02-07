@@ -33,7 +33,7 @@ class ArticleTranslation implements TranslationInterface
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private ?string $slug;
+    private ?string $slug = '';
 
     /**
      * @ORM\Column(type="text")
