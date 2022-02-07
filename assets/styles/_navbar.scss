@@ -26,3 +26,10 @@
   }
 }
 
+@media screen and (min-width: 992px) and (max-width: 1439px) {
+  .navbar-expand-lg {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
+
