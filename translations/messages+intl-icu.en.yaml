@@ -26,3 +26,22 @@ Descriptif: Description
 'Se connecter': Login
 'Présentation de l''association Maguelonne': 'Maguelonne Association'
 page.link.path: '%link_start%link.title%link_end%'
+'Édition du contenu de la page': '__Édition du contenu de la page'
+Sauvegarder: __Sauvegarder
+'Revenir à la liste des contenus': '__Revenir à la liste des contenus'
+'Ajouter un nouvel artiste': '__Ajouter un nouvel artiste'
+'Nom de l''artiste': '__Nom de l''artiste'
+'Registre musicale': '__Registre musicale'
+Instruments: __Instruments
+Nationalité: __Nationalité
+Vidéo: __Vidéo
+Audio: __Audio
+'Toutes les catégories d''articles': '__Toutes les catégories d''articles'
+'Consulter la catégorie d''articles': '__Consulter la catégorie d''articles'
+'Aucune catégories d''articles': '__Aucune catégories d''articles'
+'Catégorie d''articles': '__Catégorie d''articles'
+'Changer de langue': '__Changer de langue'
+'aperçu de l''article': '__aperçu de l''article'
+'Date de publication': '__Date de publication'
+'concerts et spectacles': '__concerts et spectacles'
+Durée: __Durée

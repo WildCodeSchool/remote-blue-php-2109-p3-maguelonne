@@ -4,6 +4,7 @@ body {
 
 footer{
     background-color: $blue-100;
+    font-size: smaller;
 }
 
 .btn-scroll {
@@ -17,3 +18,9 @@ footer{
         transform: translateX(0);
     }
 }
+
+.friendlinkcontent {
+    max-width: 540px;
+    min-width: 246px;
+}
+

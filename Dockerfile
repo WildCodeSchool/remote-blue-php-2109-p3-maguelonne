@@ -48,11 +48,7 @@ RUN apk update \
 RUN apk add --no-cache \
       libzip-dev \
       zip \
-    && docker-php-ext-install zip \
-    && docker-php-ext-configure intl \
-    && docker-php-ext-install \
-        intl \
-    && docker-php-ext-enable intl
+    && docker-php-ext-install zip
 
 # silently install 'docker-php-ext-install' extensions
 RUN set -x

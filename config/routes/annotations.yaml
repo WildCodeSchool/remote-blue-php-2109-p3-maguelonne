@@ -1,6 +1,6 @@
 controllers:
     resource: '../../src/Controller/**/*'
-    exclude: 
+    exclude:
         - '../../src/Controller/Admin/'
         - '../../src/Controller/HomeController.php'
     type: annotation

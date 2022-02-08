@@ -6,6 +6,7 @@ use App\Entity\Article;
 use App\Entity\ArticleCategory;
 use Symfony\Component\Form\AbstractType;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -30,6 +31,7 @@ class ArticleType extends AbstractType
                 'category',
                 EntityType::class,
                 [
+					'choice_label' => 'name',
                     'label' => 'Catégorie',
                     'class' => ArticleCategory::class,
                 ],
@@ -61,9 +63,10 @@ class ArticleType extends AbstractType
             )
             ->add(
                 'createdAt',
-                DateType::class,
+                DateTimeType::class,
                 [
                     'label' => 'Date de création de l\'article',
+                    'date_widget' => 'single_text'
                 ],
             )
             ->add(
