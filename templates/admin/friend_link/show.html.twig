@@ -1,9 +1,9 @@
-{% extends 'admion/base.html.twig' %}
+{% extends 'admin/base.html.twig' %}
 
 {% block title %}FriendLink{% endblock %}
 
 {% block body %}
-    <h1>FriendLink</h1>
+    <h1>Liens amis</h1>
 
     <table class="table">
         <tbody>
@@ -34,9 +34,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('friend_link_index') }}">back to list</a>
+    <a href="{{ path('friend_link_index') }}">retour a la liste</a>
 
-    <a href="{{ path('friend_link_edit', {'id': friend_link.id}) }}">edit</a>
+    <a href="{{ path('friend_link_edit', {'id': friend_link.id}) }}">editer</a>
 
     {{ include('friend_link/_delete_form.html.twig') }}
 {% endblock %}
