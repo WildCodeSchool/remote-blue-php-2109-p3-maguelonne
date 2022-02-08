@@ -30,7 +30,7 @@ class ArtistTranslation implements TranslationInterface
      *     maxMessage = "La longueur du texte est limité à 255 caractéres."
      * )
      */
-    private ?string $repository;
+    private ?string $repository = '';
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -41,14 +41,14 @@ class ArtistTranslation implements TranslationInterface
      *     maxMessage = "La longueur du texte est limité à 255 caractéres."
      * )
      */
-    private string $nationality;
+    private string $nationality = '';
 
      /**
      * @ORM\Column(type="text")
      * @Assert\NotBlank
      * @Assert\Type("string")
      */
-    private string $body;
+    private string $body = '';
 
     /**
      * @ORM\Column(type="json", nullable=true)
@@ -65,7 +65,7 @@ class ArtistTranslation implements TranslationInterface
      *     maxMessage = "La longueur du texte est limité à 255 caractéres."
      * )
      */
-    private string $alt;
+    private string $alt = '';
 
 
     public function getId(): ?int

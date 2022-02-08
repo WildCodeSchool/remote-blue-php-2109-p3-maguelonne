@@ -59,7 +59,7 @@ class EventController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('admin/event_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_event_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('admin/event/edit.html.twig', [
@@ -69,7 +69,7 @@ class EventController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="event_delete", methods={"POST"})
+     * @Route("/{id}", name="delete", methods={"POST"})
      */
     public function delete(Request $request, Event $event, EntityManagerInterface $entityManager): Response
     {
@@ -78,6 +78,6 @@ class EventController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('admin/event_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('admin_event_index', [], Response::HTTP_SEE_OTHER);
     }
 }
