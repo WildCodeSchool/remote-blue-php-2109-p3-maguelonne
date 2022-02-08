@@ -25,11 +25,13 @@
     }
   }
 }
+.custom-navbar {
 
-@media screen and (min-width: 992px) and (max-width: 1439px) {
-  .navbar-expand-lg {
-    flex-wrap: wrap;
+}
+@include media-breakpoint-only(lg) {
+  .custom-navbar {
     justify-content: flex-end;
+    flex-wrap: wrap;
   }
 }
 
