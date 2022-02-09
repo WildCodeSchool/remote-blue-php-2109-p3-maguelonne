@@ -4,9 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-
-    "content-hash": "1ac678d299f3e5ac30625667aba9d235",
-
+    "content-hash": "aa640c138b4887716554e49a025c9c21",
     "packages": [
         {
             "name": "brick/math",
@@ -10138,7 +10136,6 @@
         },
         {
             "name": "phpstan/phpstan",
-
             "version": "1.4.3",
             "source": {
                 "type": "git",
@@ -10149,7 +10146,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/phpstan/phpstan/zipball/89d10839dbfc95eeb7da656578b4a899ad2b59b1",
                 "reference": "89d10839dbfc95eeb7da656578b4a899ad2b59b1",
-
                 "shasum": ""
             },
             "require": {
@@ -10180,9 +10176,7 @@
             "description": "PHPStan - PHP Static Analysis Tool",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-
                 "source": "https://github.com/phpstan/phpstan/tree/1.4.3"
-
             },
             "funding": [
                 {
@@ -10202,9 +10196,7 @@
                     "type": "tidelift"
                 }
             ],
-
             "time": "2022-01-28T16:27:17+00:00"
-
         },
         {
             "name": "phpstan/phpstan-doctrine",
@@ -11368,5 +11360,5 @@
         "ext-iconv": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }
