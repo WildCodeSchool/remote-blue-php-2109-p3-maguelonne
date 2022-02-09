@@ -1,81 +1,67 @@
 Contactez-nous!: KONTAKT
-'Présentation de l''association Maguelonne': '__Présentation de l''association Maguelonne'
+'Présentation de l''association Maguelonne': 'Презентация ассоциации Магуэльонна'
 'Création d''une nouvelle catégorie d''article': '__Création d''une nouvelle catégorie d''article'
-'Revenir à la liste des catégories d''articles': '__Revenir à la liste des catégories d''articles'
-Supprimer: __Supprimer
-'Édition de l''article': '__Édition de l''article'
-'Revenir à la liste des articles': '__Revenir à la liste des articles'
-Publier: __Publier
-'Nouvel Article': '__Nouvel Article'
-'Création d''un nouvel article': '__Création d''un nouvel article'
-CATEGORIES: __CATEGORIES
-'Ajouter un nouvel article': '__Ajouter un nouvel article'
-'Article écrit le': '__Article écrit le'
-'Temps de lecture': '__Temps de lecture'
-Catégorie: __Catégorie
-MODIFIER: __MODIFIER
-'EN LIRE PLUS': '__EN LIRE PLUS'
-Article: __Article
-Titre: __Titre
-Descriptif: __Descriptif
-'Photo (click-droit: copier l''adresse de l''image)': '__Photo (click-droit: copier l''adresse de l''image)'
-'Créé le': '__Créé le'
-'Temps de lecture (en chiffre)': '__Temps de lecture (en chiffre)'
-'Texte alternatif à l''image': '__Texte alternatif à l''image'
-'Retour à la liste d''articles': '__Retour à la liste d''articles'
-'Mot de passe': '__Mot de passe'
-'Se connecter': '__Se connecter'
-'Édition du contenu de la page': '__Édition du contenu de la page'
-Sauvegarder: __Sauvegarder
-'Revenir à la liste des contenus': '__Revenir à la liste des contenus'
-Modifier: __Modifier
-'Ajouter un nouvel artiste': '__Ajouter un nouvel artiste'
-'Nom de l''artiste': '__Nom de l''artiste'
-'Registre musicale': '__Registre musicale'
-Instruments: __Instruments
-Nationalité: __Nationalité
-Vidéo: __Vidéo
-Audio: __Audio
-'Toutes les catégories d''articles': '__Toutes les catégories d''articles'
-'Consulter la catégorie d''articles': '__Consulter la catégorie d''articles'
-'Aucune catégories d''articles': '__Aucune catégories d''articles'
-'Catégorie d''articles': '__Catégorie d''articles'
-'Retour à la liste des catégories d''articles': '__Retour à la liste des catégories d''articles'
-'Changer de langue': '__Changer de langue'
-Accueil: WELCOME
-'Tous les articles': '__Tous les articles'
-Catégories: __Catégories
-'aperçu de l''article': '__aperçu de l''article'
-'Date de publication': '__Date de publication'
-'En lire plus': '__En lire plus'
-'Il n''y a encore aucune publication dans cette catégorie': '__Il n''y a encore aucune publication dans cette catégorie'
-'Articles liés :': '__Articles liés :'
-'concerts et spectacles': '__concerts et spectacles'
-Durée: __Durée
-Blog: __Blog
-Association: __Association
-'Sites amis': '__Sites amis'
-'Mentions Légales': '__Mentions Légales'
-Contact: __Contact
-'Politique de confidentialité': '__Politique de confidentialité'
-'S''inscrire à la newsletter': '__S''inscrire à la newsletter'
-'Inscrivez-vous pour recevoir réguliérement notre newsletter dans votre boîte mail.': '__Inscrivez-vous pour recevoir réguliérement notre newsletter dans votre boîte mail.'
-'Adresse mail': '__Adresse mail'
-'S''abonner': '__S''abonner'
-'Maguelonne. Tous droits réservés.': '__Maguelonne. Tous droits réservés.'
-Agenda: __Agenda
-Artistes: __Artistes
-'Ajouter un nouveau site ami': '__Ajouter un nouveau site ami'
-'Aller sur le site': '__Aller sur le site'
-articles: __articles
-page: __page
-minutes: __minutes
-'Trombinoscope des artistes': '__Trombinoscope des artistes'
-'Consulter sa biographie': '__Consulter sa biographie'
-'Registre musical': '__Registre musical'
-Compagnie-Brand: __Compagnie-Brand
-'Nom de la compagnie': '__Nom de la compagnie'
-Études: __Études
-'Nom da la compagnie': '__Nom da la compagnie'
-Biographie: __Biographie
-'Retour aux CV': '__Retour aux CV'
+'Revenir à la liste des catégories d''articles': 'Создание новой категории статьи'
+'Revenir à la liste des articles': 'Вернуться к списку статей'
+'Création d''un nouvel article': 'Создание новой статьи'
+CATEGORIES: Категории
+'Article écrit le': 'Статья написана'
+'Temps de lecture': 'Время чтения'
+Catégorie: Категория
+'EN LIRE PLUS': 'Читать далее '
+Article: Статья
+Titre: Заголовок
+Descriptif: Описание
+'Photo (click-droit: copier l''adresse de l''image)': 'Фото (нажмите справа: скопируйте адрес изображения) '
+'Créé le': 'Создан'
+'Temps de lecture (en chiffre)': 'Время чтения (в количестве) '
+'Retour à la liste d''articles': 'Вернуться к списку статей'
+'Revenir à la liste des contenus': 'Назад к списку контента'
+'Nom de l''artiste': 'имя исполнителя'
+'Registre musicale': 'музыкальный регистр'
+Instruments: инструменты
+Nationalité: Национальность
+Vidéo: видео
+Audio: звук
+'Toutes les catégories d''articles': 'Все категории статей'
+'Consulter la catégorie d''articles': 'Проконсультируйтесь с категорией статей'
+'Aucune catégories d''articles': 'Нет категорий статей'
+'Catégorie d''articles': 'категории предметов'
+'Retour à la liste des catégories d''articles': 'Вернуться к списку категорий статей'
+'Changer de langue': 'изменить язык'
+Accueil: Домашняя страница
+'Tous les articles': 'Все элементы'
+Catégories: Категории
+'aperçu de l''article': 'обзор статьи'
+'Date de publication': 'Дата публикации'
+'En lire plus': 'читать далее'
+'Il n''y a encore aucune publication dans cette catégorie': 'В этой категории пока нет сообщений.'
+'Articles liés :': 'Статьи по Теме:'
+'concerts et spectacles': 'концерты и шоу'
+Durée: Продолжительность
+Blog: Блог
+Association: Ассоциация
+'Sites amis': 'Сайты друзей'
+'Mentions Légales': 'Официальное уведомление'
+Contact: Контакт
+'Politique de confidentialité': 'Политика конфиденциальности'
+'S''inscrire à la newsletter': 'Подпишитесь на информационный бюллетень'
+'Inscrivez-vous pour recevoir réguliérement notre newsletter dans votre boîte mail.':
+  'Подпишитесь, чтобы регулярно получать нашу рассылку на свой почтовый ящик.'
+'Adresse mail': 'Почта Адрес'
+'S''abonner': 'Подписаться'
+'Maguelonne. Tous droits réservés.': 'Maguelonne. Все права защищены.'
+Agenda: Дневник
+Artistes: Художники
+'Aller sur le site': 'Перейти на сайт'
+articles: Предметы
+page: страница
+minutes: минуты
+'Trombinoscope des artistes': 'Тромбиноскоп художников'
+'Consulter sa biographie': 'Посмотреть его биографию'
+'Registre musical': 'Музыкальный регистр'
+'Nom de la compagnie': 'название компании'
+Études: Исследования
+'Nom da la compagnie': 'Название компании'
+Biographie: биография
+'Retour aux CV': 'Назад к резюме'
