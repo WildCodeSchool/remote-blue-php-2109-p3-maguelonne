@@ -4,111 +4,118 @@ namespace App\Entity;
 
 use App\Repository\ContentRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Knp\DoctrineBehaviors\Contract\Entity\TranslatableInterface;
+use Knp\DoctrineBehaviors\Model\Translatable\TranslatableTrait;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ContentRepository::class)
  */
-class Content
+class Content implements TranslatableInterface
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
-    private int $id;
+  use TranslatableTrait;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private string $title;
+  /**
+   * @ORM\Id
+   * @ORM\GeneratedValue
+   * @ORM\Column(type="integer")
+   */
+  private int $id;
 
-    /**
-     * @ORM\Column(type="text")
-     */
-    private string $body;
+  /**
+   * @ORM\Column(type="string", length=255, nullable=true)
+   */
+  private ?string $poster;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private ?string $slug;
+  /**
+   * @ORM\Column(type="string", length=255, nullable=true)
+   */
+  private ?string $slug = "";
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private ?string $poster;
+  /**
+   * @ORM\Column(type="string", length=255, nullable=true)
+   */
+  private ?string $identifier;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private ?string $alt;
+  public function getId(): ?int
+  {
+    return $this->id;
+  }
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+  public function getTitle(): ?string
+  {
+    return $this->translate()->getTitle();
+  }
 
-    public function getTitle(): ?string
-    {
-        return $this->title;
-    }
+  public function setTitle(?string $title): self
+  {
+    $this->translate()->setTitle($title);
 
-    public function setTitle(string $title): self
-    {
-        $this->title = $title;
+    return $this;
+  }
 
-        return $this;
-    }
+  public function getSlug(): ?string
+  {
+    return $this->slug;
+  }
 
-    public function getBody(): ?string
-    {
-        return $this->body;
-    }
+  public function setSlug(?string $slug): self
+  {
+    $this->slug = $slug;
 
-    public function setBody(string $body): self
-    {
-        $this->body = $body;
+    return $this;
+  }
 
-        return $this;
-    }
+  public function getBody(): ?string
+  {
+    return $this->translate()->getBody();
+  }
 
-    public function getSlug(): ?string
-    {
-        return $this->slug;
-    }
+  public function setBody(string $body): self
+  {
+    $this->translate()->setBody($body);
 
-    public function setSlug(?string $slug): self
-    {
-        $this->slug = $slug;
+    return $this;
+  }
 
-        return $this;
-    }
+  public function getPoster(): ?string
+  {
+    return $this->poster;
+  }
 
-    public function getPoster(): ?string
-    {
-        return $this->poster;
-    }
+  public function setPoster(?string $poster): self
+  {
+    $this->poster = $poster;
 
-    public function setPoster(?string $poster): self
-    {
-        $this->poster = $poster;
+    return $this;
+  }
 
-        return $this;
-    }
+  public function getAlt(): ?string
+  {
+    return $this->translate()->getAlt();
+  }
 
-    public function getAlt(): ?string
-    {
-        return $this->alt;
-    }
+  public function setAlt(?string $alt): self
+  {
+    $this->translate()->setAlt($alt);
 
-    public function setAlt(?string $alt): self
-    {
-        $this->alt = $alt;
+    return $this;
+  }
 
-        return $this;
-    }
+  public function getIdentifier(): ?string
+  {
+    return $this->identifier;
+  }
 
-    public function __toString()
-    {
-        return $this->title;
-    }
+  public function setIdentifier(?string $identifier): self
+  {
+    $this->identifier = $identifier;
+
+    return $this;
+  }
+
+  public function __toString()
+  {
+    return $this->title;
+  }
 }

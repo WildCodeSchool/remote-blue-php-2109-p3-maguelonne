@@ -10,8 +10,9 @@
                    href="{{ path('admin_article_index') }}">
                     <i class="bi bi-arrow-left"></i> Retour à la liste des articles
                 </a>
-                <img src="{{ article.poster }}" class="card-img img-fluid mb-4" alt="...">
-
+                {% if article.poster %}
+                <img src="{{ vich_uploader_asset(article) }}" class="card-img img-fluid mb-4" alt="...">
+                {% endif %}
                 <div class="d-flex justify-content-between align-items-center">
                     <p class="me-auto fs-3">Édition de l'article</p>
 

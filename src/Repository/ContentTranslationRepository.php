@@ -2,34 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Content;
+use App\Entity\ContentTranslation;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Content|null find($id, $lockMode = null, $lockVersion = null)
- * @method Content|null findOneBy(array $criteria, array $orderBy = null)
- * @method Content[]    findAll()
- * @method Content[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method ContentTranslation|null find($id, $lockMode = null, $lockVersion = null)
+ * @method ContentTranslation|null findOneBy(array $criteria, array $orderBy = null)
+ * @method ContentTranslation[]    findAll()
+ * @method ContentTranslation[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ContentRepository extends ServiceEntityRepository
+class ContentTranslationRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Content::class);
-    }
-
-    /**
-     * @return \Doctrine\ORM\QueryBuilder
-     */
-    public function queryFindAll()
-    {
-        return $this->createQueryBuilder('c')
-            ->orderBy('c.createdAt', 'DESC');
+        parent::__construct($registry, ContentTranslation::class);
     }
 
     // /**
-    //  * @return Content[] Returns an array of Content objects
+    //  * @return ContentTranslation[] Returns an array of ContentTranslation objects
     //  */
     /*
     public function findByExampleField($value)
@@ -46,7 +37,7 @@ class ContentRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Content
+    public function findOneBySomeField($value): ?ContentTranslation
     {
         return $this->createQueryBuilder('c')
             ->andWhere('c.exampleField = :val')

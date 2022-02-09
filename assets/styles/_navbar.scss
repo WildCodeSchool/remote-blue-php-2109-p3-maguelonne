@@ -25,4 +25,11 @@
     }
   }
 }
+.custom-navbar {
+}
+@include media-breakpoint-only(lg) {
+  .custom-navbar {
+    font-size: 0.75rem;
+  }
+}
 

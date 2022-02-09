@@ -7,9 +7,13 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ArticleRepository;
 use Knp\DoctrineBehaviors\Contract\Entity\TranslatableInterface;
 use Knp\DoctrineBehaviors\Model\Translatable\TranslatableTrait;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
+ * @Vich\Uploadable
  */
 class Article implements TranslatableInterface
 {
@@ -26,7 +30,18 @@ class Article implements TranslatableInterface
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private ?string $poster;
+    private ?string $poster = "";
+
+    /**
+     * @Vich\UploadableField(mapping="poster_file", fileNameProperty="poster")
+     * @Assert\File(
+     *     maxSize = "1M",
+     *     mimeTypes = {"image/jpeg", "image/png", "image/webp"},
+     * )
+     * @var ?File
+     */
+    private ?File $posterFile = null;
+
 
     /**
      * @ORM\Column(type="datetime")
@@ -44,6 +59,11 @@ class Article implements TranslatableInterface
      * @ORM\JoinColumn(nullable=false)
      */
     private ?ArticleCategory $category;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private ?\DateTimeInterface $updatedAt;
 
     public function getId(): ?int
     {
@@ -154,6 +174,39 @@ class Article implements TranslatableInterface
     public function setSummary(string $summary): self
     {
         $this->translate()->setSummary($summary);
+
+        return $this;
+    }
+
+    /**
+     * @return File
+     */
+    public function getPosterFile(): ?File
+    {
+        return $this->posterFile;
+    }
+
+    /**
+     * @param File|null $posterFile
+     * @return Article
+     */
+    public function setPosterFile(?File $posterFile = null): self
+    {
+        $this->posterFile = $posterFile;
+        if ($posterFile) {
+            $this->updatedAt = new DateTime('now');
+        }
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }

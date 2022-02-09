@@ -22,7 +22,7 @@ class ArtistTranslation implements TranslationInterface
      */
     private int $id;
 
-     /**
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Type("string")
      * @Assert\Length (
@@ -43,18 +43,12 @@ class ArtistTranslation implements TranslationInterface
      */
     private string $nationality = '';
 
-     /**
+    /**
      * @ORM\Column(type="text")
      * @Assert\NotBlank
      * @Assert\Type("string")
      */
     private string $body = '';
-
-    /**
-     * @ORM\Column(type="json", nullable=true)
-     *
-     */
-    private ?array $instruments = [];
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -105,18 +99,6 @@ class ArtistTranslation implements TranslationInterface
     public function setBody(string $body): self
     {
         $this->body = $body;
-
-        return $this;
-    }
-
-    public function getInstruments(): ?array
-    {
-        return $this->instruments;
-    }
-
-    public function setInstruments(?array $instruments): self
-    {
-        $this->instruments = $instruments;
 
         return $this;
     }
