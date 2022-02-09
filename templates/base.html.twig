@@ -9,7 +9,8 @@
 			<link rel="alternate" hreflang="{{ lang.locale }}" href="{{ navigation.generateUrl(lang.locale) }}">
 		{% endfor %}
 		<title>
-			{% block title %}Maguelonne{% endblock %}
+			{% block title %}Maguelonne
+			{% endblock %}
 		</title>
 
 		{% block stylesheets %}
@@ -26,7 +27,6 @@
 			{% include '_scroll_button.html.twig' %}
 			{% block body %}{% endblock %}
 		</main>
-		{{ render(controller('App\\Controller\\ContentController::renderTwig', {'id': 3})) }}
-		</html>
+		{{ render(controller('App\\Controller\\ContentController::renderTwig', {'identifier': 'footer'})) }}
 	</body>
 </html>

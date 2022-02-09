@@ -8,7 +8,6 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class ContentType extends AbstractType
 {
@@ -36,6 +35,7 @@ class ContentType extends AbstractType
                 TextType::class,
                 [
                     'label' => 'Image d\'en-tête',
+                    'help' => 'Champ facultatif'
                 ],
             )
             ->add(
@@ -44,8 +44,7 @@ class ContentType extends AbstractType
                 [
                     'label' => 'Texte Alternatif à l\'image',
                 ],
-            )
-            ->add('slug');
+            );
     }
 
     public function configureOptions(OptionsResolver $resolver): void
