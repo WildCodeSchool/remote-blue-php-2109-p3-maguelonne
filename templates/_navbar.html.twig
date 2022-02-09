@@ -7,12 +7,12 @@
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav ">
             {% set links = [
-                {'title': 'Accueil', 'path': 'home'},
-                {'title': 'Blog', 'path': 'article_index'},
-                {'title': 'Association', 'path': 'association_index'},
-                {'title': 'Agenda', 'path': 'event_index'},
-                {'title': 'Artistes', 'path': 'artist_index'},
-                {'title': 'Sites amis', 'path': 'friendLink_index'},
+                {'title': 'Accueil'|trans, 'path': 'home'},
+                {'title': 'Blog'|trans, 'path': 'article_index'},
+                {'title': 'Association'|trans, 'path': 'association_index'},
+                {'title': 'Agenda'|trans, 'path': 'event_index'},
+                {'title': 'Artistes'|trans, 'path': 'artist_index'},
+                {'title': 'Sites amis'|trans, 'path': 'friendLink_index'},
             ] %}
             {% for link in links %}
                 <li class="nav-item mx-4 my-auto">
