@@ -34,13 +34,13 @@ Prix: Preis
 'Retour à la liste d''articles': 'Zurück zur Artikelliste'
 'Mot de passe': Passwort
 'Se connecter': Einloggen
-'Mentions Légales': 'Impressum'
+'Mentions Légales': Impressum
 Contact: Kontakt
-'Politique de confidentialité': 'Datenschutz-Bestimmungen'
+'Politique de confidentialité': Datenschutz-Bestimmungen
 'S''inscrire à la newsletter': 'Abonnieren Sie den Newsletter'
 'Inscrivez-vous pour recevoir réguliérement notre newsletter dans votre boîte mail.': 'Melden Sie sich an, um regelmäßig unseren Newsletter in Ihrer Mailbox zu erhalten.'
 'Adresse mail': 'Mail Adressel'
-'S''abonner': 'Abonnierenr'
+'S''abonner': Abonnierenr
 'Maguelonne. Tous droits réservés.': 'Maguelone. Alle Rechte vorbehalten.'
 Agenda: Tagebuch
 Artistes: Künstler
@@ -48,7 +48,7 @@ Artistes: Künstler
 'Registre musicale': 'Musikalisches Register'
 Vidéo: Video
 Audio: Audio
-'Catégorie d''articles': 'Artikelkategorie'
+'Catégorie d''articles': Artikelkategorie
 'Aller sur le site': 'Gehen Sie zur Website'
 page: Seite
 minutes: Minuten
@@ -58,3 +58,16 @@ Durée: Dauer
 Études: Studien
 Biographie: Biografie
 'Retour aux CV': 'Zurück zu den Lebensläufen'
+'Édition du contenu de la page': '__Édition du contenu de la page'
+Sauvegarder: __Sauvegarder
+'Création d''un nouvel article': '__Création d''un nouvel article'
+'Ajouter un nouvel évènement': '__Ajouter un nouvel évènement'
+'Nom de l''évènement': '__Nom de l''évènement'
+Texte: __Texte
+Date: __Date
+'Ajouter un nouveau site ami': '__Ajouter un nouveau site ami'
+Supprimer: __Supprimer
+'Ajouter un nouvel artiste': '__Ajouter un nouvel artiste'
+Modifier: __Modifier
+Compagnie-Brand: __Compagnie-Brand
+'Nom da la compagnie': '__Nom da la compagnie'
