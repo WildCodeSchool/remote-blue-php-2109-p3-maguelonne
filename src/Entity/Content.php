@@ -4,33 +4,23 @@ namespace App\Entity;
 
 use App\Repository\ContentRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Knp\DoctrineBehaviors\Contract\Entity\TranslatableInterface;
+use Knp\DoctrineBehaviors\Model\Translatable\TranslatableTrait;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ContentRepository::class)
  */
-class Content
+class Content implements TranslatableInterface
 {
+    use TranslatableTrait;
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private int $id;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private string $title;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    private string $body;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private ?string $slug;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -40,7 +30,12 @@ class Content
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private ?string $alt;
+    private ?string $slug = "";
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private ?string $identifier;
 
     public function getId(): ?int
     {
@@ -49,24 +44,12 @@ class Content
 
     public function getTitle(): ?string
     {
-        return $this->title;
+        return $this->translate()->getTitle();
     }
 
-    public function setTitle(string $title): self
+    public function setTitle(?string $title): self
     {
-        $this->title = $title;
-
-        return $this;
-    }
-
-    public function getBody(): ?string
-    {
-        return $this->body;
-    }
-
-    public function setBody(string $body): self
-    {
-        $this->body = $body;
+        $this->translate()->setTitle($title);
 
         return $this;
     }
@@ -79,6 +62,18 @@ class Content
     public function setSlug(?string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getBody(): ?string
+    {
+        return $this->translate()->getBody();
+    }
+
+    public function setBody(string $body): self
+    {
+        $this->translate()->setBody($body);
 
         return $this;
     }
@@ -97,12 +92,24 @@ class Content
 
     public function getAlt(): ?string
     {
-        return $this->alt;
+        return $this->translate()->getAlt();
     }
 
-    public function setAlt(?string $alt): self
+    public function setAlt(string $alt): self
     {
-        $this->alt = $alt;
+        $this->translate()->setAlt($alt);
+
+        return $this;
+    }
+
+    public function getIdentifier(): ?string
+    {
+        return $this->identifier;
+    }
+
+    public function setIdentifier(?string $identifier): self
+    {
+        $this->identifier = $identifier;
 
         return $this;
     }
