@@ -1,26 +1,29 @@
 {% extends 'admin/base.html.twig' %}
 
+{% block javascripts %}
+	{{ parent() }}
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+const form = document.getElementById("formFilter");
+document.querySelectorAll("[data-remove-filter]").forEach((elem) => {
+elem.addEventListener("click", (event) => {
+const id = event.currentTarget.getAttribute("data-id");
+console.log(id)
+form.querySelector(".form-check-input[value='" + id + "']").checked = false;
+form.submit();
+})
+})
+})
+	</script>
+{% endblock %}
 
-{% block title %}Administration des articles
+{% block title %}Admin : tous les articles
 {% endblock %}
 
 {% block body %}
-	<h1 class="text-center">Administration des articles</h1>
-	<div class="container-fluid my-2 my-lg-5">
-		<div class="row d-flex flex-lg-row justify-content-lg-evenly justify-content-center">
-			<div class="btn-group col-12 col-lg-3 mb-4 mb-lg-0">
-				<button type="button" class="btn btn-lg btn-primary dropdown-toggle text-uppercase" data-bs-display="static" data-bs-toggle="dropdown">Catégories</button>
-				<ul class="dropdown-menu dropdown-menu-lg-end">
-					{% for article_category in article_categories %}
-						<li>
-							<a class="dropdown-item">{{ article_category.name }}</a>
-						</li>
-					{% endfor %}
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div class="container my-2 my-lg-5">
+	<h1 class="d-flex justify-content-center">Admin : tous les Articles</h1>
+	<div class="container mt-2 mb-4">
+  	<div class="container my-2 my-lg-5">
 		<div class="row d-flex flex-lg-row justify-content-center">
 			<a href="{{ path('admin_article_new') }}" class="btn btn-success col-12 col-lg-5 col-xl-3 py-3 mb-4 mb-lg-0 text-uppercase">
 				<i class="bi bi-plus-lg"></i>
@@ -28,8 +31,48 @@
 			</a>
 		</div>
 	</div>
+		<div class="row d-flex flex-lg-row justify-content-lg-evenly justify-content-center">
+			<div class="col-12 col-lg-4 mb-4 mb-lg-0">
+				<div class="dropdown">
+					<button type="button" class="btn btn-lg btn-primary w-100 dropdown-toggle shadow text-uppercase" data-bs-display="static" data-bs-toggle="dropdown" data-bs-auto-close="outside">{{ 'Catégories'|trans }}</button>
+					<div class="dropdown-menu dropdown-menu-lg-end w-100 p-3 shadow ">
+						{{ form_start(formCategoryFilter, {"method": "get", "attr": {"id": "formFilter"}}) }}
+						{{ form_widget(formCategoryFilter) }}
+						{{ form_end(formCategoryFilter) }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-	{% for article in articles %}
+
+	<div class="container">
+		<div class="row justify-content-lg-center">
+			<div class="col-lg-9 col-12">
+
+				{% if categories %}
+					<div class="mb-4">
+						<h3>Filtres sélectionnés</h3>
+						{% for category in categories %}
+							<button data-id="{{ category.id }}" data-remove-filter="" class="btn btn-info fs-5">{{ category.name }}
+								x</button>
+						{% endfor %}
+					</div>
+				{% endif %}
+				<div class="mb-3 d-flex justify-content-between">
+					<span>{{ pagination.getTotalItemCount }}
+						articles</span>
+
+					<span>page
+						{{ pagination.currentPageNumber }}
+						/
+						{{ (pagination.getTotalItemCount / paginationLimit)|round(0, 'ceil') }}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% for article in pagination %}
 		<div class="container">
 			<div class="row justify-content-lg-center">
 				<div class="col-lg-9 col-12">
@@ -62,7 +105,6 @@
                                             'add_translation_path': 'admin_article_add_translation',
                                             'id': article.id
                                         }) }}
-
 								</div>
 							</div>
 						</div>
@@ -70,6 +112,8 @@
 				</div>
 			</div>
 		</div>
+
 	{% endfor %}
+	{{ knp_pagination_render(pagination) }}
 
 {% endblock %}
