@@ -1,0 +1,5 @@
+{% for article in articles %}
+        
+<div class="mx-2"><a href="{{ path('article_related', {slug: article.slug}) }}"></a>
+{{ article.title }}</div>
+{% endfor %}

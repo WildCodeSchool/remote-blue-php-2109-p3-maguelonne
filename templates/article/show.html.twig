@@ -29,9 +29,7 @@
     <div class="my-5">{{ article.body|raw }}</div>
     <div class="h3">{{ 'Articles liés :'|trans }}</div>
     <div class="d-flex flex-direction-row">
-        <div class="mr-2">Article n°1</div>
-        <div class="mx-2">Article n°2</div>
-        <div class="mx-2">Article n°3</div>
+{{ render(controller('App\\Controller\\ArticleController::relatedArticles')) }}
     </div>
 </section>
 

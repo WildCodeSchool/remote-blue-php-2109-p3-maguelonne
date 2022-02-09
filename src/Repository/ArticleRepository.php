@@ -35,6 +35,22 @@ class ArticleRepository extends ServiceEntityRepository
     }
 
     /**
+     * @return \Doctrine\ORM\Query
+     */
+    public function findLastArticles(array $categories, array $articles)
+    {
+        return $this->createQueryBuilder('a')
+            ->where('a.category = :category_id')
+            ->setParameter('categories', $categories)
+            ->andWhere('a.createdAt != :article_createdAt')
+            ->setParameter('articles', $articles)
+            ->setMaxResults(3)
+            ->orderBy('a.createdAt', 'DESC')
+            ->getQuery();
+//            ->getResult();
+    }
+
+    /**
      * @return \Doctrine\ORM\QueryBuilder
      */
     public function queryFindAll()

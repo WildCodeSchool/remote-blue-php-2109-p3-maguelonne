@@ -96,4 +96,13 @@ class ArticleController extends AbstractController
             'article' => $article,
         ]);
     }
+
+    public function relatedArticles(ArticleRepository $articleRepository): Response
+    {
+        $articles = $articleRepository->findLastArticles($categories, $articles);
+
+        return $this->render('article/_related_articles.html.twig', [
+            'articles' => $articles,
+        ]);
+    }
 }
