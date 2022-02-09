@@ -5,14 +5,14 @@ Sauvegarder: 保護するために
 Modifier: 変更するには
 Supprimer: 削除するには
 'Édition de l''article': '記事の編集'
-'Revenir à la liste des articles': 'Revenir à la liste des articles'
+'Revenir à la liste des articles': '記事のリストに戻る'
 Publier: 公開
 'Création d''un nouvel article': '記事のリストに戻る'
 CATEGORIES: カテゴリー
 'Ajouter un nouvel article': '新しいアイテムを追加する'
 'Article écrit le': 'に書かれた記事'
 'Temps de lecture': '読書の時間'
-Catégorie: __カテゴリー
+Catégorie: カテゴリー
 'Ajouter un nouvel artiste': '新しいアーティストを追加する'
 'Nom de l''artiste': 'アーティスト名'
 'Registre musicale': 'ミュージカルレジスター'
@@ -62,7 +62,7 @@ minutes: 分
 'Registre musical': 'ミュージカルレジスター'
 Compagnie-Brand: 会社-ブランド
 'Nom de la compagnie': '会社名'
-Études: __研究
+Études: 研究
 'Nom da la compagnie': '会社名'
 Biographie: バイオグラフィー
 'Retour aux CV': 'CVに戻る'
