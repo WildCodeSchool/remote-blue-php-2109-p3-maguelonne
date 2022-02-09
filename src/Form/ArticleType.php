@@ -31,6 +31,7 @@ class ArticleType extends AbstractType
                 'category',
                 EntityType::class,
                 [
+					'choice_label' => 'name',
                     'label' => 'Catégorie',
                     'class' => ArticleCategory::class,
                 ],
