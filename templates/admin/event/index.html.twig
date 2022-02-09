@@ -37,6 +37,7 @@
                                     <dd>{{ event.duration }}</dd>
                                 </dl>
                             </div>
+                            <a href="{{ path('admin_event_edit', {'slug': event.slug}) }}" class="btn btn-primary">{{ 'Modifier'|trans }}</a>
                         </div>
                     </div>
                 </div>
