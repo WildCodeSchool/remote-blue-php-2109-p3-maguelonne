@@ -27,7 +27,7 @@ class HomeController extends AbstractController
             'home/index.html.twig',
             [
                 'content' => $contentRepository->findOneBy([
-                    'id' => 1,
+                    'identifier' => 'presentation-du-site',
                 ])
             ]
         );
