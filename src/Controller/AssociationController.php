@@ -19,7 +19,7 @@ class AssociationController extends AbstractController
     {
         return $this->render('association/index.html.twig', [
             'content' => $contentRepository->findOneBy([
-                'id' => 2
+                'identifier' => 'presentation-association'
             ])
         ]);
     }
