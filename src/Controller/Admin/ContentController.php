@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Content;
 use App\Form\ContentType;
+use App\Entity\ContentTranslation;
 use App\Repository\ContentRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -66,6 +67,48 @@ class ContentController extends AbstractController
             'content' => $content,
             'form' => $form,
         ]);
+    }
+
+    /**
+     * @param string $locale
+     * @param content $content
+     * @return Response
+     * @Route("/{id}/add-translation/{locale}", name="add_translation")
+     */
+    public function addTranslation(
+        string $locale,
+        Content $content
+    ): Response {
+        $translation = new ContentTranslation();
+        $translation->setTitle($content->getTitle());
+        $translation->setLocale($locale);
+        $translation->setSlug($this->slug($locale, $content->getTitle()));
+        $content->addTranslation($translation);
+        $this->entityManager->flush();
+        return $this->redirectToRoute('admin_content_edit', ['id' => $content->getId(), 'locale' => $locale]);
+    }
+
+    /**
+     * @Route("/{id}/delete-translation/{locale}", name="delete_translation", methods={"POST"})
+     */
+    public function deleteTranslation(
+        Request $request,
+        Content $content,
+        string $locale,
+        ContentranslationRepository $transRepository
+    ): Response {
+        if ($this->isCsrfTokenValid('delete' . $content->getId(), $request->request->get('_token'))) {
+            $translation = $transRepository->findOneBy([
+                'locale' => $locale,
+                'translatable' => $content
+            ]);
+            if ($translation) {
+                $content->removeTranslation($translation);
+                $this->entityManager->flush();
+            }
+        }
+
+        return $this->redirectToRoute('admin_content_index', [], Response::HTTP_SEE_OTHER);
     }
 
     /**
