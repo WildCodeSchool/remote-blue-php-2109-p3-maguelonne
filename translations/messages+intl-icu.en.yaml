@@ -1,47 +1,51 @@
 Contactez-nous!: 'Contact us!'
-'Création d''une nouvelle catégorie d''article': 'Creating a new item category'
-'Revenir à la liste des catégories d''articles': 'Return to the list of article categories'
-Supprimer: Delete
-'Édition de l''article': 'Editing the article'
-'Revenir à la liste des articles': 'Return to the list of articles'
-Publier: Publish
-'Nouvel Article': 'New Article'
-'Création d''un nouvel article': 'Creation of a new article'
 CATEGORIES: CATEGORIES
-'Ajouter un nouvel article': 'Add a new article'
 'Article écrit le': 'Article written on'
-'Temps de lecture': 'Reading time'
 Catégorie: Category
-MODIFIER: EDIT
 'EN LIRE PLUS': 'READ MORE'
 Article: Article
 Titre: Title
 Descriptif: Description
-'Photo (click-droit: copier l''adresse de l''image)': '__Photo (click-droit: copier l''adresse de l''image)'
+'Photo (click-droit: copier l''adresse de l''image)': 'Photo (right-click: copy image address)'
 'Créé le': 'Created at'
 'Temps de lecture (en chiffre)': 'Reading time (in number)'
-'Texte alternatif à l''image': '__Texte alternatif à l''image'
-'Retour à la liste d''articles': '__Retour à la liste d''articles'
+'minutes (en chiffre)': 'minutes (in number)'
+'Texte alternatif à l''image': 'Alt text to image'
+'Retour à la liste d''articles': 'Back to article list'
 'Mot de passe': Password
 'Se connecter': Login
 'Présentation de l''association Maguelonne': 'Maguelonne Association'
 page.link.path: '%link_start%link.title%link_end%'
-'Édition du contenu de la page': '__Édition du contenu de la page'
-Sauvegarder: __Sauvegarder
-'Revenir à la liste des contenus': '__Revenir à la liste des contenus'
-'Ajouter un nouvel artiste': '__Ajouter un nouvel artiste'
-'Nom de l''artiste': '__Nom de l''artiste'
-'Registre musicale': '__Registre musicale'
-Instruments: __Instruments
-Nationalité: __Nationalité
-Vidéo: __Vidéo
-Audio: __Audio
-'Toutes les catégories d''articles': '__Toutes les catégories d''articles'
-'Consulter la catégorie d''articles': '__Consulter la catégorie d''articles'
-'Aucune catégories d''articles': '__Aucune catégories d''articles'
-'Catégorie d''articles': '__Catégorie d''articles'
-'Changer de langue': '__Changer de langue'
-'aperçu de l''article': '__aperçu de l''article'
-'Date de publication': '__Date de publication'
-'concerts et spectacles': '__concerts et spectacles'
-Durée: __Durée
+'Édition du contenu de la page': 'Editing page content'
+Sauvegarder: Save
+'Revenir à la liste des contenus': 'Return to content list'
+'Nom de l''artiste': 'Artist name'
+'Nom de la compagnie':'Company name'
+'Registre musicale': 'Musical register'
+'Études': 'Study'
+'Biographie': 'Biography'
+Instruments: Instruments
+Nationalité: Nationality
+Vidéo: Video
+Audio: Sound
+'Toutes les catégories d''articles': 'All item categories'
+'Consulter la catégorie d''articles': 'View item categories'
+'Aucune catégories d''articles': 'No article categories'
+'Catégorie d''articles': 'Item categories'
+'Changer de langue': 'Change language'
+'aperçu de l''article': 'Article preview'
+'Date de publication': 'Publication date'
+'concerts et spectacles': 'Concerts and shows'
+Durée: Duration
+'Il n''y a encore aucune publication dans cette catégorie': 'there are no posts in this category yet'
+'Trombinoscope des artistes': 'Trombinoscope of artists'
+'Consulter sa biographie': 'View his biography'
+'Retour aux cv': 'Back to resumes'
+Agenda: 'Diary'
+Artistes: 'Artists'
+Envoyer: 'To send'
+Blog: 'Blog'
+Association: 'Association'
+Sites amis: 'Sites amis'
+'concerts et spectacles': 'concerts and shows'
+'Aller sur le site' : 'Go to the site'
