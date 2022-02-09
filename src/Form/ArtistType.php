@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 class ArtistType extends AbstractType
 {
@@ -67,8 +68,9 @@ class ArtistType extends AbstractType
                 'required' => false,
                 'label' => 'lien audio',
             ])
-            ->add('body', TextareaType::class, [
+            ->add('body', CKEditorType::class, [
                 'label' => 'Biographie de l\' artiste',
+                'config_name' => 'full',
                 'attr' => ['rows' => 10],
             ])
             ->add('alt', TextType::class, [
