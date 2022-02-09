@@ -29,8 +29,7 @@
 }
 @include media-breakpoint-only(lg) {
   .custom-navbar {
-    justify-content: flex-end;
-    flex-wrap: wrap;
+    font-size: 0.75rem;
   }
 }
 
