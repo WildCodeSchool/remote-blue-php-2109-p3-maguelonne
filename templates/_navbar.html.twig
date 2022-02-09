@@ -1,5 +1,5 @@
-<nav class="navbar row p-3 navbar-light navbar-expand-lg bg-secondary fixed-top shadow">
-    <div class="container col-2 justify-content-center"><a class="navbar-brand fs-2 logo ms-lg-0" href="{{ path('home') }}">Maguelonne</a>
+<nav class="navbar row p-3 navbar-light custom-navbar navbar-expand-lg bg-secondary fixed-top shadow">
+    <div class="container col-2 justify-content-center"><a class="navbar-brand  logo" href="{{ path('home') }}">Maguelonne</a>
     </div>
     <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarNav">
         <span class="visually-hidden">Toggle navigation</span>
@@ -15,7 +15,7 @@
                 {'title': 'Sites amis'|trans, 'path': 'friendLink_index'},
             ] %}
             {% for link in links %}
-                <li class="nav-item mx-4 my-auto">
+                <li class="nav-item mx-4 my-auto ms-lg-0">
                     <a class="nav-link text-decoration-none hover {{ app.request.pathinfo == path(link.path) ? 'active' }}"
                             {{ app.request.pathinfo == path(link.path) ? 'aria-current="page"' }} href="{{ path(link.path) }}">
                         {{ link.title }}

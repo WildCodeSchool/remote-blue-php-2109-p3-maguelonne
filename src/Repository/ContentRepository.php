@@ -19,6 +19,15 @@ class ContentRepository extends ServiceEntityRepository
         parent::__construct($registry, Content::class);
     }
 
+    /**
+     * @return \Doctrine\ORM\QueryBuilder
+     */
+    public function queryFindAll()
+    {
+        return $this->createQueryBuilder('c')
+            ->orderBy('c.createdAt', 'DESC');
+    }
+
     // /**
     //  * @return Content[] Returns an array of Content objects
     //  */

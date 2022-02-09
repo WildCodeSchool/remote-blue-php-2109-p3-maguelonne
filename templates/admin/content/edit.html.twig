@@ -11,5 +11,8 @@
 	 {
 		'button_save_label': 'Sauvegarder'|trans,
 		}) }}
+	{% if (app.request.get('locale') != content.getDefaultLocale) %}
+		{{ include('admin/content/_delete_translation_form.html.twig') }}
+	{% endif %}
 	<a href="{{ path('admin_content_index') }}">{{ 'Revenir à la liste des contenus'|trans }}</a>
 {% endblock %}
