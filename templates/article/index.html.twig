@@ -58,7 +58,10 @@
                     <div class="card mb-4 shadow">
                         <div class="row no-gutters">
                             <div class="col-md-4 mx-auto">
-                                <img src="{{ article.poster }}" class="card-img img-fluid" alt="{{ 'aperçu de l\'article'|trans }} {{ article.title }}">
+                                {% if article.poster %}
+                                <img src="{{ vich_uploader_asset(article) }}"
+                                     class="card-img img-fluid" alt="{{ 'aperçu de l\'article'|trans }} {{ article.title }}">
+                                {% endif %}
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">

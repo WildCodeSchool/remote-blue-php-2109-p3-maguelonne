@@ -13,7 +13,7 @@ use SymfonyBundles\Slugify\Slugify;
 
 class ArticleFixtures extends Fixture
 {
-    public const ARTICLENUMS = 30;
+    public const ARTICLENUMS = 0;
     public const LOCALES = [
         'fr' => 'FR',
         'en' => 'EN',

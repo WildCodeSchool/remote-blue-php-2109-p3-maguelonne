@@ -17,8 +17,7 @@ form.submit();
 	</script>
 {% endblock %}
 
-{% block title %}Admin : tous les articles
-{% endblock %}
+{% block title %}Admin : tous les articles{% endblock %}
 
 {% block body %}
 	<h1 class="d-flex justify-content-center">Admin : tous les Articles</h1>
@@ -79,7 +78,11 @@ form.submit();
 					<div class="card mb-3 shadow-lg">
 						<div class="row no-gutters">
 							<div class="col-md-4 mx-auto">
-								<img src="{{ article.poster }}" class="card-img img-fluid" alt="...">
+								{% set src = article.poster
+									? vich_uploader_asset(article)
+									: 'https://fakeimg.pl/350x200/?text=aucune image'
+								%}
+								<img src="{{ src }}" class="card-img img-fluid" alt="...">
 							</div>
 							<div class="col-md-8">
 								<div class="card-body">
