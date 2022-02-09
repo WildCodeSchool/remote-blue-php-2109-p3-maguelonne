@@ -6,11 +6,10 @@
 {% block body %}
 
 <h1 class="d-flex justify-content-center">Liste des évènements</h1>
-
 <div class="container my-2 my-lg-5">
     <div class="row d-flex flex-lg-row justify-content-center">
-        <a href="{{ path('admin_artist_new') }}"
-           class="btn btn-success col-12 col-lg-5 col-xl-3 py-3 mb-4 mb-lg-0">{{ 'Ajouter un nouvel artiste'|trans }}</a>
+        <a href="{{ path('admin_event_new') }}"
+           class="btn btn-success col-12 col-lg-5 col-xl-3 py-3 mb-4 mb-lg-0">{{ 'Ajouter un nouvel évènement'|trans }}</a>
     </div>
 </div>
 {% for event in events %}
@@ -35,7 +34,7 @@
                                     <dd>{{ event.date|format_time('short', locale=app.request.locale) }}</dd>
                                     <dt class="ms-lg-auto">{{ 'Vidéo'|trans }} :</dt>
                                     <dd>{{ event.video }}</dd>
-                                    <dt> class="ms-lg-auto">{{ 'Durée'|trans }} :</dt>
+                                    <dt class="ms-lg-auto">{{ 'Durée'|trans }} :</dt>
                                     <dd>{{ event.duration }}</dd>
                                 </dl>
                             </div>
