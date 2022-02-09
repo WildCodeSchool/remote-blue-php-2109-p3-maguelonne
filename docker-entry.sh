@@ -2,6 +2,7 @@
 set -e
 
 php composer.phar update
+php bin/console assets:install public
 
 ## Symfony configuration
 php bin/console doctrine:database:create --if-not-exists --quiet --no-interaction
