@@ -1,17 +1,17 @@
 Blog: Bloggen
 Association: Verband
-'Sites amis': 'Freundesseiten'
-Contactez-nous!: kontaktiere uns!
+'Sites amis': Freundesseiten
+Contactez-nous!: 'kontaktiere uns!'
 'Revenir à la liste des contenus': 'Zurück zur Inhaltsliste'
 CATEGORIES: KATEGORIEN
 'Article écrit le': 'Artikel geschrieben'
-'Temps de lecture': 'Lesezeit'
+'Temps de lecture': Lesezeit
 Catégorie: Kategorie
 'Tous les articles': 'Alle Elemente'
 Catégories: Kategorien
 Accueil: Startseite
 'Filtres sélectionnés': 'Ausgewählte Filter'
-articles: Artikel
+articles: Artikelen
 'Articles liés :': 'Verwandte Artikel :'
 'Trombinoscope des artistes': 'Posaunenoskop der Künstler'
 'Consulter sa biographie': 'Sehen Sie sich seine Biografie an'
@@ -21,16 +21,49 @@ Instruments: Instrumente
 Compagnie: Musikunternehmen
 Etude: Lernen
 Prix: Preis
-'Nom de l''artiste': 'Künstlername'
+'Nom de l''artiste': Künstlername
 'Toutes les catégories d''articles': 'Alle Artikelkategorien'
 'Consulter la catégorie d''articles': 'Konsultieren Sie die Kategorie der Artikel'
 'Aucune catégories d''articles': 'Keine Artikelkategorien'
 'Retour à la liste des catégories d''articles': 'Zurück zur Liste der Artikelkategorien'
 'Changer de langue': 'Sprache ändern'
 'aperçu de l''article': '__aperçu de l''article'
-'Date de publication': 'Artikelübersicht'
-'En lire plus': 'Weiterlesen'
+'Date de publication': Artikelübersicht
+'En lire plus': Weiterlesen
 'Il n''y a encore aucune publication dans cette catégorie': 'Es gibt noch keine Beiträge in dieser Kategorie'
 'Retour à la liste d''articles': 'Zurück zur Artikelliste'
-'Mot de passe': 'Passwort'
-'Se connecter': 'Einloggen'
+'Mot de passe': Passwort
+'Se connecter': Einloggen
+'Mentions Légales': '__Mentions Légales'
+Contact: __Contact
+'Politique de confidentialité': '__Politique de confidentialité'
+'S''inscrire à la newsletter': '__S''inscrire à la newsletter'
+'Inscrivez-vous pour recevoir réguliérement notre newsletter dans votre boîte mail.': '__Inscrivez-vous pour recevoir réguliérement notre newsletter dans votre boîte mail.'
+'Adresse mail': '__Adresse mail'
+'S''abonner': '__S''abonner'
+'Maguelonne. Tous droits réservés.': '__Maguelonne. Tous droits réservés.'
+Agenda: __Agenda
+Artistes: __Artistes
+'Édition du contenu de la page': '__Édition du contenu de la page'
+Sauvegarder: __Sauvegarder
+Modifier: __Modifier
+'Création d''un nouvel article': '__Création d''un nouvel article'
+'Revenir à la liste des articles': '__Revenir à la liste des articles'
+'Ajouter un nouveau site ami': '__Ajouter un nouveau site ami'
+Supprimer: __Supprimer
+'Ajouter un nouvel artiste': '__Ajouter un nouvel artiste'
+'Registre musicale': '__Registre musicale'
+Vidéo: __Vidéo
+Audio: __Audio
+'Catégorie d''articles': '__Catégorie d''articles'
+'Aller sur le site': '__Aller sur le site'
+page: __page
+minutes: __minutes
+'concerts et spectacles': '__concerts et spectacles'
+Durée: __Durée
+Compagnie-Brand: __Compagnie-Brand
+'Nom de la compagnie': '__Nom de la compagnie'
+Études: __Études
+'Nom da la compagnie': '__Nom da la compagnie'
+Biographie: __Biographie
+'Retour aux CV': '__Retour aux CV'
