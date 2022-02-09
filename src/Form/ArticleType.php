@@ -14,6 +14,8 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Validator\Constraints\File;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class ArticleType extends AbstractType
 {
@@ -31,7 +33,7 @@ class ArticleType extends AbstractType
                 'category',
                 EntityType::class,
                 [
-					'choice_label' => 'name',
+                    'choice_label' => 'name',
                     'label' => 'Catégorie',
                     'class' => ArticleCategory::class,
                 ],
@@ -55,11 +57,25 @@ class ArticleType extends AbstractType
                 ],
             )
             ->add(
-                'poster',
-                TextType::class,
+                'posterFile',
+                VichFileType::class,
                 [
-                    'label' => 'Photo de l\'article (clic-droit: copier l\'adresse de l\'image)',
-                ],
+                    'label' => 'Téléchargement de photos',
+                    'mapped' => false,
+                    'required' => false,
+                    'constraints' => [
+                        new File([
+                            'maxSize' => '1500k',
+                            'mimeTypes' => [
+                                'image/png',
+                                'image/jpeg',
+                            ],
+                            'mimeTypesMessage' =>
+                                'Veuillez télécharger une image avec une extension en jpg, jpeg ou png',
+                        ])
+                    ]
+
+                ]
             )
             ->add(
                 'createdAt',

@@ -7,9 +7,12 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ArticleRepository;
 use Knp\DoctrineBehaviors\Contract\Entity\TranslatableInterface;
 use Knp\DoctrineBehaviors\Model\Translatable\TranslatableTrait;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
+ * @Vich\Uploadable
  */
 class Article implements TranslatableInterface
 {
@@ -26,7 +29,14 @@ class Article implements TranslatableInterface
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private ?string $poster;
+    private ?string $poster = "";
+
+    /**
+     * @Vich\UploadableField(mapping="poster_file", fileNameProperty="poster")
+     * @var ?File
+     */
+    private ?File $posterFile = null;
+
 
     /**
      * @ORM\Column(type="datetime")
@@ -157,4 +167,22 @@ class Article implements TranslatableInterface
 
         return $this;
     }
+
+    /**
+     * @return File
+     */
+    public function getPosterFile(): ?File
+    {
+        return $this->posterFile;
+    }
+
+    /**
+     * @param File $posterFile
+     */
+    public function setPosterFile(File $posterFile = null): void
+    {
+        $this->posterFile = $posterFile;
+    }
+
+
 }
