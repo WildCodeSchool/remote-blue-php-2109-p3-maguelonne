@@ -67,7 +67,7 @@ class Artist implements TranslatableInterface
      */
     private ?string $audio;
 
-     /**
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\NotBlank
      * @Assert\Type("string")
@@ -92,6 +92,12 @@ class Artist implements TranslatableInterface
      * @ORM\OneToMany(targetEntity=Study::class, mappedBy="artist")
      */
     private Collection $study;
+
+    /**
+     * @ORM\Column(type="json", nullable=true)
+     *
+     */
+    private ?array $instruments = [];
 
     public function __construct()
     {
@@ -270,9 +276,23 @@ class Artist implements TranslatableInterface
         return $this->translate()->getBody();
     }
 
+    public function setBody(string $body): self
+    {
+        $this->translate()->setBody($body);
+
+        return $this;
+    }
+
     public function getInstruments(): ?array
     {
-        return $this->translate()->getInstruments();
+        return $this->instruments;
+    }
+
+    public function setInstruments(?array $instruments): self
+    {
+        $this->instruments = $instruments;
+
+        return $this;
     }
 
     public function getAlt(): ?string
