@@ -7,6 +7,7 @@ use App\Form\EventType;
 use App\Repository\EventRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -19,7 +20,8 @@ class EventController extends AbstractController
     /**
      * @Route("/", name="index", methods={"GET"})
      */
-    public function index(EventRepository $eventRepository): Response
+    public function index(
+        EventRepository $eventRepository): Response
     {
         return $this->render('admin/event/index.html.twig', [
             'events' => $eventRepository->findAll(),
