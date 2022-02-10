@@ -93,7 +93,7 @@ class Artist implements TranslatableInterface
     private ?string $slug;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      *
      */
     private DateTime $createdAt;
@@ -328,9 +328,23 @@ class Artist implements TranslatableInterface
         return $this->translate()->getRepository();
     }
 
+    public function setRepository(string $repository): self
+    {
+        $this->translate()->setRepository($repository);
+
+        return $this;
+    }
+
     public function getNationality(): ?string
     {
         return $this->translate()->getNationality();
+    }
+
+    public function setNationality(string $nationality): self
+    {
+        $this->translate()->setNationality($nationality);
+
+        return $this;
     }
 
     public function getBody(): ?string
@@ -360,6 +374,13 @@ class Artist implements TranslatableInterface
     public function getAlt(): ?string
     {
         return $this->translate()->getAlt();
+    }
+
+    public function setAlt(string $alt): self
+    {
+        $this->translate()->setAlt($alt);
+
+        return $this;
     }
 
     public function getUpdatedAt(): ?\DateTimeInterface

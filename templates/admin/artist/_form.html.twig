@@ -1,12 +1,9 @@
-<div class="text-align-center">
+
 	{{ form_start(form) }}
-</div>
-<div class="container my-2 my-lg-5">
+<div class="mb-4">
 	{{ form_errors(form) }}
 	{{ form_widget(form) }}
-	<button class="btn btn-primary bottom-0 border">{{ button_save_label|default('Publier') }}
-	</button>
-	<button class="btn btn-danger bottom-0 end-0 border">{{ button_delete_label|default('Supprimer') }}
+	<button class="btn btn-success d-block w-100">{{ button_save_label|default('Publier') }}
 	</button>
 </div>
 {{ form_end(form) }}

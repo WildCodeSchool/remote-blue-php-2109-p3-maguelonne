@@ -101,8 +101,7 @@ class ArticleController extends AbstractTranslatorController
             $locale = 'fr';
             $translation = new ArticleTranslation();
             $translation->setLocale($locale);
-            $translation->setTitle($form->getData()->getTitle());
-            $translation->setTitle($form->getData()->getTitle());
+                $translation->setTitle($form->getData()->getTitle());
             $translation->setSummary($form->getData()->getSummary());
             $translation->setBody($form->getData()->getBody());
             $translation->setAlt($form->getData()->getAlt());
