@@ -10,9 +10,9 @@
 			<div class="d-flex p-5 align-items-center opacity-75 justify-content-center Asso position-relative" alt=" {{ content.alt }}" style="background-image: url( '{{ content.poster }}' )">
 				<h1 class="position-absolute display-4 text-light text-center">{{ content.title|trans }}</h1>
 			</div>
-			<p class="fs-4">
-				{{ content.body }}
-			</p>
+			<div class="fs-5">
+				{{ content.body|raw }}
+			</div>
 		</section>
 		<section class="container">
 			<div class="row justify-content-around">

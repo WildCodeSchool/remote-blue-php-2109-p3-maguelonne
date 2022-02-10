@@ -9,9 +9,9 @@
 		<section class="container">
 			<img class="img-fluid image-home mb-3" src="{{ content.poster }}" alt="{{ content.alt }}">
 			<h1 class="d-flex justify-content-center mb-4">{{ content.title }}</h1>
-			<p class="fs-4">
-				{{ content.body }}
-			</p>
+			<div class="fs-5">
+				{{ content.body|raw }}
+			</div>
 		</section>
 		<section class="container">
 			<div class="row">

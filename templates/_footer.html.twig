@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-md-4">
 				<h5>{{ content.title }}</h5>
-				<p>{{ content.body }}</p>
+				{{ content.body|raw }}
 			</div>
 			<div class="col-md-4">
 				<h5>{{ 'Mentions Légales'|trans }}</h5>
