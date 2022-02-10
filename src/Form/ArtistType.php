@@ -12,16 +12,21 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class ArtistType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('photo', TextType::class, [
-                'required' => false,
-                'label' => 'photo',
-            ])
+            ->add(
+                'photoFile',
+                VichFileType::class,
+                [
+                    'label' => 'Téléchargement de photos',
+                    'required' => false,
+                ]
+            )
             ->add('name', TextType::class, [
                 'label' => "Nom de l'artiste"
             ])

@@ -65,6 +65,7 @@ class Article implements TranslatableInterface
      */
     private ?\DateTimeInterface $updatedAt;
 
+
     public function getId(): ?int
     {
         return $this->id;

@@ -10,7 +10,7 @@ use Symfony\Component\String\Slugger\AsciiSlugger;
 
 class ArtistFixtures extends Fixture
 {
-    public const ARTIST_NUMS = 30;
+    public const ARTIST_NUMS = 0;
     public const LOCALES = [
         'fr' => 'FR',
         'en' => 'EN',

@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use DateTime;
 use App\Repository\ArtistRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -9,9 +10,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Knp\DoctrineBehaviors\Contract\Entity\TranslatableInterface;
 use Knp\DoctrineBehaviors\Model\Translatable\TranslatableTrait;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=ArtistRepository::class)
+ * @Vich\Uploadable
  */
 class Artist implements TranslatableInterface
 {
@@ -45,7 +49,17 @@ class Artist implements TranslatableInterface
      *     maxMessage = "La longueur du texte est limité à 255 caractéres."
      * )
      */
-    private ?string $photo;
+    private ?string $photo = "";
+
+    /**
+     * @Vich\UploadableField(mapping="poster_file", fileNameProperty="photo")
+     * @Assert\File(
+     *     maxSize = "1M",
+     *     mimeTypes = {"image/jpeg", "image/png", "image/webp"},
+     * )
+     * @var ?File
+     */
+    private ?file $photoFile = null;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -77,6 +91,33 @@ class Artist implements TranslatableInterface
      * )
      */
     private ?string $slug;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     *
+     */
+    private DateTime $createdAt;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private ?\DateTimeInterface $updatedAt;
+
+    /**
+     * @return DateTime
+     */
+    public function getCreatedAt(): DateTime
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param DateTime $createdAt
+     */
+    public function setCreatedAt(DateTime $createdAt): void
+    {
+        $this->createdAt = $createdAt;
+    }
 
     /**
      * @ORM\OneToMany(targetEntity=Company::class, mappedBy="artist")
@@ -168,6 +209,27 @@ class Artist implements TranslatableInterface
     {
         $this->slug = $slug;
 
+        return $this;
+    }
+
+    /**
+     * @return File
+     */
+    public function getPhotoFile(): ?File
+    {
+        return $this->photoFile;
+    }
+
+    /**
+     * @param File|null $photoFile
+     * @return Artist
+     */
+    public function setPhotoFile(?File $photoFile = null): self
+    {
+        $this->photoFile = $photoFile;
+        if ($photoFile) {
+            $this->updatedAt = new DateTime('now');
+        }
         return $this;
     }
 
@@ -266,9 +328,23 @@ class Artist implements TranslatableInterface
         return $this->translate()->getRepository();
     }
 
+    public function setRepository(string $repository): self
+    {
+        $this->translate()->setRepository($repository);
+
+        return $this;
+    }
+
     public function getNationality(): ?string
     {
         return $this->translate()->getNationality();
+    }
+
+    public function setNationality(string $nationality): self
+    {
+        $this->translate()->setNationality($nationality);
+
+        return $this;
     }
 
     public function getBody(): ?string
@@ -298,5 +374,24 @@ class Artist implements TranslatableInterface
     public function getAlt(): ?string
     {
         return $this->translate()->getAlt();
+    }
+
+    public function setAlt(string $alt): self
+    {
+        $this->translate()->setAlt($alt);
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
     }
 }

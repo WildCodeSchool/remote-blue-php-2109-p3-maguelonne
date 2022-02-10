@@ -3,6 +3,8 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Artist;
+use App\Entity\ArtistTranslation;
+use App\Repository\ArtistTranslationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,8 +17,19 @@ use Doctrine\ORM\EntityManagerInterface;
  * @Route("/artist", name="artist_")
  */
 
-class ArtistController extends AbstractController
+class ArtistController extends AbstractTranslatorController
 {
+    private EntityManagerInterface $entityManager;
+
+    /**
+     * ArticleController constructor.
+     * @param EntityManagerInterface $entityManager
+     */
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        $this->entityManager = $entityManager;
+    }
+
     /**
      * lister les artistes
      * @Route("/", name="index")
@@ -39,6 +52,15 @@ class ArtistController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $locale = 'fr';
+            $translation = new ArtistTranslation();
+            $translation->setLocale($locale);
+            $translation->setBody($form->getData()->getBody());
+            $translation->setRepository($form->getData()->getRepository());
+            $translation->setNationality($form->getData()->getNationality());
+            $translation->setAlt($form->getData()->getAlt());
+
+            $artist->addTranslation($translation);
             $entityManager->persist($artist);
             $entityManager->flush();
 
@@ -63,17 +85,24 @@ class ArtistController extends AbstractController
 
     /**
      * Edition d'un artiste
-     * @Route("/{slug}/edit", name="edit", methods={"GET", "POST"})
+     * @Route("/{id}/edit", name="edit", methods={"GET", "POST"})
      */
     public function edit(
         Request $request,
         Artist $artist,
         EntityManagerInterface $entityManager
     ): Response {
+        $locale = $request->query->get('locale');
+        $artist->setCurrentLocale($locale);
         $form = $this->createForm(ArtistType::class, $artist);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $translation = $artist->translate($locale, false);
+            $translation->setBody($artist->getBody());
+            $translation->setRepository($artist->getRepository());
+            $translation->setNationality($artist->getNationality());
+            $translation->setAlt($artist->getAlt());
             $entityManager->flush();
 
             return $this->redirectToRoute('admin_artist_index', [], Response::HTTP_SEE_OTHER);
@@ -83,6 +112,47 @@ class ArtistController extends AbstractController
             'artist' => $artist,
             'form' => $form
         ]);
+    }
+
+    /**
+     * @param string $locale
+     * @param Artist $artist
+     * @return Response
+     * @Route("/{id}/add-translation/{locale}", name="add_translation")
+     */
+    public function addTranslation(
+        string $locale,
+        Artist $artist
+    ): Response {
+        $translation = new ArtistTranslation();
+        $translation->setLocale($locale);
+        $translation->setBody($artist->getBody());
+        $artist->addTranslation($translation);
+        $this->entityManager->flush();
+        return $this->redirectToRoute('admin_artist_edit', ['id' => $artist->getId(), 'locale' => $locale]);
+    }
+
+    /**
+     * @Route("/{id}/delete-translation/{locale}", name="delete_translation", methods={"POST"})
+     */
+    public function deleteTranslation(
+        Request $request,
+        Artist $artist,
+        string $locale,
+        ArtistTranslationRepository $transRepository
+    ): Response {
+        if ($this->isCsrfTokenValid('delete' . $artist->getId(), $request->request->get('_token'))) {
+            $translation = $transRepository->findOneBy([
+                'locale' => $locale,
+                'translatable' => $artist
+            ]);
+            if ($translation) {
+                $artist->removeTranslation($translation);
+                $this->entityManager->flush();
+            }
+        }
+
+        return $this->redirectToRoute('admin_artist_index', [], Response::HTTP_SEE_OTHER);
     }
 
     /**
@@ -96,6 +166,6 @@ class ArtistController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('admin/artist/index.html.twig', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('admin_artist_index', [], Response::HTTP_SEE_OTHER);
     }
 }
