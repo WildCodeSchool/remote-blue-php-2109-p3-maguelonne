@@ -42,7 +42,7 @@
 
                 {% if categories %}
                 <div class="mb-4">
-                    <h3>Filtres sélectionnés</h3>
+                    <h3>{{ 'Filtres sélectionnés'|trans }}</h3>
                     {% for category in categories %}
                         <button data-id="{{ category.id }}" data-remove-filter="" class="btn btn-info fs-5">{{ category.name }} x</button>
                     {% endfor %}

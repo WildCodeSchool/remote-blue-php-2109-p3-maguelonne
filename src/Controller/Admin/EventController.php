@@ -50,7 +50,7 @@ class EventController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="edit", methods={"GET", "POST"})
+     * @Route("/{slug}/edit", name="edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Event $event, EntityManagerInterface $entityManager): Response
     {

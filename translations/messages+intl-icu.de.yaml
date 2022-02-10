@@ -34,13 +34,13 @@ Prix: Preis
 'Retour à la liste d''articles': 'Zurück zur Artikelliste'
 'Mot de passe': Passwort
 'Se connecter': Einloggen
-'Mentions Légales': 'Impressum'
+'Mentions Légales': Impressum
 Contact: Kontakt
-'Politique de confidentialité': 'Datenschutz-Bestimmungen'
+'Politique de confidentialité': Datenschutz-Bestimmungen
 'S''inscrire à la newsletter': 'Abonnieren Sie den Newsletter'
 'Inscrivez-vous pour recevoir réguliérement notre newsletter dans votre boîte mail.': 'Melden Sie sich an, um regelmäßig unseren Newsletter in Ihrer Mailbox zu erhalten.'
 'Adresse mail': 'Mail Adressel'
-'S''abonner': 'Abonnierenr'
+'S''abonner': Abonnierenr
 'Maguelonne. Tous droits réservés.': 'Maguelone. Alle Rechte vorbehalten.'
 Agenda: Tagebuch
 Artistes: Künstler
@@ -48,7 +48,7 @@ Artistes: Künstler
 'Registre musicale': 'Musikalisches Register'
 Vidéo: Video
 Audio: Audio
-'Catégorie d''articles': 'Artikelkategorie'
+'Catégorie d''articles': Artikelkategorie
 'Aller sur le site': 'Gehen Sie zur Website'
 page: Seite
 minutes: Minuten
@@ -58,3 +58,8 @@ Durée: Dauer
 Études: Studien
 Biographie: Biografie
 'Retour aux CV': 'Zurück zu den Lebensläufen'
+'Votre nom': 'Ihre Name'
+'Votre email': 'Ihre E-Mail'
+'Objet': 'Objekt'
+'Votre message': 'Ihre Nachricht'
+'Envoyer': 'Senden'
