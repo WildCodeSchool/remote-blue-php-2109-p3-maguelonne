@@ -50,7 +50,6 @@ class ArtistController extends AbstractTranslatorController
         $artist = new Artist();
         $form = $this->createForm(ArtistType::class, $artist);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $locale = 'fr';
             $translation = new ArtistTranslation();
@@ -59,11 +58,10 @@ class ArtistController extends AbstractTranslatorController
             $translation->setRepository($form->getData()->getRepository());
             $translation->setNationality($form->getData()->getNationality());
             $translation->setAlt($form->getData()->getAlt());
-
+            $artist->setSlug($this->slug($locale, $form->getData()->getName()));
             $artist->addTranslation($translation);
             $entityManager->persist($artist);
             $entityManager->flush();
-
             return $this->redirectToRoute('admin_artist_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -103,6 +101,7 @@ class ArtistController extends AbstractTranslatorController
             $translation->setRepository($artist->getRepository());
             $translation->setNationality($artist->getNationality());
             $translation->setAlt($artist->getAlt());
+            $artist->setSlug($this->slug($locale, $artist->getName()));
             $entityManager->flush();
 
             return $this->redirectToRoute('admin_artist_index', [], Response::HTTP_SEE_OTHER);

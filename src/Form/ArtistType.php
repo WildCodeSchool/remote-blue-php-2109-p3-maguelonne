@@ -80,7 +80,9 @@ class ArtistType extends AbstractType
             ])
             ->add('alt', TextType::class, [
                 'label' => 'Texte alternatif de l\' image.'
-            ]);
+            ])
+            ->add('slug')
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

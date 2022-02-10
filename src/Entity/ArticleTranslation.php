@@ -46,7 +46,7 @@ class ArticleTranslation implements TranslationInterface
     private string $alt = '';
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private string $summary = '';
 

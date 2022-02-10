@@ -90,7 +90,7 @@ class Artist implements TranslatableInterface
      *     maxMessage = "La longueur du texte est limité à 255 caractéres."
      * )
      */
-    private ?string $slug;
+    private ?string $slug = '';
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
