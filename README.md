@@ -1,35 +1,18 @@
 # Project 3 - Maguelonne Starter Kit - Symfony 5.*
 
-<p> Here is my BDD
-  <a href="https://ibb.co/sw2nX7m"><img src="" alt="Bdd-Maguelonne" border="0"></a>
-</p>
-
--------------------------------------------
-## Presentation
-
-This starter kit is here to easily start a repository for Wild Code School students.
-
-It's symfony website-skeleton project with some additional library (webpack, fixtures) and tools to validate code standards.
-
-* GrumPHP, as pre-commit hook, will run 2 tools when `git commit` is run :
-  
-    * PHP_CodeSniffer to check PSR12 
-    * PHPStan focuses on finding errors in your code (without actually running it)
-    * PHPmd will check if you follow PHP best practices
-     
-  If tests fail, the commit is canceled and a warning message is displayed to developper.
-
-* Github Action as Continuous Integration will be run when a branch with active pull request is updated on github. It will run :
-
-    * Tasks to check if vendor, .idea, env.local are not versionned,
-    * PHP_CodeSniffer, PHPStan and PHPmd with same configuration as GrumPHP.
- 
-## Getting Started for Students
+###Maguelonne est un Blog à 3 entrées:
+- Blog: articles classés par catégories
+- Association: contenant 1/ Artistes et CV 2/ Agenda des concerts
+- Sites Amis
 
 ### Prerequisites
 
 1. Check composer is installed
 2. Check yarn & node are installed
+
+<p> Here is Maguelonne BDD
+  <a href="https://ibb.co/sw2nX7m"><img src="https://i.ibb.co/PhNKVkm/BDD-Maguelone.png" alt="Bdd-Maguelonne" border="0"></a>
+</p>
 
 ### Install
 
@@ -56,6 +39,40 @@ It's symfony website-skeleton project with some additional library (webpack, fix
 If you develop on Windows, you should edit you git configuration to change your end of line rules with this command :
 
 `git config --global core.autocrlf true`
+
+
+###Bundles:
+- CKEDITOR : 
+1. Run 'yarn add ckeditor' to launch
+2. Run 'php bin/console assets:install public' to update
+- PAGINATOR :
+
+
+
+
+
+-------------------------------------------
+## Presentation
+
+This starter kit is here to easily start a repository for Wild Code School students.
+
+It's symfony website-skeleton project with some additional library (webpack, fixtures) and tools to validate code standards.
+
+* GrumPHP, as pre-commit hook, will run 2 tools when `git commit` is run :
+  
+    * PHP_CodeSniffer to check PSR12 
+    * PHPStan focuses on finding errors in your code (without actually running it)
+    * PHPmd will check if you follow PHP best practices
+     
+  If tests fail, the commit is canceled and a warning message is displayed to developper.
+
+* Github Action as Continuous Integration will be run when a branch with active pull request is updated on github. It will run :
+
+    * Tasks to check if vendor, .idea, env.local are not versionned,
+    * PHP_CodeSniffer, PHPStan and PHPmd with same configuration as GrumPHP.
+ 
+## Getting Started for Students
+
 
 ## Deployment
 
